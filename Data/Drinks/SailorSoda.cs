@@ -48,12 +48,12 @@ namespace BleakwindBuffet.Data.Drinks
                 switch (Size)
                 {
                     case Size.Large:
-                        return 117;
+                        return 205;
                     case Size.Medium:
                         return 153;
                     case Size.Small:
                     default:
-                        return 205;
+                        return 117;
                 }
             }
         }
