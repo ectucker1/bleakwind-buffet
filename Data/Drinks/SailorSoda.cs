@@ -19,7 +19,7 @@ namespace BleakwindBuffet.Data.Drinks
         public Size Size { get; set; } = Size.Small;
 
         /// <summary>
-        /// Gets the price of the drink
+        /// Gets the price of the soda based on size
         /// </summary>
         public double Price
         {
@@ -39,7 +39,7 @@ namespace BleakwindBuffet.Data.Drinks
         }
 
         /// <summary>
-        /// Gets the calories of the drink
+        /// Gets the calories of the soda based on size
         /// </summary>
         public uint Calories
         {

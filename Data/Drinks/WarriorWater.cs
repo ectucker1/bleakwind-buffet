@@ -19,12 +19,12 @@ namespace BleakwindBuffet.Data.Drinks
         public Size Size { get; set; } = Size.Small;
 
         /// <summary>
-        /// Gets the price of the drink
+        /// Gets the price of the water
         /// </summary>
         public double Price => 0.0;
 
         /// <summary>
-        /// Gets the calories of the drink
+        /// Gets the calories of the water
         /// </summary>
         public uint Calories => 0;
 

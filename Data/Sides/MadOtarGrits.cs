@@ -19,7 +19,7 @@ namespace BleakwindBuffet.Data.Sides
         public Size Size { get; set; } = Size.Small;
 
         /// <summary>
-        /// Gets the price of the side
+        /// Gets the price of the grits based on size
         /// </summary>
         public double Price
         {
@@ -39,7 +39,7 @@ namespace BleakwindBuffet.Data.Sides
         }
 
         /// <summary>
-        /// Gets the calories of the side
+        /// Gets the calories of the grits based on size
         /// </summary>
         public uint Calories
         {
