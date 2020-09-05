@@ -107,7 +107,7 @@ namespace BleakwindBuffet.DataTests.UnitTests.DrinkTests
                 Assert.Contains("Hold ice", w.SpecialInstructions);
             if (includeLemon)
                 Assert.Contains("Add lemon", w.SpecialInstructions);
-            if (includeIce && !includeIce)
+            if (includeIce && !includeLemon)
                 Assert.Empty(w.SpecialInstructions);
         }
 
