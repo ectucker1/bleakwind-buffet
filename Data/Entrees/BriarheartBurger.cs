@@ -10,17 +10,17 @@ namespace BleakwindBuffet.Data.Entrees
     /// <summary>
     /// Stores the price, calories, name, and special instructions for the Briarheart Burger
     /// </summary>
-    public class BriarheartBurger
+    public class BriarheartBurger : Entree
     {
         /// <summary>
         /// Gets the price of the burger
         /// </summary>
-        public double Price => 6.32;
+        public override double Price => 6.32;
 
         /// <summary>
         /// Gets the calories of the burger
         /// </summary>
-        public uint Calories => 743;
+        public override uint Calories => 743;
 
         /// <summary>
         /// Stores true if the bun should be left on this burger
@@ -50,7 +50,7 @@ namespace BleakwindBuffet.Data.Entrees
         /// <summary>
         /// Returns a list of special instructions for this burger
         /// </summary>
-        public List<string> SpecialInstructions {
+        public override List<string> SpecialInstructions {
             get
             {
                 List<string> instructions = new List<string>();

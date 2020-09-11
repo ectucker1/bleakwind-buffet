@@ -10,17 +10,17 @@ namespace BleakwindBuffet.Data.Entrees
     /// <summary>
     /// Stores the price, calories, name, and special instructions for the Smokehouse Skeleton
     /// </summary>
-    public class SmokehouseSkeleton
+    public class SmokehouseSkeleton : Entree
     {
         /// <summary>
         /// Gets the price of the breakfast combo
         /// </summary>
-        public double Price => 5.62;
+        public override double Price => 5.62;
 
         /// <summary>
         /// Gets the calories of the breakfast combo
         /// </summary>
-        public uint Calories => 602;
+        public override uint Calories => 602;
 
         /// <summary>
         /// Stores true if the combo should come with a sausage link
@@ -45,7 +45,7 @@ namespace BleakwindBuffet.Data.Entrees
         /// <summary>
         /// Returns a list of special instructions for the combo
         /// </summary>
-        public List<string> SpecialInstructions
+        public override List<string> SpecialInstructions
         {
             get
             {

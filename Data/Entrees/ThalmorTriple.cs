@@ -10,17 +10,17 @@ namespace BleakwindBuffet.Data.Entrees
     /// <summary>
     /// Stores the price, calories, name, and special instructions for the Thalmor Triple
     /// </summary>
-    public class ThalmorTriple
+    public class ThalmorTriple : Entree
     {
         /// <summary>
         /// Gets the price of the burger
         /// </summary>
-        public double Price => 8.32;
+        public override double Price => 8.32;
 
         /// <summary>
         /// Gets the calories of the burger
         /// </summary>
-        public uint Calories => 943;
+        public override uint Calories => 943;
 
         /// <summary>
         /// Stores true if the bun should be left on this burger
@@ -75,7 +75,7 @@ namespace BleakwindBuffet.Data.Entrees
         /// <summary>
         /// Returns a list of special instructions for this burger
         /// </summary>
-        public List<string> SpecialInstructions
+        public override List<string> SpecialInstructions
         {
             get
             {

@@ -2,7 +2,7 @@
 
 /*
 * Author: Ethan Tucker
-* Class name: Drink.cs
+* Class name: IOrderItem.cs
 * Purpose: Interface implemented by all items on the menu
 */
 namespace BleakwindBuffet.Data

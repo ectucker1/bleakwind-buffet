@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 /*
 * Author: Ethan Tucker
-* Class name: Drink.cs
+* Class name: Side.cs
 * Purpose: Base class for all side data
 */
 namespace BleakwindBuffet.Data.Sides
