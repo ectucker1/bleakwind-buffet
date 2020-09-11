@@ -17,6 +17,20 @@ namespace BleakwindBuffet.DataTests.UnitTests.DrinkTests
     public class SailorSodaTests
     {
         [Fact]
+        public void ShouldBeADrink()
+        {
+            var s = new SailorSoda();
+            Assert.IsAssignableFrom<Drink>(s);
+        }
+
+        [Fact]
+        public void ShouldImplementIOrderItem()
+        {
+            var s = new SailorSoda();
+            Assert.IsAssignableFrom<IOrderItem>(s);
+        }
+
+        [Fact]
         public void ShouldIncludeIceByDefault()
         {
             var s = new SailorSoda();
