@@ -15,6 +15,20 @@ namespace BleakwindBuffet.DataTests.UnitTests.SideTests
     public class VokunSaladTests
     {
         [Fact]
+        public void ShouldBeASide()
+        {
+            var vs = new VokunSalad();
+            Assert.IsAssignableFrom<Side>(vs);
+        }
+
+        [Fact]
+        public void ShouldImplementIOrderItem()
+        {
+            var vs = new VokunSalad();
+            Assert.IsAssignableFrom<IOrderItem>(vs);
+        }
+
+        [Fact]
         public void ShouldBeSmallByDefault()
         {
             var vs = new VokunSalad();

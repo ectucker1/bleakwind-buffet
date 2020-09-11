@@ -15,6 +15,20 @@ namespace BleakwindBuffet.DataTests.UnitTests.SideTests
     public class FriedMiraakTests
     {
         [Fact]
+        public void ShouldBeASide()
+        {
+            var fm = new FriedMiraak();
+            Assert.IsAssignableFrom<Side>(fm);
+        }
+
+        [Fact]
+        public void ShouldImplementIOrderItem()
+        {
+            var fm = new FriedMiraak();
+            Assert.IsAssignableFrom<IOrderItem>(fm);
+        }
+
+        [Fact]
         public void ShouldBeSmallByDefault()
         {
             var fm = new FriedMiraak();

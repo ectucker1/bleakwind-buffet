@@ -11,17 +11,12 @@ namespace BleakwindBuffet.Data.Sides
     /// <summary>
     /// Stores the price calories, name, and size for the Fried Miraak
     /// </summary>
-    public class FriedMiraak
+    public class FriedMiraak : Side
     {
-        /// <summary>
-        /// Gets the size of the side
-        /// </summary>
-        public Size Size { get; set; } = Size.Small;
-
         /// <summary>
         /// Gets the price of the hash browns based on size
         /// </summary>
-        public double Price
+        public override double Price
         {
             get
             {
@@ -41,7 +36,7 @@ namespace BleakwindBuffet.Data.Sides
         /// <summary>
         /// Gets the calories of the hash browns based on size
         /// </summary>
-        public uint Calories
+        public override uint Calories
         {
             get
             {
@@ -61,7 +56,7 @@ namespace BleakwindBuffet.Data.Sides
         /// <summary>
         /// Returns a list of special instructions for this side
         /// </summary>
-        public List<string> SpecialInstructions
+        public override List<string> SpecialInstructions
         {
             get
             {
