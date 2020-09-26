@@ -1,0 +1,35 @@
+﻿<UserControl x:Class="BleakwindBuffet.PointOfSale.Controls.MenuSelectionComponent"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:BleakwindBuffet.PointOfSale.Controls"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <StackPanel>
+        <TextBlock>Entrees</TextBlock>
+        <WrapPanel>
+            <local:MenuItemButtonComponent ItemName="Briarheart Burger"></local:MenuItemButtonComponent>
+            <local:MenuItemButtonComponent ItemName="Double Draugr"></local:MenuItemButtonComponent>
+            <local:MenuItemButtonComponent ItemName="Thalmor Triple"></local:MenuItemButtonComponent>
+            <local:MenuItemButtonComponent ItemName="Garden Orc Omelette"></local:MenuItemButtonComponent>
+            <local:MenuItemButtonComponent ItemName="Philly Poacher"></local:MenuItemButtonComponent>
+            <local:MenuItemButtonComponent ItemName="Smokehouse Skeleton"></local:MenuItemButtonComponent>
+            <local:MenuItemButtonComponent ItemName="Thugs T-Bone"></local:MenuItemButtonComponent>
+        </WrapPanel>
+        <TextBlock>Sides</TextBlock>
+        <WrapPanel>
+            <local:MenuItemButtonComponent ItemName="Vokun Salad"></local:MenuItemButtonComponent>
+            <local:MenuItemButtonComponent ItemName="Fried Miraak"></local:MenuItemButtonComponent>
+            <local:MenuItemButtonComponent ItemName="Mad Otar Grits"></local:MenuItemButtonComponent>
+            <local:MenuItemButtonComponent ItemName="Dragonborn Waffle Fries"></local:MenuItemButtonComponent>
+        </WrapPanel>
+        <TextBlock>Drinks</TextBlock>
+        <WrapPanel>
+            <local:MenuItemButtonComponent ItemName="Aretino Apple Juice"></local:MenuItemButtonComponent>
+            <local:MenuItemButtonComponent ItemName="Candlehearth Coffee"></local:MenuItemButtonComponent>
+            <local:MenuItemButtonComponent ItemName="Markarth Milk"></local:MenuItemButtonComponent>
+            <local:MenuItemButtonComponent ItemName="Warrior Water"></local:MenuItemButtonComponent>
+        </WrapPanel>
+    </StackPanel>
+</UserControl>
