@@ -11,14 +11,14 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace BleakwindBuffet.PointOfSale.Controls.MenuItems
+namespace BleakwindBuffet.PointOfSale.Controls.MenuItems.Entrees
 {
     /// <summary>
-    /// Interaction logic for BriarheartBurgerCustomization.xaml
+    /// Interaction logic for SmokehouseSkeletonCustomization.xaml
     /// </summary>
-    public partial class BriarheartBurgerCustomization : UserControl
+    public partial class SmokehouseSkeletonCustomization : UserControl
     {
-        public BriarheartBurgerCustomization()
+        public SmokehouseSkeletonCustomization()
         {
             InitializeComponent();
         }
