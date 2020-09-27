@@ -1,4 +1,9 @@
-﻿<UserControl x:Class="BleakwindBuffet.PointOfSale.Controls.MenuItems.Entrees.ThugsTBoneCustomization"
+﻿<!--
+    Author: Ethan Tucker
+    Class: ThugsTBoneCustomization.xaml
+    Purpose: Define the customization options for the Thugs T-Bone
+-->
+<UserControl x:Class="BleakwindBuffet.PointOfSale.Controls.MenuItems.Entrees.ThugsTBoneCustomization"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 

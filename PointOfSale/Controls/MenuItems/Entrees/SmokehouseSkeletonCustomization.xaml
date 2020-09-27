@@ -1,4 +1,9 @@
-﻿<UserControl x:Class="BleakwindBuffet.PointOfSale.Controls.MenuItems.Entrees.SmokehouseSkeletonCustomization"
+﻿<!--
+    Author: Ethan Tucker
+    Class: SmokehouseSkeletonCustomization.xaml
+    Purpose: Define the customization options for the Smokehouse Skeleton
+-->
+<UserControl x:Class="BleakwindBuffet.PointOfSale.Controls.MenuItems.Entrees.SmokehouseSkeletonCustomization"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 

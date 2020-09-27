@@ -1,4 +1,9 @@
-﻿<UserControl x:Class="BleakwindBuffet.PointOfSale.Controls.MenuSelectionComponent"
+﻿<!--
+    Author: Ethan Tucker
+    Class: MenuSelectionComponent.xaml
+    Purpose: Define the layout of the menu selection component
+-->
+<UserControl x:Class="BleakwindBuffet.PointOfSale.Controls.MenuSelectionComponent"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -11,7 +16,9 @@
              d:DesignHeight="450" d:DesignWidth="800">
     <StackPanel Margin="4">
         <TextBlock Margin="4" FontSize="16">Entrees</TextBlock>
+        <!--This container lists all entrees-->
         <WrapPanel>
+            <!--Each MenuItemButtonComponent has an ItemName to set it's text, and an ItemCustomizationControl to determine which kind of component is needed for customization-->
             <local:MenuItemButtonComponent Click="OnMenuItemClick" ItemName="Briarheart Burger" ItemCustomizationControl="{x:Type entrees:BriarheartBurgerCustomization}"></local:MenuItemButtonComponent>
             <local:MenuItemButtonComponent Click="OnMenuItemClick" ItemName="Double Draugr" ItemCustomizationControl="{x:Type entrees:DoubleDraugrCustomization}"></local:MenuItemButtonComponent>
             <local:MenuItemButtonComponent Click="OnMenuItemClick" ItemName="Thalmor Triple"  ItemCustomizationControl="{x:Type entrees:ThalmorTripleCustomization}"></local:MenuItemButtonComponent>
@@ -21,14 +28,18 @@
             <local:MenuItemButtonComponent Click="OnMenuItemClick" ItemName="Thugs T-Bone"  ItemCustomizationControl="{x:Type entrees:ThugsTBoneCustomization}"></local:MenuItemButtonComponent>
         </WrapPanel>
         <TextBlock Margin="4" FontSize="16">Sides</TextBlock>
+        <!--This container lists all sides-->
         <WrapPanel>
+            <!--Each MenuItemButtonComponent has an ItemName to set it's text, and an ItemCustomizationControl to determine which kind of component is needed for customization-->
             <local:MenuItemButtonComponent Click="OnMenuItemClick" ItemName="Vokun Salad" ItemCustomizationControl="{x:Type sides:VokunSaladCustomization}"></local:MenuItemButtonComponent>
             <local:MenuItemButtonComponent Click="OnMenuItemClick" ItemName="Fried Miraak"  ItemCustomizationControl="{x:Type sides:FriedMiraakCustomization}"></local:MenuItemButtonComponent>
             <local:MenuItemButtonComponent Click="OnMenuItemClick" ItemName="Mad Otar Grits"  ItemCustomizationControl="{x:Type sides:MadOtarGritsCustomization}"></local:MenuItemButtonComponent>
             <local:MenuItemButtonComponent Click="OnMenuItemClick" ItemName="Dragonborn Waffle Fries"  ItemCustomizationControl="{x:Type sides:DragonbornWaffleFriesCustomization}"></local:MenuItemButtonComponent>
         </WrapPanel>
         <TextBlock Margin="4" FontSize="16">Drinks</TextBlock>
+        <!--This container lists all drinks-->
         <WrapPanel>
+            <!--Each MenuItemButtonComponent has an ItemName to set it's text, and an ItemCustomizationControl to determine which kind of component is needed for customization-->
             <local:MenuItemButtonComponent Click="OnMenuItemClick" ItemName="Aretino Apple Juice" ItemCustomizationControl="{x:Type drinks:AretinoAppleJuiceCustomization}"></local:MenuItemButtonComponent>
             <local:MenuItemButtonComponent Click="OnMenuItemClick" ItemName="Candlehearth Coffee" ItemCustomizationControl="{x:Type drinks:CandlehearthCoffeeCustomization}"></local:MenuItemButtonComponent>
             <local:MenuItemButtonComponent Click="OnMenuItemClick" ItemName="Markarth Milk" ItemCustomizationControl="{x:Type drinks:MarkarthMilkCustomization}"></local:MenuItemButtonComponent>

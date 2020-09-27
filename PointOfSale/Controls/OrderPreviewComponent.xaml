@@ -1,4 +1,9 @@
-﻿<UserControl x:Class="BleakwindBuffet.PointOfSale.Controls.OrderPreviewComponent"
+﻿<!--
+    Author: Ethan Tucker
+    Class: OrderPreviewComponent.xaml
+    Purpose: Define the layout of the order preview
+-->
+<UserControl x:Class="BleakwindBuffet.PointOfSale.Controls.OrderPreviewComponent"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -8,6 +13,7 @@
              d:DesignHeight="450" d:DesignWidth="200">
     <DockPanel Margin="0,4,0,0">
         <TextBlock Name="OrderNumber" DockPanel.Dock="Top" TextAlignment="Center" Margin="4" FontSize="16">Order #000</TextBlock>
+        <!--This grid displays the subtotal, tax, and total-->
         <Grid DockPanel.Dock="Bottom" Margin="4">
             <Grid.RowDefinitions>
                 <RowDefinition/>
@@ -25,9 +31,12 @@
             <TextBlock Name="textSubtotal" Grid.Row="0" Grid.Column="1" Margin="4">$17.78</TextBlock>
             <TextBlock Name="textTax" Grid.Row="1" Grid.Column="1" Margin="4">$0.67</TextBlock>
             <TextBlock Name="textTotal" Grid.Row="2" Grid.Column="1" Margin="4">$18.25</TextBlock>
+            <!--This button will cancel an order-->
             <Button Name="buttonCancel" Grid.Row="3" Grid.Column="0" Margin="4">Cancel Order</Button>
+            <!--This button will finalize and submit an order-->
             <Button Name="buttonSubmit" Grid.Row="3" Grid.Column="1" Margin="4">Submit Order</Button>
         </Grid>
+        <!--This ListView will contain all items in the order, though the content is currently static-->
         <ListView Name="ItemList" Margin="4">
             <TextBlock>Example Item</TextBlock>
         </ListView>

@@ -1,4 +1,9 @@
-﻿<Button x:Class="BleakwindBuffet.PointOfSale.Controls.MenuItemButtonComponent"
+﻿<!--
+    Author: Ethan Tucker
+    Class: MenuItemButtonComponent.xaml
+    Purpose: Define the visual of a MenuItemButtonComponent
+-->
+<Button x:Class="BleakwindBuffet.PointOfSale.Controls.MenuItemButtonComponent"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -9,5 +14,6 @@
              MinWidth="80"
              MinHeight="80"
              Margin="4">
+    <!--The text for the TextBlock comes in as a dependecy property on the parent button-->
     <TextBlock MaxWidth="70" Text="{Binding ItemName, RelativeSource={RelativeSource AncestorType=Button}}" TextWrapping="WrapWithOverflow" TextAlignment="Center"/>
 </Button>
