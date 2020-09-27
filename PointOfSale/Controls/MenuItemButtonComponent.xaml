@@ -6,7 +6,8 @@
              xmlns:local="clr-namespace:BleakwindBuffet.PointOfSale.Controls"
              mc:Ignorable="d" 
              d:DesignHeight="80" d:DesignWidth="80"
-             HorizontalContentAlignment="Left"
-             VerticalContentAlignment="Bottom">
-    <TextBlock TextWrapping="WrapWithOverflow" Text="{Binding ItemName, RelativeSource={RelativeSource AncestorType=Button}}"/>
+             MinWidth="80"
+             MinHeight="80"
+             Margin="4">
+    <TextBlock MaxWidth="70" Text="{Binding ItemName, RelativeSource={RelativeSource AncestorType=Button}}" TextWrapping="WrapWithOverflow" TextAlignment="Center"/>
 </Button>

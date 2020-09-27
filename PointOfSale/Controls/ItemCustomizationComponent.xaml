@@ -7,15 +7,15 @@
              xmlns:entrees="clr-namespace:BleakwindBuffet.PointOfSale.Controls.MenuItems.Entrees"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
-    <DockPanel>
+    <DockPanel Margin="4">
         <Grid DockPanel.Dock="Bottom">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition/>
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
-            <Button Click="OnDiscardItemClicked" Grid.Column="0">Discard Item</Button>
-            <Button Click="OnAddItemClicked" Grid.Column="1">Add Item</Button>
+            <Button Click="OnDiscardItemClicked" Grid.Column="0" Margin="4">Discard Item</Button>
+            <Button Click="OnAddItemClicked" Grid.Column="1" Margin="4">Add Item</Button>
         </Grid>
-        <Border Name="containerCustomization"></Border>
+        <Border Name="containerCustomization" Margin="4,0,4,4"></Border>
     </DockPanel>
 </UserControl>

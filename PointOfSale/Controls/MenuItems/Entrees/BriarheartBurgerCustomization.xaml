@@ -8,7 +8,7 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <StackPanel>
-        <TextBlock TextAlignment="Center">Customize Briarheart Burger</TextBlock>
+        <TextBlock TextAlignment="Center" Margin="4" FontSize="16">Customize Briarheart Burger</TextBlock>
         <fields:BooleanField FieldName="Bun" FieldValue="True"></fields:BooleanField>
         <fields:BooleanField FieldName="Ketchup" FieldValue="True"></fields:BooleanField>
         <fields:BooleanField FieldName="Mustard" FieldValue="True"></fields:BooleanField>

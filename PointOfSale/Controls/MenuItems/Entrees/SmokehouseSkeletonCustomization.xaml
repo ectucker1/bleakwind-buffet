@@ -8,7 +8,7 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <StackPanel>
-        <TextBlock TextAlignment="Center">Customize Smokehouse Skeleton</TextBlock>
+        <TextBlock TextAlignment="Center" Margin="4" FontSize="16">Customize Smokehouse Skeleton</TextBlock>
         <fields:BooleanField FieldName="Sausage Link" FieldValue="True"></fields:BooleanField>
         <fields:BooleanField FieldName="Egg" FieldValue="True"></fields:BooleanField>
         <fields:BooleanField FieldName="Hash Browns" FieldValue="True"></fields:BooleanField>

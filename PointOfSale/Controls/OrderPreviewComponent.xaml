@@ -6,9 +6,9 @@
              xmlns:local="clr-namespace:BleakwindBuffet.PointOfSale.Controls"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="200">
-    <DockPanel>
-        <TextBlock Name="OrderNumber" DockPanel.Dock="Top" TextAlignment="Center">Order #100</TextBlock>
-        <Grid DockPanel.Dock="Bottom">
+    <DockPanel Margin="0,4,0,0">
+        <TextBlock Name="OrderNumber" DockPanel.Dock="Top" TextAlignment="Center" Margin="4" FontSize="16">Order #000</TextBlock>
+        <Grid DockPanel.Dock="Bottom" Margin="4">
             <Grid.RowDefinitions>
                 <RowDefinition/>
                 <RowDefinition/>
@@ -19,17 +19,17 @@
                 <ColumnDefinition/>
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
-            <TextBlock Grid.Row="0" Grid.Column="0">Subtotal:</TextBlock>
-            <TextBlock Grid.Row="1" Grid.Column="0">Tax:</TextBlock>
-            <TextBlock Grid.Row="2" Grid.Column="0">Total:</TextBlock>
-            <TextBlock Name="textSubtotal" Grid.Row="0" Grid.Column="1">$17.78</TextBlock>
-            <TextBlock Name="textTax" Grid.Row="1" Grid.Column="1">$0.67</TextBlock>
-            <TextBlock Name="textTotal" Grid.Row="2" Grid.Column="1">$18.25</TextBlock>
-            <Button Name="buttonCancel" Grid.Row="3" Grid.Column="0">Cancel Order</Button>
-            <Button Name="buttonSubmit" Grid.Row="3" Grid.Column="1">Submit Order</Button>
+            <TextBlock Grid.Row="0" Grid.Column="0" Margin="4">Subtotal:</TextBlock>
+            <TextBlock Grid.Row="1" Grid.Column="0" Margin="4">Tax:</TextBlock>
+            <TextBlock Grid.Row="2" Grid.Column="0" Margin="4">Total:</TextBlock>
+            <TextBlock Name="textSubtotal" Grid.Row="0" Grid.Column="1" Margin="4">$17.78</TextBlock>
+            <TextBlock Name="textTax" Grid.Row="1" Grid.Column="1" Margin="4">$0.67</TextBlock>
+            <TextBlock Name="textTotal" Grid.Row="2" Grid.Column="1" Margin="4">$18.25</TextBlock>
+            <Button Name="buttonCancel" Grid.Row="3" Grid.Column="0" Margin="4">Cancel Order</Button>
+            <Button Name="buttonSubmit" Grid.Row="3" Grid.Column="1" Margin="4">Submit Order</Button>
         </Grid>
-        <ListView Name="ItemList">
-            <TextBlock>Briarheart Burger</TextBlock>
+        <ListView Name="ItemList" Margin="4">
+            <TextBlock>Example Item</TextBlock>
         </ListView>
     </DockPanel>
 </UserControl>

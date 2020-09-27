@@ -6,7 +6,7 @@
              xmlns:local="clr-namespace:BleakwindBuffet.PointOfSale.Controls.MenuItems.Fields"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
-    <Grid>
+    <Grid Margin="4">
         <Grid.RowDefinitions>
             <RowDefinition/>
         </Grid.RowDefinitions>
@@ -14,11 +14,11 @@
             <ColumnDefinition/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-        <Label Grid.Row="0" Grid.Column="0">Size</Label>
+        <Label Grid.Row="0" Grid.Column="0" HorizontalContentAlignment="Right">Size</Label>
         <StackPanel Grid.Row="0" Grid.Column="1">
-            <RadioButton Name="radioSmall" GroupName="Size" IsChecked="True">Small</RadioButton>
-            <RadioButton Name="radioMedium" GroupName="Size">Medium</RadioButton>
-            <RadioButton Name="radioLarge" GroupName="Size">Large</RadioButton>
+            <RadioButton Name="radioSmall" GroupName="Size" IsChecked="True" Margin="4">Small</RadioButton>
+            <RadioButton Name="radioMedium" GroupName="Size" Margin="4">Medium</RadioButton>
+            <RadioButton Name="radioLarge" GroupName="Size" Margin="4">Large</RadioButton>
         </StackPanel>
     </Grid>
 </UserControl>

@@ -6,7 +6,7 @@
              xmlns:local="clr-namespace:BleakwindBuffet.PointOfSale.Controls.MenuItems.Fields"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
-    <Grid>
+    <Grid Margin="4">
         <Grid.RowDefinitions>
             <RowDefinition/>
         </Grid.RowDefinitions>
@@ -14,14 +14,14 @@
             <ColumnDefinition/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-        <Label Grid.Row="0" Grid.Column="0">Flavor</Label>
+        <Label Grid.Row="0" Grid.Column="0" HorizontalContentAlignment="Right">Flavor</Label>
         <StackPanel Grid.Row="0" Grid.Column="1">
-            <RadioButton Name="radioBlackberry" GroupName="Flavor">Blackberry</RadioButton>
-            <RadioButton Name="radioCherry" GroupName="Flavor" IsChecked="True">Cherry</RadioButton>
-            <RadioButton Name="radioGrapefruit" GroupName="Flavor">Grapefruit</RadioButton>
-            <RadioButton Name="radioLemon" GroupName="Flavor">Lemon</RadioButton>
-            <RadioButton Name="radioPeach" GroupName="Flavor">Peach</RadioButton>
-            <RadioButton Name="radioWatermelon" GroupName="Flavor">Watermelon</RadioButton>
+            <RadioButton Name="radioBlackberry" GroupName="Flavor" Margin="4">Blackberry</RadioButton>
+            <RadioButton Name="radioCherry" GroupName="Flavor" IsChecked="True" Margin="4">Cherry</RadioButton>
+            <RadioButton Name="radioGrapefruit" GroupName="Flavor" Margin="4">Grapefruit</RadioButton>
+            <RadioButton Name="radioLemon" GroupName="Flavor" Margin="4">Lemon</RadioButton>
+            <RadioButton Name="radioPeach" GroupName="Flavor" Margin="4">Peach</RadioButton>
+            <RadioButton Name="radioWatermelon" GroupName="Flavor" Margin="4">Watermelon</RadioButton>
         </StackPanel>
     </Grid>
 </UserControl>
