@@ -11,6 +11,11 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
+/*
+ * Author: Ethan Tucker
+ * Class name: WarriorWaterCustomization.xaml.cs
+ * Purpose: Defines the customization options for the Warrior Water
+ */
 namespace BleakwindBuffet.PointOfSale.Controls.MenuItems.Drinks
 {
     /// <summary>

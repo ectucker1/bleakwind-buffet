@@ -13,6 +13,11 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
+/*
+ * Author: Ethan Tucker
+ * Class name: MainWindow.xaml.cs
+ * Purpose: Define the main window for the PointOfSale
+ */
 namespace BleakwindBuffet.PointOfSale
 {
     /// <summary>

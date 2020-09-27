@@ -12,6 +12,11 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using ItemSize = BleakwindBuffet.Data.Enums.Size;
 
+/*
+ * Author: Ethan Tucker
+ * Class name: SizeField.xaml.cs
+ * Purpose: Defines a field representing an item size
+ */
 namespace BleakwindBuffet.PointOfSale.Controls.MenuItems.Fields
 {
     /// <summary>
@@ -19,11 +24,17 @@ namespace BleakwindBuffet.PointOfSale.Controls.MenuItems.Fields
     /// </summary>
     public partial class SizeField : UserControl
     {
+        /// <summary>
+        /// Creates and initialized a new size field
+        /// </summary>
         public SizeField()
         {
             InitializeComponent();
         }
 
+        /// <summary>
+        /// Gets the currently selected item size
+        /// </summary>
         public ItemSize SelectedSize
         {
             get

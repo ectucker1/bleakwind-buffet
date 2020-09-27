@@ -11,6 +11,11 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
+/*
+ * Author: Ethan Tucker
+ * Class name: GardenOrcOmeletteCustomization.xaml.cs
+ * Purpose: Defines the customization options for the Garden Orc Omelette
+ */
 namespace BleakwindBuffet.PointOfSale.Controls.MenuItems.Entrees
 {
     /// <summary>

@@ -11,6 +11,11 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
+/*
+ * Author: Ethan Tucker
+ * Class name: OrderPreviewComponent.xaml.cs
+ * Purpose: Define the OrderPreviewComponent
+ */
 namespace BleakwindBuffet.PointOfSale.Controls
 {
     /// <summary>

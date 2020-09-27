@@ -11,6 +11,11 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
+/*
+ * Author: Ethan Tucker
+ * Class name: MenuSelectionComponent.xaml.cs
+ * Purpose: Define the MenuSelectionComponent, which lists all menu items
+ */
 namespace BleakwindBuffet.PointOfSale.Controls
 {
     /// <summary>
@@ -23,6 +28,11 @@ namespace BleakwindBuffet.PointOfSale.Controls
             InitializeComponent();
         }
 
+        /// <summary>
+        /// Begins the customization of an item when a menu item is clicked
+        /// </summary>
+        /// <param name="sender">The MenuItemButtonComponent that was clicked</param>
+        /// <param name="e">Click event arguments</param>
         private void OnMenuItemClick(object sender, RoutedEventArgs e)
         {
             if (sender is MenuItemButtonComponent menuItem)

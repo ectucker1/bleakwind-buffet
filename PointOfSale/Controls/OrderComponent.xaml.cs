@@ -11,6 +11,11 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
+/*
+ * Author: Ethan Tucker
+ * Class name: OrderComponent.xaml.cs
+ * Purpose: Define the order component, which has the main layout of the Point of Sale
+ */
 namespace BleakwindBuffet.PointOfSale.Controls
 {
     /// <summary>
@@ -23,6 +28,10 @@ namespace BleakwindBuffet.PointOfSale.Controls
             InitializeComponent();
         }
 
+        /// <summary>
+        /// Starts customizing a new item by placing it in the ItemCustomizationComponent
+        /// </summary>
+        /// <param name="customizationControl">The Type of the customization page to use</param>
         public void StartItem(Type customizationControl)
         {
             controlItemCustomization.SwitchCustomizationLayout(customizationControl);

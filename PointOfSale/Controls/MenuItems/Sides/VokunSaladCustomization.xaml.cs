@@ -11,6 +11,11 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
+/*
+ * Author: Ethan Tucker
+ * Class name: VokunSaladCustomization.xaml.cs
+ * Purpose: Defines the customization options for the Vokun Salad
+ */
 namespace BleakwindBuffet.PointOfSale.Controls.MenuItems.Sides
 {
     /// <summary>

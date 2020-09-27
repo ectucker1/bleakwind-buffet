@@ -12,6 +12,11 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using BleakwindBuffet.Data.Enums;
 
+/*
+ * Author: Ethan Tucker
+ * Class name: FlavorField.xaml.cs
+ * Purpose: Defines a field representing a soda flavor
+ */
 namespace BleakwindBuffet.PointOfSale.Controls.MenuItems.Fields
 {
     /// <summary>
@@ -19,12 +24,18 @@ namespace BleakwindBuffet.PointOfSale.Controls.MenuItems.Fields
     /// </summary>
     public partial class FlavorField : UserControl
     {
+        /// <summary>
+        /// Creates and initializes new flavor field
+        /// </summary>
         public FlavorField()
         {
             InitializeComponent();
         }
 
-        public SodaFlavor SelectedSize
+        /// <summary>
+        /// Returns the currently selected soda flavor
+        /// </summary>
+        public SodaFlavor SelectedFlavor
         {
             get
             {

@@ -11,6 +11,11 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
+/*
+ * Author: Ethan Tucker
+ * Class name: AretinoAppleJuiceCustomization.xaml.cs
+ * Purpose: Defines the customization options for the AretinoAppleJuice
+ */
 namespace BleakwindBuffet.PointOfSale.Controls.MenuItems.Drinks
 {
     /// <summary>

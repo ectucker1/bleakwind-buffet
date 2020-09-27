@@ -11,6 +11,11 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
+/*
+ * Author: Ethan Tucker
+ * Class name: ThugsTBoneCustomization.xaml.cs
+ * Purpose: Defines the customization options (or lack thereof) for the Thugs T-Bone
+ */
 namespace BleakwindBuffet.PointOfSale.Controls.MenuItems.Entrees
 {
     /// <summary>
