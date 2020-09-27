@@ -4,32 +4,36 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:BleakwindBuffet.PointOfSale.Controls"
+             xmlns:drinks="clr-namespace:BleakwindBuffet.PointOfSale.Controls.MenuItems.Drinks"
+             xmlns:entrees="clr-namespace:BleakwindBuffet.PointOfSale.Controls.MenuItems.Entrees"
+             xmlns:sides="clr-namespace:BleakwindBuffet.PointOfSale.Controls.MenuItems.Sides"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <StackPanel>
         <TextBlock>Entrees</TextBlock>
         <WrapPanel>
-            <local:MenuItemButtonComponent ItemName="Briarheart Burger"></local:MenuItemButtonComponent>
-            <local:MenuItemButtonComponent ItemName="Double Draugr"></local:MenuItemButtonComponent>
-            <local:MenuItemButtonComponent ItemName="Thalmor Triple"></local:MenuItemButtonComponent>
-            <local:MenuItemButtonComponent ItemName="Garden Orc Omelette"></local:MenuItemButtonComponent>
-            <local:MenuItemButtonComponent ItemName="Philly Poacher"></local:MenuItemButtonComponent>
-            <local:MenuItemButtonComponent ItemName="Smokehouse Skeleton"></local:MenuItemButtonComponent>
-            <local:MenuItemButtonComponent ItemName="Thugs T-Bone"></local:MenuItemButtonComponent>
+            <local:MenuItemButtonComponent Click="OnMenuItemClick" ItemName="Briarheart Burger" ItemCustomizationControl="{x:Type entrees:BriarheartBurgerCustomization}"></local:MenuItemButtonComponent>
+            <local:MenuItemButtonComponent Click="OnMenuItemClick" ItemName="Double Draugr" ItemCustomizationControl="{x:Type entrees:DoubleDraugrCustomization}"></local:MenuItemButtonComponent>
+            <local:MenuItemButtonComponent Click="OnMenuItemClick" ItemName="Thalmor Triple"  ItemCustomizationControl="{x:Type entrees:ThalmorTripleCustomization}"></local:MenuItemButtonComponent>
+            <local:MenuItemButtonComponent Click="OnMenuItemClick" ItemName="Garden Orc Omelette"  ItemCustomizationControl="{x:Type entrees:GardenOrcOmeletteCustomization}"></local:MenuItemButtonComponent>
+            <local:MenuItemButtonComponent Click="OnMenuItemClick" ItemName="Philly Poacher"  ItemCustomizationControl="{x:Type entrees:PhillyPoacherCustomization}"></local:MenuItemButtonComponent>
+            <local:MenuItemButtonComponent Click="OnMenuItemClick" ItemName="Smokehouse Skeleton"  ItemCustomizationControl="{x:Type entrees:SmokehouseSkeletonCustomization}"></local:MenuItemButtonComponent>
+            <local:MenuItemButtonComponent Click="OnMenuItemClick" ItemName="Thugs T-Bone"  ItemCustomizationControl="{x:Type entrees:ThugsTBoneCustomization}"></local:MenuItemButtonComponent>
         </WrapPanel>
         <TextBlock>Sides</TextBlock>
         <WrapPanel>
-            <local:MenuItemButtonComponent ItemName="Vokun Salad"></local:MenuItemButtonComponent>
-            <local:MenuItemButtonComponent ItemName="Fried Miraak"></local:MenuItemButtonComponent>
-            <local:MenuItemButtonComponent ItemName="Mad Otar Grits"></local:MenuItemButtonComponent>
-            <local:MenuItemButtonComponent ItemName="Dragonborn Waffle Fries"></local:MenuItemButtonComponent>
+            <local:MenuItemButtonComponent Click="OnMenuItemClick" ItemName="Vokun Salad" ItemCustomizationControl="{x:Type sides:VokunSaladCustomization}"></local:MenuItemButtonComponent>
+            <local:MenuItemButtonComponent Click="OnMenuItemClick" ItemName="Fried Miraak"  ItemCustomizationControl="{x:Type sides:FriedMiraakCustomization}"></local:MenuItemButtonComponent>
+            <local:MenuItemButtonComponent Click="OnMenuItemClick" ItemName="Mad Otar Grits"  ItemCustomizationControl="{x:Type sides:MadOtarGritsCustomization}"></local:MenuItemButtonComponent>
+            <local:MenuItemButtonComponent Click="OnMenuItemClick" ItemName="Dragonborn Waffle Fries"  ItemCustomizationControl="{x:Type sides:DragonbornWaffleFriesCustomization}"></local:MenuItemButtonComponent>
         </WrapPanel>
         <TextBlock>Drinks</TextBlock>
         <WrapPanel>
-            <local:MenuItemButtonComponent ItemName="Aretino Apple Juice"></local:MenuItemButtonComponent>
-            <local:MenuItemButtonComponent ItemName="Candlehearth Coffee"></local:MenuItemButtonComponent>
-            <local:MenuItemButtonComponent ItemName="Markarth Milk"></local:MenuItemButtonComponent>
-            <local:MenuItemButtonComponent ItemName="Warrior Water"></local:MenuItemButtonComponent>
+            <local:MenuItemButtonComponent Click="OnMenuItemClick" ItemName="Aretino Apple Juice" ItemCustomizationControl="{x:Type drinks:AretinoAppleJuiceCustomization}"></local:MenuItemButtonComponent>
+            <local:MenuItemButtonComponent Click="OnMenuItemClick" ItemName="Candlehearth Coffee" ItemCustomizationControl="{x:Type drinks:CandlehearthCoffeeCustomization}"></local:MenuItemButtonComponent>
+            <local:MenuItemButtonComponent Click="OnMenuItemClick" ItemName="Markarth Milk" ItemCustomizationControl="{x:Type drinks:MarkarthMilkCustomization}"></local:MenuItemButtonComponent>
+            <local:MenuItemButtonComponent Click="OnMenuItemClick" ItemName="Sailor Soda" ItemCustomizationControl="{x:Type drinks:SailorSodaCustomization}"></local:MenuItemButtonComponent>
+            <local:MenuItemButtonComponent Click="OnMenuItemClick" ItemName="Warrior Water" ItemCustomizationControl="{x:Type drinks:WarriorWaterCustomization}"></local:MenuItemButtonComponent>
         </WrapPanel>
     </StackPanel>
 </UserControl>

@@ -22,5 +22,14 @@ namespace BleakwindBuffet.PointOfSale.Controls
         {
             InitializeComponent();
         }
+
+        private void OnMenuItemClick(object sender, RoutedEventArgs e)
+        {
+            if (sender is MenuItemButtonComponent menuItem)
+            {
+                var orderComponent = this.FindAncestor<OrderComponent>();
+                orderComponent.StartItem(menuItem.ItemCustomizationControl);
+            }
+        }
     }
 }

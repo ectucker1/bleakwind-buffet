@@ -22,5 +22,10 @@ namespace BleakwindBuffet.PointOfSale.Controls
         {
             InitializeComponent();
         }
+
+        public void StartItem(Type customizationControl)
+        {
+            controlItemCustomization.SwitchCustomizationLayout(customizationControl);
+        }
     }
 }

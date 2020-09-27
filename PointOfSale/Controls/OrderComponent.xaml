@@ -13,8 +13,8 @@
             <ColumnDefinition/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-        <local:MenuSelectionComponent  Grid.Column="0"></local:MenuSelectionComponent>
-        <local:ItemCustomizationComponent Grid.Column="1"></local:ItemCustomizationComponent>
-        <local:OrderPreviewComponent Grid.Column="2"></local:OrderPreviewComponent>
+        <local:MenuSelectionComponent x:Name="controlMenuSelection" Grid.Column="0"></local:MenuSelectionComponent>
+        <local:ItemCustomizationComponent x:Name="controlItemCustomization" Grid.Column="1"></local:ItemCustomizationComponent>
+        <local:OrderPreviewComponent x:Name="controlOrderPreview" Grid.Column="2"></local:OrderPreviewComponent>
     </Grid>
 </UserControl>

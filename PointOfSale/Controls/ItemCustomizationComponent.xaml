@@ -13,9 +13,9 @@
                 <ColumnDefinition/>
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
-            <Button Name="buttonDiscard" Grid.Column="0">Discard Item</Button>
-            <Button Name="buttonAdd" Grid.Column="1">Add Item</Button>
+            <Button Click="OnDiscardItemClicked" Grid.Column="0">Discard Item</Button>
+            <Button Click="OnAddItemClicked" Grid.Column="1">Add Item</Button>
         </Grid>
-        <entrees:BriarheartBurgerCustomization></entrees:BriarheartBurgerCustomization>
+        <Border Name="containerCustomization"></Border>
     </DockPanel>
 </UserControl>

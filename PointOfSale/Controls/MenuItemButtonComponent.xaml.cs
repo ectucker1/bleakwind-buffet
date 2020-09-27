@@ -16,7 +16,7 @@ namespace BleakwindBuffet.PointOfSale.Controls
     /// <summary>
     /// Interaction logic for MenuItemButtonComponent.xaml
     /// </summary>
-    public partial class MenuItemButtonComponent : UserControl
+    public partial class MenuItemButtonComponent : Button
     {
         #region ItemName Property
 
@@ -29,6 +29,18 @@ namespace BleakwindBuffet.PointOfSale.Controls
         public static readonly DependencyProperty ItemNameProperty = DependencyProperty.Register(nameof(ItemName), typeof(string), typeof(MenuItemButtonComponent));
 
         #endregion ItemName Property
+
+        #region ItemCustomizationControl Property
+
+        public Type ItemCustomizationControl
+        {
+            get => (Type) GetValue(ItemCustomizationControlProperty);
+            set => SetValue(ItemCustomizationControlProperty, value);
+        }
+
+        public static readonly DependencyProperty ItemCustomizationControlProperty = DependencyProperty.Register(nameof(ItemCustomizationControl), typeof(Type), typeof(MenuItemButtonComponent));
+
+        #endregion ItemCustomizationControl Property
 
         public MenuItemButtonComponent()
         {

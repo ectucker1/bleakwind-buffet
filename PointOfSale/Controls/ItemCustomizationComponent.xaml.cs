@@ -22,5 +22,29 @@ namespace BleakwindBuffet.PointOfSale.Controls
         {
             InitializeComponent();
         }
+
+        public void SwitchCustomizationLayout(Type customizationControl)
+        {
+            var layout = Activator.CreateInstance(customizationControl);
+            if (layout is UIElement control)
+            {
+                containerCustomization.Child = control;
+            }
+        }
+
+        public void OnAddItemClicked(object sender, RoutedEventArgs e)
+        {
+            ClearCustomizationLayout();
+        }
+
+        public void OnDiscardItemClicked(object sender, RoutedEventArgs e)
+        {
+            ClearCustomizationLayout();
+        }
+
+        private void ClearCustomizationLayout()
+        {
+            containerCustomization.Child = null;
+        }
     }
 }
