@@ -11,7 +11,8 @@
         xmlns:local="clr-namespace:BleakwindBuffet.PointOfSale"
         xmlns:controls="clr-namespace:BleakwindBuffet.PointOfSale.Controls"
         mc:Ignorable="d"
-        Title="MainWindow" Height="600" Width="1000">
+        Title="Bleakwind Buffet Point of Sale"
+        Height="600" Width="1000">
     <DockPanel>
         <!--The order component contains buttons to add items to an order, customization logic, and a preview of the order-->
         <controls:OrderComponent></controls:OrderComponent>
