@@ -8,6 +8,7 @@ using Xunit;
 
 using BleakwindBuffet.Data;
 using BleakwindBuffet.Data.Entrees;
+using System.ComponentModel;
 
 namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
 {
@@ -25,6 +26,13 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
         {
             var pp = new PhillyPoacher();
             Assert.IsAssignableFrom<IOrderItem>(pp);
+        }
+
+        [Fact]
+        public void ShouldImplementINotifyPropertyChanged()
+        {
+            var pp = new PhillyPoacher();
+            Assert.IsAssignableFrom<INotifyPropertyChanged>(pp);
         }
 
         [Fact]
@@ -120,6 +128,57 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
         {
             var pp = new PhillyPoacher();
             Assert.Equal("Philly Poacher", pp.ToString());
+        }
+
+        [Fact]
+        public void ShouldNotifyWhenSettingSirloin()
+        {
+            var pp = new PhillyPoacher();
+            Assert.PropertyChanged(pp, nameof(PhillyPoacher.Sirloin), () => {
+                pp.Sirloin = false;
+            });
+            Assert.PropertyChanged(pp, nameof(PhillyPoacher.Sirloin), () => {
+                pp.Sirloin = true;
+            });
+        }
+
+        [Fact]
+        public void ShouldNotifyWhenSettingOnion()
+        {
+            var pp = new PhillyPoacher();
+            Assert.PropertyChanged(pp, nameof(PhillyPoacher.Onion), () => {
+                pp.Onion = false;
+            });
+            Assert.PropertyChanged(pp, nameof(PhillyPoacher.Onion), () => {
+                pp.Onion = true;
+            });
+        }
+
+        [Fact]
+        public void ShouldNotifyWhenSettingRoll()
+        {
+            var pp = new PhillyPoacher();
+            Assert.PropertyChanged(pp, nameof(PhillyPoacher.Roll), () => {
+                pp.Roll = false;
+            });
+            Assert.PropertyChanged(pp, nameof(PhillyPoacher.Roll), () => {
+                pp.Roll = true;
+            });
+        }
+
+        [Fact]
+        public void ShouldNotifySpecialInstructionsChanged()
+        {
+            var pp = new PhillyPoacher();
+            Assert.PropertyChanged(pp, nameof(PhillyPoacher.SpecialInstructions), () => {
+                pp.Sirloin = false;
+            });
+            Assert.PropertyChanged(pp, nameof(PhillyPoacher.SpecialInstructions), () => {
+                pp.Onion = false;
+            });
+            Assert.PropertyChanged(pp, nameof(PhillyPoacher.SpecialInstructions), () => {
+                pp.Roll = false;
+            });
         }
     }
 }

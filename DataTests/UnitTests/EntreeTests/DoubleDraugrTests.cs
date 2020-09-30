@@ -8,6 +8,7 @@ using Xunit;
 
 using BleakwindBuffet.Data;
 using BleakwindBuffet.Data.Entrees;
+using System.ComponentModel;
 
 namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
 {
@@ -25,6 +26,13 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
         {
             var dd = new DoubleDraugr();
             Assert.IsAssignableFrom<IOrderItem>(dd);
+        }
+
+        [Fact]
+        public void ShouldImplementINotifyPropertyChanged()
+        {
+            var dd = new DoubleDraugr();
+            Assert.IsAssignableFrom<INotifyPropertyChanged>(dd);
         }
 
         [Fact]
@@ -221,6 +229,132 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
         {
             var dd = new DoubleDraugr();
             Assert.Equal("Double Draugr", dd.ToString());
+        }
+
+        [Fact]
+        public void ShouldNotifyWhenSettingBun()
+        {
+            var dd = new DoubleDraugr();
+            Assert.PropertyChanged(dd, nameof(DoubleDraugr.Bun), () => {
+                dd.Bun = false;
+            });
+            Assert.PropertyChanged(dd, nameof(DoubleDraugr.Bun), () => {
+                dd.Bun = true;
+            });
+        }
+
+        [Fact]
+        public void ShouldNotifyWhenSettingKetchup()
+        {
+            var dd = new DoubleDraugr();
+            Assert.PropertyChanged(dd, nameof(DoubleDraugr.Ketchup), () => {
+                dd.Ketchup = false;
+            });
+            Assert.PropertyChanged(dd, nameof(DoubleDraugr.Ketchup), () => {
+                dd.Ketchup = true;
+            });
+        }
+
+        [Fact]
+        public void ShouldNotifyWhenSettingMustard()
+        {
+            var dd = new DoubleDraugr();
+            Assert.PropertyChanged(dd, nameof(DoubleDraugr.Mustard), () => {
+                dd.Mustard = false;
+            });
+            Assert.PropertyChanged(dd, nameof(DoubleDraugr.Mustard), () => {
+                dd.Mustard = true;
+            });
+        }
+
+        [Fact]
+        public void ShouldNotifyWhenSettingPickle()
+        {
+            var dd = new DoubleDraugr();
+            Assert.PropertyChanged(dd, nameof(DoubleDraugr.Pickle), () => {
+                dd.Pickle = false;
+            });
+            Assert.PropertyChanged(dd, nameof(DoubleDraugr.Pickle), () => {
+                dd.Pickle = true;
+            });
+        }
+
+        [Fact]
+        public void ShouldNotifyWhenSettingCheese()
+        {
+            var dd = new DoubleDraugr();
+            Assert.PropertyChanged(dd, nameof(DoubleDraugr.Cheese), () => {
+                dd.Cheese = false;
+            });
+            Assert.PropertyChanged(dd, nameof(DoubleDraugr.Cheese), () => {
+                dd.Cheese = true;
+            });
+        }
+
+        [Fact]
+        public void ShouldNotifyWhenSettingTomato()
+        {
+            var dd = new DoubleDraugr();
+            Assert.PropertyChanged(dd, nameof(DoubleDraugr.Tomato), () => {
+                dd.Tomato = false;
+            });
+            Assert.PropertyChanged(dd, nameof(DoubleDraugr.Tomato), () => {
+                dd.Tomato = true;
+            });
+        }
+
+        [Fact]
+        public void ShouldNotifyWhenSettingLettuce()
+        {
+            var dd = new DoubleDraugr();
+            Assert.PropertyChanged(dd, nameof(DoubleDraugr.Lettuce), () => {
+                dd.Lettuce = false;
+            });
+            Assert.PropertyChanged(dd, nameof(DoubleDraugr.Lettuce), () => {
+                dd.Lettuce = true;
+            });
+        }
+
+        [Fact]
+        public void ShouldNotifyWhenSettingMayo()
+        {
+            var dd = new DoubleDraugr();
+            Assert.PropertyChanged(dd, nameof(DoubleDraugr.Mayo), () => {
+                dd.Mayo = false;
+            });
+            Assert.PropertyChanged(dd, nameof(DoubleDraugr.Mayo), () => {
+                dd.Mayo = true;
+            });
+        }
+
+        [Fact]
+        public void ShouldNotifySpecialInstructionsChanged()
+        {
+            var dd = new DoubleDraugr();
+            Assert.PropertyChanged(dd, nameof(DoubleDraugr.SpecialInstructions), () => {
+                dd.Bun = false;
+            });
+            Assert.PropertyChanged(dd, nameof(DoubleDraugr.SpecialInstructions), () => {
+                dd.Ketchup = false;
+            });
+            Assert.PropertyChanged(dd, nameof(DoubleDraugr.SpecialInstructions), () => {
+                dd.Mustard = false;
+            });
+            Assert.PropertyChanged(dd, nameof(DoubleDraugr.SpecialInstructions), () => {
+                dd.Pickle = false;
+            });
+            Assert.PropertyChanged(dd, nameof(DoubleDraugr.SpecialInstructions), () => {
+                dd.Cheese = false;
+            });
+            Assert.PropertyChanged(dd, nameof(DoubleDraugr.SpecialInstructions), () => {
+                dd.Tomato = false;
+            });
+            Assert.PropertyChanged(dd, nameof(DoubleDraugr.SpecialInstructions), () => {
+                dd.Lettuce = false;
+            });
+            Assert.PropertyChanged(dd, nameof(DoubleDraugr.SpecialInstructions), () => {
+                dd.Mayo = false;
+            });
         }
     }
 }

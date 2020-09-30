@@ -8,6 +8,7 @@ using Xunit;
 
 using BleakwindBuffet.Data;
 using BleakwindBuffet.Data.Entrees;
+using System.ComponentModel;
 
 namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
 {
@@ -25,6 +26,13 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
         {
             var goc = new GardenOrcOmelette();
             Assert.IsAssignableFrom<IOrderItem>(goc);
+        }
+
+        [Fact]
+        public void ShouldImplementINotifyPropertyChanged()
+        {
+            var goc = new GardenOrcOmelette();
+            Assert.IsAssignableFrom<INotifyPropertyChanged>(goc);
         }
 
         [Fact]
@@ -140,6 +148,72 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
         {
             var goc = new GardenOrcOmelette();
             Assert.Equal("Garden Orc Omelette", goc.ToString());
+        }
+
+        [Fact]
+        public void ShouldNotifyWhenSettingBroccoli()
+        {
+            var goc = new GardenOrcOmelette();
+            Assert.PropertyChanged(goc, nameof(GardenOrcOmelette.Broccoli), () => {
+                goc.Broccoli = false;
+            });
+            Assert.PropertyChanged(goc, nameof(GardenOrcOmelette.Broccoli), () => {
+                goc.Broccoli = true;
+            });
+        }
+
+        [Fact]
+        public void ShouldNotifyWhenSettingMushrooms()
+        {
+            var goc = new GardenOrcOmelette();
+            Assert.PropertyChanged(goc, nameof(GardenOrcOmelette.Mushrooms), () => {
+                goc.Mushrooms = false;
+            });
+            Assert.PropertyChanged(goc, nameof(GardenOrcOmelette.Mushrooms), () => {
+                goc.Mushrooms = true;
+            });
+        }
+
+        [Fact]
+        public void ShouldNotifyWhenSettingTomato()
+        {
+            var goc = new GardenOrcOmelette();
+            Assert.PropertyChanged(goc, nameof(GardenOrcOmelette.Tomato), () => {
+                goc.Tomato = false;
+            });
+            Assert.PropertyChanged(goc, nameof(GardenOrcOmelette.Tomato), () => {
+                goc.Tomato = true;
+            });
+        }
+
+        [Fact]
+        public void ShouldNotifyWhenSettingCheddar()
+        {
+            var goc = new GardenOrcOmelette();
+            Assert.PropertyChanged(goc, nameof(GardenOrcOmelette.Cheddar), () => {
+                goc.Cheddar = false;
+            });
+            Assert.PropertyChanged(goc, nameof(GardenOrcOmelette.Cheddar), () => {
+                goc.Cheddar = true;
+            });
+        }
+
+        [Fact]
+        public void ShouldNotifySpecialInstructionsChanged()
+        {
+            var goc = new GardenOrcOmelette();
+            Assert.PropertyChanged(goc, nameof(GardenOrcOmelette.Broccoli), () => {
+                goc.Broccoli = false;
+            });
+            Assert.PropertyChanged(goc, nameof(GardenOrcOmelette.Mushrooms), () => {
+                goc.Mushrooms = false;
+            });
+            Assert.PropertyChanged(goc, nameof(GardenOrcOmelette.Tomato), () => {
+                goc.Tomato = false;
+            });
+            Assert.PropertyChanged(goc, nameof(GardenOrcOmelette.Cheddar), () => {
+                goc.Cheddar = false;
+            });
         }
     }
 }

@@ -8,6 +8,7 @@ using Xunit;
 
 using BleakwindBuffet.Data;
 using BleakwindBuffet.Data.Entrees;
+using System.ComponentModel;
 
 namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
 {
@@ -25,6 +26,13 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
         {
             var ss = new SmokehouseSkeleton();
             Assert.IsAssignableFrom<IOrderItem>(ss);
+        }
+
+        [Fact]
+        public void ShouldImplementINotifyPropertyChanged()
+        {
+            var ss = new SmokehouseSkeleton();
+            Assert.IsAssignableFrom<INotifyPropertyChanged>(ss);
         }
 
         [Fact]
@@ -140,6 +148,72 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
         {
             var ss = new SmokehouseSkeleton();
             Assert.Equal("Smokehouse Skeleton", ss.ToString());
+        }
+
+        [Fact]
+        public void ShouldNotifyWhenSettingSausageLink()
+        {
+            var ss = new SmokehouseSkeleton();
+            Assert.PropertyChanged(ss, nameof(SmokehouseSkeleton.SausageLink), () => {
+                ss.SausageLink = false;
+            });
+            Assert.PropertyChanged(ss, nameof(SmokehouseSkeleton.SausageLink), () => {
+                ss.SausageLink = true;
+            });
+        }
+
+        [Fact]
+        public void ShouldNotifyWhenSettingEgg()
+        {
+            var ss = new SmokehouseSkeleton();
+            Assert.PropertyChanged(ss, nameof(SmokehouseSkeleton.Egg), () => {
+                ss.Egg = false;
+            });
+            Assert.PropertyChanged(ss, nameof(SmokehouseSkeleton.Egg), () => {
+                ss.Egg = true;
+            });
+        }
+
+        [Fact]
+        public void ShouldNotifyWhenSettingHashBrowns()
+        {
+            var ss = new SmokehouseSkeleton();
+            Assert.PropertyChanged(ss, nameof(SmokehouseSkeleton.HashBrowns), () => {
+                ss.HashBrowns = false;
+            });
+            Assert.PropertyChanged(ss, nameof(SmokehouseSkeleton.HashBrowns), () => {
+                ss.HashBrowns = true;
+            });
+        }
+
+        [Fact]
+        public void ShouldNotifyWhenSettingPancake()
+        {
+            var ss = new SmokehouseSkeleton();
+            Assert.PropertyChanged(ss, nameof(SmokehouseSkeleton.Pancake), () => {
+                ss.Pancake = false;
+            });
+            Assert.PropertyChanged(ss, nameof(SmokehouseSkeleton.Pancake), () => {
+                ss.Pancake = true;
+            });
+        }
+
+        [Fact]
+        public void ShouldNotifySpecialInstructionsChanged()
+        {
+            var ss = new SmokehouseSkeleton();
+            Assert.PropertyChanged(ss, nameof(SmokehouseSkeleton.SausageLink), () => {
+                ss.SausageLink = false;
+            });
+            Assert.PropertyChanged(ss, nameof(SmokehouseSkeleton.Egg), () => {
+                ss.Egg = false;
+            });
+            Assert.PropertyChanged(ss, nameof(SmokehouseSkeleton.HashBrowns), () => {
+                ss.HashBrowns = false;
+            });
+            Assert.PropertyChanged(ss, nameof(SmokehouseSkeleton.Pancake), () => {
+                ss.Pancake = false;
+            });
         }
     }
 }

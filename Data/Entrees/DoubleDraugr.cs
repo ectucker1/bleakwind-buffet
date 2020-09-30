@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.ComponentModel;
 
 /*
 * Author: Ethan Tucker
@@ -10,8 +11,13 @@ namespace BleakwindBuffet.Data.Entrees
     /// <summary>
     /// Stores the price, calories, name, and special instructions for the Double Draugr
     /// </summary>
-    public class DoubleDraugr : Entree
+    public class DoubleDraugr : Entree, INotifyPropertyChanged
     {
+        /// <summary>
+        /// Event handler called whenever a property changes on this menu item
+        /// </summary>
+        public event PropertyChangedEventHandler PropertyChanged;
+
         /// <summary>
         /// Gets the price of the burger
         /// </summary>
@@ -23,44 +29,156 @@ namespace BleakwindBuffet.Data.Entrees
         public override uint Calories => 843;
 
         /// <summary>
+        /// Backing field for the Bun property
+        /// </summary>
+        private bool bun = true;
+
+        /// <summary>
         /// Stores true if the bun should be left on this burger
         /// </summary>
-        public bool Bun { get; set; } = true;
+        public bool Bun
+        {
+            get => bun;
+            set
+            {
+                bun = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(Bun)));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(SpecialInstructions)));
+            }
+        }
+
+        /// <summary>
+        /// Backing field for the Ketchup property
+        /// </summary>
+        private bool ketchup = true;
 
         /// <summary>
         /// Stores true if ketchup should be left on this burger
         /// </summary>
-        public bool Ketchup { get; set; } = true;
+        public bool Ketchup
+        {
+            get => ketchup;
+            set
+            {
+                ketchup = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(Ketchup)));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(SpecialInstructions)));
+            }
+        }
+
+        /// <summary>
+        /// Backing field for the Mustard property
+        /// </summary>
+        private bool mustard = true;
 
         /// <summary>
         /// Stores true if mustard should be left on this burger
         /// </summary>
-        public bool Mustard { get; set; } = true;
+        public bool Mustard
+        {
+            get => mustard;
+            set
+            {
+                mustard = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(Mustard)));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(SpecialInstructions)));
+            }
+        }
+
+        /// <summary>
+        /// Backing field for the Pickle property
+        /// </summary>
+        private bool pickle = true;
 
         /// <summary>
         /// Stores true if pickes should be left on this burger
         /// </summary>
-        public bool Pickle { get; set; } = true;
+        public bool Pickle
+        {
+            get => pickle;
+            set
+            {
+                pickle = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(Pickle)));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(SpecialInstructions)));
+            }
+        }
+
+        /// <summary>
+        /// Backing field for the Cheese property
+        /// </summary>
+        private bool cheese = true;
 
         /// <summary>
         /// Stores true if cheese should be left on this burger
         /// </summary>
-        public bool Cheese { get; set; } = true;
+        public bool Cheese
+        {
+            get => cheese;
+            set
+            {
+                cheese = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(Cheese)));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(SpecialInstructions)));
+            }
+        }
+
+        /// <summary>
+        /// Backing field for the Tomato property
+        /// </summary>
+        private bool tomato = true;
 
         /// <summary>
         /// Stores true if tomato should be left on this burger
         /// </summary>
-        public bool Tomato { get; set; } = true;
+        public bool Tomato
+        {
+            get => tomato;
+            set
+            {
+                tomato = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(Tomato)));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(SpecialInstructions)));
+            }
+        }
+
+        /// <summary>
+        /// Backing field for the Lettuce property
+        /// </summary>
+        private bool lettuce = true;
 
         /// <summary>
         /// Stores true if lettuce should be left on this burger
         /// </summary>
-        public bool Lettuce { get; set; } = true;
+        public bool Lettuce
+        {
+            get => lettuce;
+            set
+            {
+                lettuce = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(Lettuce)));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(SpecialInstructions)));
+            }
+        }
+
+        /// <summary>
+        /// Backing field for the Mayo property
+        /// </summary>
+        private bool mayo = true;
 
         /// <summary>
         /// Stores true if mayo should be left on this burger
         /// </summary>
-        public bool Mayo { get; set; } = true;
+        public bool Mayo
+        {
+            get => mayo;
+            set
+            {
+                mayo = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(Mayo)));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(SpecialInstructions)));
+            }
+        }
 
         /// <summary>
         /// Returns a list of special instructions for this burger

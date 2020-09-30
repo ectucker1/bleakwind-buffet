@@ -8,6 +8,7 @@ using Xunit;
 
 using BleakwindBuffet.Data;
 using BleakwindBuffet.Data.Entrees;
+using System.ComponentModel;
 
 namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
 {
@@ -25,6 +26,13 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
         {
             var bb = new BriarheartBurger();
             Assert.IsAssignableFrom<IOrderItem>(bb);
+        }
+
+        [Fact]
+        public void ShouldImplementINotifyPropertyChanged()
+        {
+            var bb = new BriarheartBurger();
+            Assert.IsAssignableFrom<INotifyPropertyChanged>(bb);
         }
 
         [Fact]
@@ -160,6 +168,87 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
         {
             var bb = new BriarheartBurger();
             Assert.Equal("Briarheart Burger", bb.ToString());
+        }
+
+        [Fact]
+        public void ShouldNotifyWhenSettingBun()
+        {
+            var bb = new BriarheartBurger();
+            Assert.PropertyChanged(bb, nameof(BriarheartBurger.Bun), () => {
+                bb.Bun = false;
+            });
+            Assert.PropertyChanged(bb, nameof(BriarheartBurger.Bun), () => {
+                bb.Bun = true;
+            });
+        }
+
+        [Fact]
+        public void ShouldNotifyWhenSettingKetchup()
+        {
+            var bb = new BriarheartBurger();
+            Assert.PropertyChanged(bb, nameof(BriarheartBurger.Ketchup), () => {
+                bb.Ketchup = false;
+            });
+            Assert.PropertyChanged(bb, nameof(BriarheartBurger.Ketchup), () => {
+                bb.Ketchup = true;
+            });
+        }
+
+        [Fact]
+        public void ShouldNotifyWhenSettingMustard()
+        {
+            var bb = new BriarheartBurger();
+            Assert.PropertyChanged(bb, nameof(BriarheartBurger.Mustard), () => {
+                bb.Mustard = false;
+            });
+            Assert.PropertyChanged(bb, nameof(BriarheartBurger.Mustard), () => {
+                bb.Mustard = true;
+            });
+        }
+
+        [Fact]
+        public void ShouldNotifyWhenSettingPickle()
+        {
+            var bb = new BriarheartBurger();
+            Assert.PropertyChanged(bb, nameof(BriarheartBurger.Pickle), () => {
+                bb.Pickle = false;
+            });
+            Assert.PropertyChanged(bb, nameof(BriarheartBurger.Pickle), () => {
+                bb.Pickle = true;
+            });
+        }
+
+        [Fact]
+        public void ShouldNotifyWhenSettingCheese()
+        {
+            var bb = new BriarheartBurger();
+            Assert.PropertyChanged(bb, nameof(BriarheartBurger.Cheese), () => {
+                bb.Cheese = false;
+            });
+            Assert.PropertyChanged(bb, nameof(BriarheartBurger.Cheese), () => {
+                bb.Cheese = true;
+            });
+        }
+
+        [Fact]
+        public void ShouldNotifySpecialInstructionsChanged()
+        {
+            var bb = new BriarheartBurger();
+            Assert.PropertyChanged(bb, nameof(BriarheartBurger.SpecialInstructions), () => {
+                bb.Bun = false;
+            });
+            Assert.PropertyChanged(bb, nameof(BriarheartBurger.SpecialInstructions), () => {
+                bb.Ketchup = false;
+            });
+            Assert.PropertyChanged(bb, nameof(BriarheartBurger.SpecialInstructions), () => {
+                bb.Mustard = false;
+            });
+            Assert.PropertyChanged(bb, nameof(BriarheartBurger.SpecialInstructions), () => {
+                bb.Pickle = false;
+            });
+            Assert.PropertyChanged(bb, nameof(BriarheartBurger.SpecialInstructions), () => {
+                bb.Cheese = false;
+            });
         }
     }
 }

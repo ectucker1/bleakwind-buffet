@@ -8,6 +8,7 @@ using Xunit;
 
 using BleakwindBuffet.Data;
 using BleakwindBuffet.Data.Entrees;
+using System.ComponentModel;
 
 namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
 {
@@ -25,6 +26,13 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
         {
             var tt = new ThalmorTriple();
             Assert.IsAssignableFrom<IOrderItem>(tt);
+        }
+
+        [Fact]
+        public void ShouldImplementINotifyPropertyChanged()
+        {
+            var tt = new ThalmorTriple();
+            Assert.IsAssignableFrom<INotifyPropertyChanged>(tt);
         }
 
         [Fact]
@@ -262,6 +270,162 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
         {
             var tt = new ThalmorTriple();
             Assert.Equal("Thalmor Triple", tt.ToString());
+        }
+
+        [Fact]
+        public void ShouldNotifyWhenSettingBun()
+        {
+            var tt = new ThalmorTriple();
+            Assert.PropertyChanged(tt, nameof(ThalmorTriple.Bun), () => {
+                tt.Bun = false;
+            });
+            Assert.PropertyChanged(tt, nameof(ThalmorTriple.Bun), () => {
+                tt.Bun = true;
+            });
+        }
+
+        [Fact]
+        public void ShouldNotifyWhenSettingKetchup()
+        {
+            var tt = new ThalmorTriple();
+            Assert.PropertyChanged(tt, nameof(ThalmorTriple.Ketchup), () => {
+                tt.Ketchup = false;
+            });
+            Assert.PropertyChanged(tt, nameof(ThalmorTriple.Ketchup), () => {
+                tt.Ketchup = true;
+            });
+        }
+
+        [Fact]
+        public void ShouldNotifyWhenSettingMustard()
+        {
+            var tt = new ThalmorTriple();
+            Assert.PropertyChanged(tt, nameof(ThalmorTriple.Mustard), () => {
+                tt.Mustard = false;
+            });
+            Assert.PropertyChanged(tt, nameof(ThalmorTriple.Mustard), () => {
+                tt.Mustard = true;
+            });
+        }
+
+        [Fact]
+        public void ShouldNotifyWhenSettingPickle()
+        {
+            var tt = new ThalmorTriple();
+            Assert.PropertyChanged(tt, nameof(ThalmorTriple.Pickle), () => {
+                tt.Pickle = false;
+            });
+            Assert.PropertyChanged(tt, nameof(ThalmorTriple.Pickle), () => {
+                tt.Pickle = true;
+            });
+        }
+
+        [Fact]
+        public void ShouldNotifyWhenSettingCheese()
+        {
+            var tt = new ThalmorTriple();
+            Assert.PropertyChanged(tt, nameof(ThalmorTriple.Cheese), () => {
+                tt.Cheese = false;
+            });
+            Assert.PropertyChanged(tt, nameof(ThalmorTriple.Cheese), () => {
+                tt.Cheese = true;
+            });
+        }
+
+        [Fact]
+        public void ShouldNotifyWhenSettingTomato()
+        {
+            var tt = new ThalmorTriple();
+            Assert.PropertyChanged(tt, nameof(ThalmorTriple.Tomato), () => {
+                tt.Tomato = false;
+            });
+            Assert.PropertyChanged(tt, nameof(ThalmorTriple.Tomato), () => {
+                tt.Tomato = true;
+            });
+        }
+
+        [Fact]
+        public void ShouldNotifyWhenSettingLettuce()
+        {
+            var tt = new ThalmorTriple();
+            Assert.PropertyChanged(tt, nameof(ThalmorTriple.Lettuce), () => {
+                tt.Lettuce = false;
+            });
+            Assert.PropertyChanged(tt, nameof(ThalmorTriple.Lettuce), () => {
+                tt.Lettuce = true;
+            });
+        }
+
+        [Fact]
+        public void ShouldNotifyWhenSettingMayo()
+        {
+            var tt = new ThalmorTriple();
+            Assert.PropertyChanged(tt, nameof(ThalmorTriple.Mayo), () => {
+                tt.Mayo = false;
+            });
+            Assert.PropertyChanged(tt, nameof(ThalmorTriple.Mayo), () => {
+                tt.Mayo = true;
+            });
+        }
+
+        [Fact]
+        public void ShouldNotifyWhenSettingBacon()
+        {
+            var tt = new ThalmorTriple();
+            Assert.PropertyChanged(tt, nameof(ThalmorTriple.Bacon), () => {
+                tt.Bacon = false;
+            });
+            Assert.PropertyChanged(tt, nameof(ThalmorTriple.Bacon), () => {
+                tt.Bacon = true;
+            });
+        }
+
+        [Fact]
+        public void ShouldNotifyWhenSettingEgg()
+        {
+            var tt = new ThalmorTriple();
+            Assert.PropertyChanged(tt, nameof(ThalmorTriple.Egg), () => {
+                tt.Egg = false;
+            });
+            Assert.PropertyChanged(tt, nameof(ThalmorTriple.Egg), () => {
+                tt.Egg = true;
+            });
+        }
+
+        [Fact]
+        public void ShouldNotifySpecialInstructionsChanged()
+        {
+            var tt = new ThalmorTriple();
+            Assert.PropertyChanged(tt, nameof(ThalmorTriple.SpecialInstructions), () => {
+                tt.Bun = false;
+            });
+            Assert.PropertyChanged(tt, nameof(ThalmorTriple.SpecialInstructions), () => {
+                tt.Ketchup = false;
+            });
+            Assert.PropertyChanged(tt, nameof(ThalmorTriple.SpecialInstructions), () => {
+                tt.Mustard = false;
+            });
+            Assert.PropertyChanged(tt, nameof(ThalmorTriple.SpecialInstructions), () => {
+                tt.Pickle = false;
+            });
+            Assert.PropertyChanged(tt, nameof(ThalmorTriple.SpecialInstructions), () => {
+                tt.Cheese = false;
+            });
+            Assert.PropertyChanged(tt, nameof(ThalmorTriple.SpecialInstructions), () => {
+                tt.Tomato = false;
+            });
+            Assert.PropertyChanged(tt, nameof(ThalmorTriple.SpecialInstructions), () => {
+                tt.Lettuce = false;
+            });
+            Assert.PropertyChanged(tt, nameof(ThalmorTriple.SpecialInstructions), () => {
+                tt.Mayo = false;
+            });
+            Assert.PropertyChanged(tt, nameof(ThalmorTriple.SpecialInstructions), () => {
+                tt.Bacon = false;
+            });
+            Assert.PropertyChanged(tt, nameof(ThalmorTriple.SpecialInstructions), () => {
+                tt.Egg = false;
+            });
         }
     }
 }

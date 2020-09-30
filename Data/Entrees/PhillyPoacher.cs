@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.ComponentModel;
 
 /*
 * Author: Ethan Tucker
@@ -10,8 +11,13 @@ namespace BleakwindBuffet.Data.Entrees
     /// <summary>
     /// Stores the price, calories, name, and special instructions for the Philly Poacher
     /// </summary>
-    public class PhillyPoacher : Entree
+    public class PhillyPoacher : Entree, INotifyPropertyChanged
     {
+        /// <summary>
+        /// Event handler called whenever a property changes on this menu item
+        /// </summary>
+        public event PropertyChangedEventHandler PropertyChanged;
+
         /// <summary>
         /// Gets the price of the sandwich
         /// </summary>
@@ -23,19 +29,61 @@ namespace BleakwindBuffet.Data.Entrees
         public override uint Calories => 784;
 
         /// <summary>
+        /// Backing field for the Sirloin property
+        /// </summary>
+        private bool sirloin = true;
+
+        /// <summary>
         /// Stores true if the sandwich should have sirloin
         /// </summary>
-        public bool Sirloin { get; set; } = true;
+        public bool Sirloin
+        {
+            get => sirloin;
+            set
+            {
+                sirloin = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(Sirloin)));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(SpecialInstructions)));
+            }
+        }
+
+        /// <summary>
+        /// Backing field for the Onion property
+        /// </summary>
+        private bool onion = true;
 
         /// <summary>
         /// Stores true if the sandwich should have onions
         /// </summary>
-        public bool Onion { get; set; } = true;
+        public bool Onion
+        {
+            get => onion;
+            set
+            {
+                onion = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(Onion)));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(SpecialInstructions)));
+            }
+        }
+
+        /// <summary>
+        /// Backing field for the Roll property
+        /// </summary>
+        private bool roll = true;
 
         /// <summary>
         /// Stores true if the sandwich should come on a roll
         /// </summary>
-        public bool Roll { get; set; } = true;
+        public bool Roll
+        {
+            get => roll;
+            set
+            {
+                roll = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(Roll)));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(SpecialInstructions)));
+            }
+        }
 
         /// <summary>
         /// Returns a list of special instructions for the sandwich
