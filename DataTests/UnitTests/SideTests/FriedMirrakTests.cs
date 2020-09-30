@@ -86,5 +86,29 @@ namespace BleakwindBuffet.DataTests.UnitTests.SideTests
             fm.Size = size;
             Assert.Equal(name, fm.ToString());
         }
+
+        [Theory]
+        [InlineData(Size.Small)]
+        [InlineData(Size.Medium)]
+        [InlineData(Size.Large)]
+        public void ShouldNotifyPriceChangeWhenSizeChanged(Size size)
+        {
+            var fm = new FriedMiraak();
+            Assert.PropertyChanged(fm, nameof(FriedMiraak.Price), () => {
+                fm.Size = size;
+            });
+        }
+
+        [Theory]
+        [InlineData(Size.Small)]
+        [InlineData(Size.Medium)]
+        [InlineData(Size.Large)]
+        public void ShouldNotifyCaloriesChangeWhenSizeChanged(Size size)
+        {
+            var fm = new FriedMiraak();
+            Assert.PropertyChanged(fm, nameof(FriedMiraak.Calories), () => {
+                fm.Size = size;
+            });
+        }
     }
 }
