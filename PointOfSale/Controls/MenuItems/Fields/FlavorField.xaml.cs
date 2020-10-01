@@ -24,47 +24,53 @@ namespace BleakwindBuffet.PointOfSale.Controls.MenuItems.Fields
     /// </summary>
     public partial class FlavorField : UserControl
     {
+        #region FieldName Property
+
+        /// <summary>
+        /// Gets or sets the name of this field
+        /// </summary>
+        public string FieldName
+        {
+            get => (string)GetValue(FieldNameProperty);
+            set => SetValue(FieldNameProperty, value);
+        }
+
+        /// <summary>
+        /// Dependency property used to set the field name in XAML
+        /// </summary>
+        public static readonly DependencyProperty FieldNameProperty = DependencyProperty.Register(nameof(FieldName), typeof(string), typeof(FlavorField));
+
+        #endregion FieldName Property
+
+        #region FieldValue Property
+
+        /// <summary>
+        /// Gets or sets the value of this field
+        /// </summary>
+        public SodaFlavor FieldValue
+        {
+            get => (SodaFlavor)GetValue(FieldValueProperty);
+            set => SetValue(FieldValueProperty, value);
+        }
+
+        /// <summary>
+        /// Dependency property used to access and set the field value in XAML
+        /// </summary>
+        public static readonly DependencyProperty FieldValueProperty = DependencyProperty.Register(nameof(FieldValue), typeof(SodaFlavor), typeof(FlavorField),
+            new FrameworkPropertyMetadata
+            {
+                BindsTwoWayByDefault = true,
+                DefaultUpdateSourceTrigger = UpdateSourceTrigger.PropertyChanged
+            });
+
+        #endregion FieldValue Property
+
         /// <summary>
         /// Creates and initializes new flavor field
         /// </summary>
         public FlavorField()
         {
             InitializeComponent();
-        }
-
-        /// <summary>
-        /// Returns the currently selected soda flavor
-        /// </summary>
-        public SodaFlavor SelectedFlavor
-        {
-            get
-            {
-                // Comparision to true needed because IsChecked is type bool?
-                if (radioBlackberry.IsChecked == true)
-                {
-                    return SodaFlavor.Blackberry;
-                }
-                else if (radioGrapefruit.IsChecked == true)
-                {
-                    return SodaFlavor.Grapefruit;
-                }
-                else if (radioLemon.IsChecked == true)
-                {
-                    return SodaFlavor.Lemon;
-                }
-                else if (radioPeach.IsChecked == true)
-                {
-                    return SodaFlavor.Peach;
-                }
-                else if (radioWatermelon.IsChecked == true)
-                {
-                    return SodaFlavor.Watermelon;
-                }
-                else
-                {
-                    return SodaFlavor.Cherry;
-                }
-            }
         }
     }
 }

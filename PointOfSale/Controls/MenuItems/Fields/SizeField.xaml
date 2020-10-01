@@ -9,8 +9,29 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:BleakwindBuffet.PointOfSale.Controls.MenuItems.Fields"
+             xmlns:system="clr-namespace:System;assembly=mscorlib"
+             xmlns:enums="clr-namespace:BleakwindBuffet.Data.Enums;assembly=Data"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
+    <UserControl.Resources>
+        <!--Resource listing all values of the Size enum-->
+        <ObjectDataProvider x:Key="sizes" MethodName="GetValues" ObjectType="{x:Type system:Enum}">
+            <ObjectDataProvider.MethodParameters>
+                <x:Type TypeName="enums:Size"/>
+            </ObjectDataProvider.MethodParameters>
+        </ObjectDataProvider>
+        <!--Style making the list items look like radio buttons-->
+        <!--This is taken directly from the 2.4.5 - Binding Enums example-->
+        <Style TargetType="{x:Type ListBoxItem}">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate>
+                        <RadioButton Content="{TemplateBinding ContentPresenter.Content}" IsChecked="{Binding Path=IsSelected, RelativeSource={RelativeSource TemplatedParent}, Mode=TwoWay}" Margin="4"/>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </UserControl.Resources>
     <!--Each field is laid out in a two column grid-->
     <Grid Margin="4">
         <Grid.RowDefinitions>
@@ -20,12 +41,9 @@
             <ColumnDefinition/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-        <Label Grid.Row="0" Grid.Column="0" HorizontalContentAlignment="Right">Size</Label>
-        <!--The size field defaults to small-->
-        <StackPanel Grid.Row="0" Grid.Column="1">
-            <RadioButton Name="radioSmall" GroupName="Size" IsChecked="True" Margin="4">Small</RadioButton>
-            <RadioButton Name="radioMedium" GroupName="Size" Margin="4">Medium</RadioButton>
-            <RadioButton Name="radioLarge" GroupName="Size" Margin="4">Large</RadioButton>
-        </StackPanel>
+        <!--The name of the field comes in as a dependency property-->
+        <Label Grid.Row="0" Grid.Column="0" Content="{Binding FieldName, RelativeSource={RelativeSource AncestorType=UserControl}}" HorizontalContentAlignment="Right"/>
+        <!--This list box will populate with elements for each possible size value-->
+        <ListBox Grid.Row="0" Grid.Column="1" ItemsSource="{Binding Source={StaticResource sizes}}" SelectedItem="{Binding FieldValue, RelativeSource={RelativeSource AncestorType=UserControl}}" BorderThickness="0"/>
     </Grid>
 </UserControl>

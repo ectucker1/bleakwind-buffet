@@ -24,35 +24,53 @@ namespace BleakwindBuffet.PointOfSale.Controls.MenuItems.Fields
     /// </summary>
     public partial class SizeField : UserControl
     {
+        #region FieldName Property
+
+        /// <summary>
+        /// Gets or sets the name of this field
+        /// </summary>
+        public string FieldName
+        {
+            get => (string)GetValue(FieldNameProperty);
+            set => SetValue(FieldNameProperty, value);
+        }
+
+        /// <summary>
+        /// Dependency property used to set the field name in XAML
+        /// </summary>
+        public static readonly DependencyProperty FieldNameProperty = DependencyProperty.Register(nameof(FieldName), typeof(string), typeof(SizeField));
+
+        #endregion FieldName Property
+
+        #region FieldValue Property
+
+        /// <summary>
+        /// Gets or sets the value of this field
+        /// </summary>
+        public ItemSize FieldValue
+        {
+            get => (ItemSize)GetValue(FieldValueProperty);
+            set => SetValue(FieldValueProperty, value);
+        }
+
+        /// <summary>
+        /// Dependency property used to access and set the field value in XAML
+        /// </summary>
+        public static readonly DependencyProperty FieldValueProperty = DependencyProperty.Register(nameof(FieldValue), typeof(ItemSize), typeof(SizeField),
+            new FrameworkPropertyMetadata
+            {
+                BindsTwoWayByDefault = true,
+                DefaultUpdateSourceTrigger = UpdateSourceTrigger.PropertyChanged
+            });
+
+        #endregion FieldValue Property
+
         /// <summary>
         /// Creates and initialized a new size field
         /// </summary>
         public SizeField()
         {
             InitializeComponent();
-        }
-
-        /// <summary>
-        /// Gets the currently selected item size
-        /// </summary>
-        public ItemSize SelectedSize
-        {
-            get
-            {
-                // Comparision to true needed because IsChecked is type bool?
-                if (radioLarge.IsChecked == true)
-                {
-                    return ItemSize.Large;
-                }
-                else if (radioMedium.IsChecked == true)
-                {
-                    return ItemSize.Medium;
-                }
-                else
-                {
-                    return ItemSize.Small;
-                }
-            }
         }
     }
 }

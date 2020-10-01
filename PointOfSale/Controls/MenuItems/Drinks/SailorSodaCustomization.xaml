@@ -14,8 +14,8 @@
              d:DesignHeight="450" d:DesignWidth="800">
     <StackPanel>
         <TextBlock TextAlignment="Center" Margin="4" FontSize="16">Customize Sailor Soda</TextBlock>
-        <fields:SizeField></fields:SizeField>
-        <fields:BooleanField FieldName="Ice" FieldValue="True"></fields:BooleanField>
-        <fields:FlavorField></fields:FlavorField>
+        <fields:SizeField FieldName="Size" FieldValue="{Binding Path=Size}"></fields:SizeField>
+        <fields:BooleanField FieldName="Ice" FieldValue="{Binding Path=Ice}"></fields:BooleanField>
+        <fields:FlavorField FieldName="Flavor" FieldValue="{Binding Path=Flavor}"></fields:FlavorField>
     </StackPanel>
 </UserControl>

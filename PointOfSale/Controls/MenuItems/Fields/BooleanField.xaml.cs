@@ -30,7 +30,7 @@ namespace BleakwindBuffet.PointOfSale.Controls.MenuItems.Fields
         /// </summary>
         public string FieldName
         {
-            get => (string) GetValue(FieldNameProperty);
+            get => (string)GetValue(FieldNameProperty);
             set => SetValue(FieldNameProperty, value);
         }
 
@@ -48,14 +48,19 @@ namespace BleakwindBuffet.PointOfSale.Controls.MenuItems.Fields
         /// </summary>
         public bool FieldValue
         {
-            get => (bool) GetValue(FieldValueProperty);
+            get => (bool)GetValue(FieldValueProperty);
             set => SetValue(FieldValueProperty, value);
         }
 
         /// <summary>
         /// Dependency property used to access and set the field value in XAML
         /// </summary>
-        public static readonly DependencyProperty FieldValueProperty = DependencyProperty.Register(nameof(FieldValue), typeof(bool), typeof(BooleanField));
+        public static readonly DependencyProperty FieldValueProperty = DependencyProperty.Register(nameof(FieldValue), typeof(bool), typeof(BooleanField),
+            new FrameworkPropertyMetadata
+            {
+                BindsTwoWayByDefault = true,
+                DefaultUpdateSourceTrigger = UpdateSourceTrigger.PropertyChanged
+            });
 
         #endregion FieldValue Property
 

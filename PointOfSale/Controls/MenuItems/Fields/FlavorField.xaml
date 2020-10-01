@@ -9,8 +9,29 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:BleakwindBuffet.PointOfSale.Controls.MenuItems.Fields"
-             mc:Ignorable="d" 
+             xmlns:system="clr-namespace:System;assembly=mscorlib"
+             xmlns:enums="clr-namespace:BleakwindBuffet.Data.Enums;assembly=Data"
+             mc:Ignorable="d"
              d:DesignHeight="450" d:DesignWidth="800">
+    <UserControl.Resources>
+        <!--Resource listing all values of the Flavor enum-->
+        <ObjectDataProvider x:Key="flavors" MethodName="GetValues" ObjectType="{x:Type system:Enum}">
+            <ObjectDataProvider.MethodParameters>
+                <x:Type TypeName="enums:SodaFlavor"/>
+            </ObjectDataProvider.MethodParameters>
+        </ObjectDataProvider>
+        <!--Style making the list items look like radio buttons-->
+        <!--This is taken directly from the 2.4.5 - Binding Enums example-->
+        <Style TargetType="{x:Type ListBoxItem}">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate>
+                        <RadioButton Content="{TemplateBinding ContentPresenter.Content}" IsChecked="{Binding Path=IsSelected, RelativeSource={RelativeSource TemplatedParent}, Mode=TwoWay}" Margin="4"/>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </UserControl.Resources>
     <!--Each field is laid out in a two column grid-->
     <Grid Margin="4">
         <Grid.RowDefinitions>
@@ -20,15 +41,9 @@
             <ColumnDefinition/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-        <Label Grid.Row="0" Grid.Column="0" HorizontalContentAlignment="Right">Flavor</Label>
-        <!--The flavor field defaults to cherry-->
-        <StackPanel Grid.Row="0" Grid.Column="1">
-            <RadioButton Name="radioBlackberry" GroupName="Flavor" Margin="4">Blackberry</RadioButton>
-            <RadioButton Name="radioCherry" GroupName="Flavor" IsChecked="True" Margin="4">Cherry</RadioButton>
-            <RadioButton Name="radioGrapefruit" GroupName="Flavor" Margin="4">Grapefruit</RadioButton>
-            <RadioButton Name="radioLemon" GroupName="Flavor" Margin="4">Lemon</RadioButton>
-            <RadioButton Name="radioPeach" GroupName="Flavor" Margin="4">Peach</RadioButton>
-            <RadioButton Name="radioWatermelon" GroupName="Flavor" Margin="4">Watermelon</RadioButton>
-        </StackPanel>
+        <!--The name of the field comes in as a dependency property-->
+        <Label Grid.Row="0" Grid.Column="0" Content="{Binding FieldName, RelativeSource={RelativeSource AncestorType=UserControl}}" HorizontalContentAlignment="Right"/>
+        <!--This list box will populate with elements for each possible Flavor value-->
+        <ListBox Grid.Row="0" Grid.Column="1" ItemsSource="{Binding Source={StaticResource flavors}}" SelectedItem="{Binding FieldValue, RelativeSource={RelativeSource AncestorType=UserControl}}" BorderThickness="0"/>
     </Grid>
 </UserControl>
