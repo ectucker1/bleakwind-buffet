@@ -30,6 +30,13 @@ namespace BleakwindBuffet.DataTests.UnitTests.DrinkTests
         }
 
         [Fact]
+        public void ShouldImplementINotifyPropertyChanged()
+        {
+            var w = new WarriorWater();
+            Assert.IsAssignableFrom<IOrderItem>(w);
+        }
+
+        [Fact]
         public void ShouldIncludeIceByDefault()
         {
             var w = new WarriorWater();
@@ -134,6 +141,55 @@ namespace BleakwindBuffet.DataTests.UnitTests.DrinkTests
             var w = new WarriorWater();
             w.Size = size;
             Assert.Equal(name, w.ToString());
+        }
+
+
+        [Theory]
+        [InlineData(Size.Small)]
+        [InlineData(Size.Medium)]
+        [InlineData(Size.Large)]
+        public void ShouldNotifyWhenSettingSize(Size size)
+        {
+            var w = new WarriorWater();
+            Assert.PropertyChanged(w, nameof(WarriorWater.Size), () => {
+                w.Size = size;
+            });
+        }
+
+        [Fact]
+        public void ShouldNotifyWhenSettingIce()
+        {
+            var w = new WarriorWater();
+            Assert.PropertyChanged(w, nameof(WarriorWater.Ice), () => {
+                w.Ice = false;
+            });
+            Assert.PropertyChanged(w, nameof(WarriorWater.Ice), () => {
+                w.Ice = true;
+            });
+        }
+
+        [Fact]
+        public void ShouldNotifyWhenSettingLemon()
+        {
+            var w = new WarriorWater();
+            Assert.PropertyChanged(w, nameof(WarriorWater.Lemon), () => {
+                w.Lemon = true;
+            });
+            Assert.PropertyChanged(w, nameof(WarriorWater.Lemon), () => {
+                w.Lemon = false;
+            });
+        }
+
+        [Fact]
+        public void ShouldNotifySpecialInstructionsChanged()
+        {
+            var w = new WarriorWater();
+            Assert.PropertyChanged(w, nameof(WarriorWater.SpecialInstructions), () => {
+                w.Ice = false;
+            });
+            Assert.PropertyChanged(w, nameof(WarriorWater.SpecialInstructions), () => {
+                w.Lemon = true;
+            });
         }
     }
 }

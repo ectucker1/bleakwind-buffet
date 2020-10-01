@@ -1,5 +1,6 @@
 ﻿using BleakwindBuffet.Data.Enums;
 using System.Collections.Generic;
+using System.ComponentModel;
 
 /*
 * Author: Ethan Tucker
@@ -11,8 +12,28 @@ namespace BleakwindBuffet.Data.Drinks
     /// <summary>
     /// Stores the price, calories, name, and special instructions for the Candlehearth Coffee
     /// </summary>
-    public class CandlehearthCoffee : Drink
+    public class CandlehearthCoffee : Drink, INotifyPropertyChanged
     {
+        /// <summary>
+        /// Event handler called whenever a property changes on this drink
+        /// </summary>
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        /// <summary>
+        /// Stores the size of this drink
+        /// </summary>
+        public override Size Size
+        {
+            get => size;
+            set
+            {
+                size = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(Size)));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(Price)));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(Calories)));
+            }
+        }
+
         /// <summary>
         /// Gets the price of the coffee based on size
         /// </summary>
@@ -54,19 +75,60 @@ namespace BleakwindBuffet.Data.Drinks
         }
 
         /// <summary>
+        /// Backing variable for Ice property
+        /// </summary>
+        private bool ice = false;
+
+        /// <summary>
         /// Stores true if this drink should be served with ice
         /// </summary>
-        public bool Ice { get; set; } = false;
+        public bool Ice
+        {
+            get => ice;
+            set
+            {
+                ice = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(Ice)));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(SpecialInstructions)));
+            }
+        }
+
+        /// <summary>
+        /// Backing variable for RoomForCream property
+        /// </summary>
+        private bool roomForCream = false;
 
         /// <summary>
         /// Stores true if cream should be added
         /// </summary>
-        public bool RoomForCream { get; set; } = false;
+        public bool RoomForCream
+        {
+            get => roomForCream;
+            set
+            {
+                roomForCream = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(RoomForCream)));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(SpecialInstructions)));
+            }
+        }
+
+        /// <summary>
+        /// Backing variable for Decaf property
+        /// </summary>
+        private bool decaf = false;
 
         /// <summary>
         /// Stores true if the coffee should be made decaf
         /// </summary>
-        public bool Decaf { get; set; } = false;
+        public bool Decaf
+        {
+            get => decaf;
+            set
+            {
+                decaf = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(Decaf)));
+            }
+        }
 
         /// <summary>
         /// Returns a list of special instructions for this drink

@@ -29,6 +29,13 @@ namespace BleakwindBuffet.DataTests.UnitTests.DrinkTests
         }
 
         [Fact]
+        public void ShouldImplementINotifyPropertyChanged()
+        {
+            var m = new MarkarthMilk();
+            Assert.IsAssignableFrom<IOrderItem>(m);
+        }
+
+        [Fact]
         public void ShouldNotIncludeIceByDefault()
         {
             var m = new MarkarthMilk();
@@ -109,6 +116,64 @@ namespace BleakwindBuffet.DataTests.UnitTests.DrinkTests
             var m = new MarkarthMilk();
             m.Size = size;
             Assert.Equal(name, m.ToString());
+        }
+
+
+        [Theory]
+        [InlineData(Size.Small)]
+        [InlineData(Size.Medium)]
+        [InlineData(Size.Large)]
+        public void ShouldNotifyWhenSettingSize(Size size)
+        {
+            var m = new MarkarthMilk();
+            Assert.PropertyChanged(m, nameof(MarkarthMilk.Size), () => {
+                m.Size = size;
+            });
+        }
+
+        [Theory]
+        [InlineData(Size.Small)]
+        [InlineData(Size.Medium)]
+        [InlineData(Size.Large)]
+        public void ShouldNotifyPriceChangedWhenSizeChanged(Size size)
+        {
+            var m = new MarkarthMilk();
+            Assert.PropertyChanged(m, nameof(MarkarthMilk.Price), () => {
+                m.Size = size;
+            });
+        }
+
+        [Theory]
+        [InlineData(Size.Small)]
+        [InlineData(Size.Medium)]
+        [InlineData(Size.Large)]
+        public void ShouldNotifyCaloriesChangedWhenSizeChanged(Size size)
+        {
+            var m = new MarkarthMilk();
+            Assert.PropertyChanged(m, nameof(MarkarthMilk.Calories), () => {
+                m.Size = size;
+            });
+        }
+
+        [Fact]
+        public void ShouldNotifyWhenSettingIce()
+        {
+            var m = new MarkarthMilk();
+            Assert.PropertyChanged(m, nameof(MarkarthMilk.Ice), () => {
+                m.Ice = true;
+            });
+            Assert.PropertyChanged(m, nameof(MarkarthMilk.Ice), () => {
+                m.Ice = false;
+            });
+        }
+
+        [Fact]
+        public void ShouldNotifySpecialInstructionsChanged()
+        {
+            var m = new MarkarthMilk();
+            Assert.PropertyChanged(m, nameof(MarkarthMilk.SpecialInstructions), () => {
+                m.Ice = true;
+            });
         }
     }
 }

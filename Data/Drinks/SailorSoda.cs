@@ -1,5 +1,6 @@
 ﻿using BleakwindBuffet.Data.Enums;
 using System.Collections.Generic;
+using System.ComponentModel;
 
 /*
 * Author: Ethan Tucker
@@ -11,8 +12,28 @@ namespace BleakwindBuffet.Data.Drinks
     /// <summary>
     /// Stores the price, calories, name, and special instructions for the Sailor Soda
     /// </summary>
-    public class SailorSoda : Drink
+    public class SailorSoda : Drink, INotifyPropertyChanged
     {
+        /// <summary>
+        /// Event handler called whenever a property changes on this drink
+        /// </summary>
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        /// <summary>
+        /// Stores the size of this drink
+        /// </summary>
+        public override Size Size
+        {
+            get => size;
+            set
+            {
+                size = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(Size)));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(Price)));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(Calories)));
+            }
+        }
+
         /// <summary>
         /// Gets the price of the soda based on size
         /// </summary>
@@ -54,14 +75,41 @@ namespace BleakwindBuffet.Data.Drinks
         }
 
         /// <summary>
+        /// Backing variable for Ice property
+        /// </summary>
+        private bool ice = true;
+
+        /// <summary>
         /// Stores true if this drink should be served with ice
         /// </summary>
-        public bool Ice { get; set; } = true;
+        public bool Ice
+        {
+            get => ice;
+            set
+            {
+                ice = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(Ice)));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(SpecialInstructions)));
+            }
+        }
+
+        /// <summary>
+        /// Backing variable for Flavor property
+        /// </summary>
+        private SodaFlavor flavor = SodaFlavor.Cherry;
 
         /// <summary>
         /// Holds the flavor of this soda
         /// </summary>
-        public SodaFlavor Flavor { get; set; } = SodaFlavor.Cherry;
+        public SodaFlavor Flavor
+        {
+            get => flavor;
+            set
+            {
+                flavor = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(Flavor)));
+            }
+        }
 
         /// <summary>
         /// Returns a list of special instructions for this drink

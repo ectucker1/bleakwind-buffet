@@ -1,5 +1,6 @@
 ﻿using BleakwindBuffet.Data.Enums;
 using System.Collections.Generic;
+using System.ComponentModel;
 
 /*
 * Author: Ethan Tucker
@@ -14,9 +15,14 @@ namespace BleakwindBuffet.Data.Drinks
     public abstract class Drink : IOrderItem
     {
         /// <summary>
+        /// Backing field for Size property
+        /// </summary>
+        protected Size size = Size.Small;
+
+        /// <summary>
         /// Stores the size of the drink
         /// </summary>
-        public Size Size { get; set; } = Size.Small;
+        public abstract Size Size { get; set; }
 
         /// <summary>
         /// Gets the price of the drink for its size

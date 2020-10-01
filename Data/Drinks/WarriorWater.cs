@@ -1,5 +1,6 @@
 ﻿using BleakwindBuffet.Data.Enums;
 using System.Collections.Generic;
+using System.ComponentModel;
 
 /*
 * Author: Ethan Tucker
@@ -11,8 +12,26 @@ namespace BleakwindBuffet.Data.Drinks
     /// <summary>
     /// Stores the price, calories, name, and special instructions for the Warrior Water
     /// </summary>
-    public class WarriorWater : Drink
+    public class WarriorWater : Drink, INotifyPropertyChanged
     {
+        /// <summary>
+        /// Event handler called whenever a property changes on this drink
+        /// </summary>
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        /// <summary>
+        /// Stores the size of this drink
+        /// </summary>
+        public override Size Size
+        {
+            get => size;
+            set
+            {
+                size = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(Size)));
+            }
+        }
+
         /// <summary>
         /// Gets the price of the water
         /// </summary>
@@ -24,14 +43,42 @@ namespace BleakwindBuffet.Data.Drinks
         public override uint Calories => 0;
 
         /// <summary>
+        /// Backing variable for Ice property
+        /// </summary>
+        private bool ice = true;
+
+        /// <summary>
         /// Stores true if this drink should be served with ice
         /// </summary>
-        public bool Ice { get; set; } = true;
+        public bool Ice
+        {
+            get => ice;
+            set
+            {
+                ice = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(Ice)));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(SpecialInstructions)));
+            }
+        }
+
+        /// <summary>
+        /// Backing variable for Lemon property
+        /// </summary>
+        private bool lemon = false;
 
         /// <summary>
         /// Stores true if this drink should be served with a lemon
         /// </summary>
-        public bool Lemon { get; set; } = false;
+        public bool Lemon
+        {
+            get => lemon;
+            set
+            {
+                lemon = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(Lemon)));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(SpecialInstructions)));
+            }
+        }
 
         /// <summary>
         /// Returns a list of special instructions for this drink

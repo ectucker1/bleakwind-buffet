@@ -29,6 +29,13 @@ namespace BleakwindBuffet.DataTests.UnitTests.DrinkTests
         }
 
         [Fact]
+        public void ShouldImplementINotifyPropertyChanged()
+        {
+            var aj = new AretinoAppleJuice();
+            Assert.IsAssignableFrom<IOrderItem>(aj);
+        }
+
+        [Fact]
         public void ShouldNotIncludeIceByDefault()
         {
             var aj = new AretinoAppleJuice();
@@ -108,6 +115,64 @@ namespace BleakwindBuffet.DataTests.UnitTests.DrinkTests
             var aj = new AretinoAppleJuice();
             aj.Size = size;
             Assert.Equal(name, aj.ToString());
+        }
+
+
+        [Theory]
+        [InlineData(Size.Small)]
+        [InlineData(Size.Medium)]
+        [InlineData(Size.Large)]
+        public void ShouldNotifyWhenSettingSize(Size size)
+        {
+            var aj = new AretinoAppleJuice();
+            Assert.PropertyChanged(aj, nameof(AretinoAppleJuice.Size), () => {
+                aj.Size = size;
+            });
+        }
+
+        [Theory]
+        [InlineData(Size.Small)]
+        [InlineData(Size.Medium)]
+        [InlineData(Size.Large)]
+        public void ShouldNotifyPriceChangedWhenSizeChanged(Size size)
+        {
+            var aj = new AretinoAppleJuice();
+            Assert.PropertyChanged(aj, nameof(AretinoAppleJuice.Price), () => {
+                aj.Size = size;
+            });
+        }
+
+        [Theory]
+        [InlineData(Size.Small)]
+        [InlineData(Size.Medium)]
+        [InlineData(Size.Large)]
+        public void ShouldNotifyCaloriesChangedWhenSizeChanged(Size size)
+        {
+            var aj = new AretinoAppleJuice();
+            Assert.PropertyChanged(aj, nameof(AretinoAppleJuice.Calories), () => {
+                aj.Size = size;
+            });
+        }
+
+        [Fact]
+        public void ShouldNotifyWhenSettingIce()
+        {
+            var aj = new AretinoAppleJuice();
+            Assert.PropertyChanged(aj, nameof(AretinoAppleJuice.Ice), () => {
+                aj.Ice = true;
+            });
+            Assert.PropertyChanged(aj, nameof(AretinoAppleJuice.Ice), () => {
+                aj.Ice = false;
+            });
+        }
+
+        [Fact]
+        public void ShouldNotifySpecialInstructionsChanged()
+        {
+            var aj = new AretinoAppleJuice();
+            Assert.PropertyChanged(aj, nameof(AretinoAppleJuice.SpecialInstructions), () => {
+                aj.Ice = true;
+            });
         }
     }
 }

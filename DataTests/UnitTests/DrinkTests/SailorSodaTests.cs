@@ -31,6 +31,13 @@ namespace BleakwindBuffet.DataTests.UnitTests.DrinkTests
         }
 
         [Fact]
+        public void ShouldImplementINotifyPropertyChanged()
+        {
+            var s = new SailorSoda();
+            Assert.IsAssignableFrom<IOrderItem>(s);
+        }
+
+        [Fact]
         public void ShouldIncludeIceByDefault()
         {
             var s = new SailorSoda();
@@ -156,6 +163,78 @@ namespace BleakwindBuffet.DataTests.UnitTests.DrinkTests
             };
 
             Assert.Equal(name, s.ToString());
+        }
+
+        [Theory]
+        [InlineData(Size.Small)]
+        [InlineData(Size.Medium)]
+        [InlineData(Size.Large)]
+        public void ShouldNotifyWhenSettingSize(Size size)
+        {
+            var s = new SailorSoda();
+            Assert.PropertyChanged(s, nameof(SailorSoda.Size), () => {
+                s.Size = size;
+            });
+        }
+
+        [Theory]
+        [InlineData(Size.Small)]
+        [InlineData(Size.Medium)]
+        [InlineData(Size.Large)]
+        public void ShouldNotifyPriceChangedWhenSizeChanged(Size size)
+        {
+            var s = new SailorSoda();
+            Assert.PropertyChanged(s, nameof(SailorSoda.Price), () => {
+                s.Size = size;
+            });
+        }
+
+        [Theory]
+        [InlineData(Size.Small)]
+        [InlineData(Size.Medium)]
+        [InlineData(Size.Large)]
+        public void ShouldNotifyCaloriesChangedWhenSizeChanged(Size size)
+        {
+            var s = new SailorSoda();
+            Assert.PropertyChanged(s, nameof(SailorSoda.Calories), () => {
+                s.Size = size;
+            });
+        }
+
+        [Fact]
+        public void ShouldNotifyWhenSettingIce()
+        {
+            var s = new SailorSoda();
+            Assert.PropertyChanged(s, nameof(SailorSoda.Ice), () => {
+                s.Ice = false;
+            });
+            Assert.PropertyChanged(s, nameof(SailorSoda.Ice), () => {
+                s.Ice = true;
+            });
+        }
+
+        [Theory]
+        [InlineData(SodaFlavor.Blackberry)]
+        [InlineData(SodaFlavor.Cherry)]
+        [InlineData(SodaFlavor.Grapefruit)]
+        [InlineData(SodaFlavor.Lemon)]
+        [InlineData(SodaFlavor.Peach)]
+        [InlineData(SodaFlavor.Watermelon)]
+        public void ShouldNotifyWhenSettingFlavor(SodaFlavor flavor)
+        {
+            var s = new SailorSoda();
+            Assert.PropertyChanged(s, nameof(SailorSoda.Flavor), () => {
+                s.Flavor = flavor;
+            });
+        }
+
+        [Fact]
+        public void ShouldNotifySpecialInstructionsChanged()
+        {
+            var s = new SailorSoda();
+            Assert.PropertyChanged(s, nameof(SailorSoda.SpecialInstructions), () => {
+                s.Ice = false;
+            });
         }
     }
 }
