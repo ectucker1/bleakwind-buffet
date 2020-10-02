@@ -26,7 +26,10 @@
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate>
-                        <RadioButton Content="{TemplateBinding ContentPresenter.Content}" IsChecked="{Binding Path=IsSelected, RelativeSource={RelativeSource TemplatedParent}, Mode=TwoWay}" Margin="4"/>
+                        <!--Viewbox is used to make radio button bigger-->
+                        <Viewbox Height="32" HorizontalAlignment="Left" >
+                            <RadioButton Content="{TemplateBinding ContentPresenter.Content}" IsChecked="{Binding Path=IsSelected, RelativeSource={RelativeSource TemplatedParent}, Mode=TwoWay}" Margin="4"/>
+                        </Viewbox>
                     </ControlTemplate>
                 </Setter.Value>
             </Setter>
@@ -42,7 +45,7 @@
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
         <!--The name of the field comes in as a dependency property-->
-        <Label Grid.Row="0" Grid.Column="0" Content="{Binding FieldName, RelativeSource={RelativeSource AncestorType=UserControl}}" HorizontalContentAlignment="Right"/>
+        <Label Grid.Row="0" Grid.Column="0" Content="{Binding FieldName, RelativeSource={RelativeSource AncestorType=UserControl}}" HorizontalContentAlignment="Right" FontSize="16"/>
         <!--This list box will populate with elements for each possible Flavor value-->
         <ListBox Grid.Row="0" Grid.Column="1" ItemsSource="{Binding Source={StaticResource flavors}}" SelectedItem="{Binding FieldValue, RelativeSource={RelativeSource AncestorType=UserControl}}" BorderThickness="0"/>
     </Grid>

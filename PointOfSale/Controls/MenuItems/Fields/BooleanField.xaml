@@ -21,8 +21,12 @@
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
         <!--The name of a boolean field comes in as a dependency property-->
-        <Label Grid.Row="0" Grid.Column="0" Content="{Binding FieldName, RelativeSource={RelativeSource AncestorType=UserControl}}" HorizontalContentAlignment="Right"/>
-        <!--The default value of a boolean field comes in as a dependency property-->
-        <CheckBox Grid.Row="0" Grid.Column="1" IsChecked="{Binding FieldValue, RelativeSource={RelativeSource AncestorType=UserControl}}" VerticalAlignment="Center"/>
+        <Label Grid.Row="0" Grid.Column="0" Content="{Binding FieldName, RelativeSource={RelativeSource AncestorType=UserControl}}" HorizontalContentAlignment="Right" FontSize="16"/>
+
+        <!--Viewbox is used to make checkbox bigger-->
+        <Viewbox Grid.Row="0" Grid.Column="1" Height="32" HorizontalAlignment="Left" Margin="0,8,0,0">
+            <!--The default value of a boolean field comes in as a dependency property-->
+            <CheckBox IsChecked="{Binding FieldValue, RelativeSource={RelativeSource AncestorType=UserControl}}" VerticalAlignment="Center"/>
+        </Viewbox>
     </Grid>
 </UserControl>

@@ -13,6 +13,16 @@
         mc:Ignorable="d"
         Title="Bleakwind Buffet Point of Sale"
         Height="600" Width="1000">
+    <!--Global application styles-->
+    <Window.Resources>
+        <Style TargetType="{x:Type Button}">
+            <Setter Property="MinHeight" Value="26"/>
+            <Setter Property="FontSize" Value="16"/>
+        </Style>
+        <Style TargetType="{x:Type CheckBox}">
+            <Setter Property="MinHeight" Value="26"/>
+        </Style>
+    </Window.Resources>
     <DockPanel>
         <!--The order component contains buttons to add items to an order, customization logic, and a preview of the order-->
         <controls:OrderComponent></controls:OrderComponent>
