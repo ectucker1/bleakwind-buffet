@@ -14,9 +14,9 @@
              d:DesignHeight="450" d:DesignWidth="800">
     <StackPanel>
         <TextBlock TextAlignment="Center" Margin="4" FontSize="16">Customize Garden Orc Omelette</TextBlock>
-        <fields:BooleanField FieldName="Broccoli" FieldValue="True"></fields:BooleanField>
-        <fields:BooleanField FieldName="Mushrooms" FieldValue="True"></fields:BooleanField>
-        <fields:BooleanField FieldName="Tomato" FieldValue="True"></fields:BooleanField>
-        <fields:BooleanField FieldName="Cheddar" FieldValue="True"></fields:BooleanField>
+        <fields:BooleanField FieldName="Broccoli" FieldValue="{Binding Broccoli}"></fields:BooleanField>
+        <fields:BooleanField FieldName="Mushrooms" FieldValue="{Binding Mushrooms}"></fields:BooleanField>
+        <fields:BooleanField FieldName="Tomato" FieldValue="{Binding Tomato}"></fields:BooleanField>
+        <fields:BooleanField FieldName="Cheddar" FieldValue="{Binding Cheddar}"></fields:BooleanField>
     </StackPanel>
 </UserControl>

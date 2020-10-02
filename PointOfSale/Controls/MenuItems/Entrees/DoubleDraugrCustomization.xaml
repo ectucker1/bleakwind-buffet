@@ -14,13 +14,13 @@
              d:DesignHeight="450" d:DesignWidth="800">
     <StackPanel>
         <TextBlock TextAlignment="Center" Margin="4" FontSize="16">Customize Double Draugr</TextBlock>
-        <fields:BooleanField FieldName="Bun" FieldValue="True"></fields:BooleanField>
-        <fields:BooleanField FieldName="Ketchup" FieldValue="True"></fields:BooleanField>
-        <fields:BooleanField FieldName="Mustard" FieldValue="True"></fields:BooleanField>
-        <fields:BooleanField FieldName="Pickle" FieldValue="True"></fields:BooleanField>
-        <fields:BooleanField FieldName="Cheese" FieldValue="True"></fields:BooleanField>
-        <fields:BooleanField FieldName="Tomato" FieldValue="True"></fields:BooleanField>
-        <fields:BooleanField FieldName="Lettuce" FieldValue="True"></fields:BooleanField>
-        <fields:BooleanField FieldName="Mayo" FieldValue="True"></fields:BooleanField>
+        <fields:BooleanField FieldName="Bun" FieldValue="{Binding Bun}"></fields:BooleanField>
+        <fields:BooleanField FieldName="Ketchup" FieldValue="{Binding Ketchup}"></fields:BooleanField>
+        <fields:BooleanField FieldName="Mustard" FieldValue="{Binding Mustard}"></fields:BooleanField>
+        <fields:BooleanField FieldName="Pickle" FieldValue="{Binding Pickle}"></fields:BooleanField>
+        <fields:BooleanField FieldName="Cheese" FieldValue="{Binding Cheese}"></fields:BooleanField>
+        <fields:BooleanField FieldName="Tomato" FieldValue="{Binding Tomato}"></fields:BooleanField>
+        <fields:BooleanField FieldName="Lettuce" FieldValue="{Binding Lettuce}"></fields:BooleanField>
+        <fields:BooleanField FieldName="Mayo" FieldValue="{Binding Mayo}"></fields:BooleanField>
     </StackPanel>
 </UserControl>

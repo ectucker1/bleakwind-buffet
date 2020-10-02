@@ -14,8 +14,8 @@
              d:DesignHeight="450" d:DesignWidth="800">
     <StackPanel>
         <TextBlock TextAlignment="Center" Margin="4" FontSize="16">Customize Philly Poacher</TextBlock>
-        <fields:BooleanField FieldName="Sirloin" FieldValue="True"></fields:BooleanField>
-        <fields:BooleanField FieldName="Onion" FieldValue="True"></fields:BooleanField>
-        <fields:BooleanField FieldName="Roll" FieldValue="True"></fields:BooleanField>
+        <fields:BooleanField FieldName="Sirloin" FieldValue="{Binding Sirloin}"></fields:BooleanField>
+        <fields:BooleanField FieldName="Onion" FieldValue="{Binding Onion}"></fields:BooleanField>
+        <fields:BooleanField FieldName="Roll" FieldValue="{Binding Roll}"></fields:BooleanField>
     </StackPanel>
 </UserControl>

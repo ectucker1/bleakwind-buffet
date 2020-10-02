@@ -14,9 +14,9 @@
              d:DesignHeight="450" d:DesignWidth="800">
     <StackPanel>
         <TextBlock TextAlignment="Center" Margin="4" FontSize="16">Customize Smokehouse Skeleton</TextBlock>
-        <fields:BooleanField FieldName="Sausage Link" FieldValue="True"></fields:BooleanField>
-        <fields:BooleanField FieldName="Egg" FieldValue="True"></fields:BooleanField>
-        <fields:BooleanField FieldName="Hash Browns" FieldValue="True"></fields:BooleanField>
-        <fields:BooleanField FieldName="Pancake" FieldValue="True"></fields:BooleanField>
+        <fields:BooleanField FieldName="Sausage Link" FieldValue="{Binding SausageLink}"></fields:BooleanField>
+        <fields:BooleanField FieldName="Egg" FieldValue="{Binding Egg}"></fields:BooleanField>
+        <fields:BooleanField FieldName="Hash Browns" FieldValue="{Binding HashBrowns}"></fields:BooleanField>
+        <fields:BooleanField FieldName="Pancake" FieldValue="{Binding Pancake}"></fields:BooleanField>
     </StackPanel>
 </UserControl>

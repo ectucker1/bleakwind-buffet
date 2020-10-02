@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BleakwindBuffet.Data.Sides;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Windows;
@@ -26,6 +27,7 @@ namespace BleakwindBuffet.PointOfSale.Controls.MenuItems.Sides
         public FriedMiraakCustomization()
         {
             InitializeComponent();
+            DataContext = new FriedMiraak();
         }
     }
 }

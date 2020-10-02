@@ -14,8 +14,8 @@
              d:DesignHeight="450" d:DesignWidth="800">
     <StackPanel>
         <TextBlock TextAlignment="Center" Margin="4" FontSize="16">Customize Warrior Water</TextBlock>
-        <fields:SizeField></fields:SizeField>
-        <fields:BooleanField FieldName="Ice" FieldValue="True"></fields:BooleanField>
-        <fields:BooleanField FieldName="Lemon" FieldValue="False"></fields:BooleanField>
+        <fields:SizeField FieldName="Size" FieldValue="{Binding Path=Size}"></fields:SizeField>
+        <fields:BooleanField FieldName="Ice" FieldValue="{Binding Path=Ice}"></fields:BooleanField>
+        <fields:BooleanField FieldName="Lemon" FieldValue="{Binding Path=Lemon}"></fields:BooleanField>
     </StackPanel>
 </UserControl>

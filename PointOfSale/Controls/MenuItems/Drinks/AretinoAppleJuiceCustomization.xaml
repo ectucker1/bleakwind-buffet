@@ -14,7 +14,7 @@
              d:DesignHeight="450" d:DesignWidth="800">
     <StackPanel>
         <TextBlock TextAlignment="Center" Margin="4" FontSize="16">Customize Aretino Apple Juice</TextBlock>
-        <fields:SizeField></fields:SizeField>
-        <fields:BooleanField FieldName="Ice" FieldValue="False"></fields:BooleanField>
+        <fields:SizeField FieldName="Size" FieldValue="{Binding Path=Size}"></fields:SizeField>
+        <fields:BooleanField FieldName="Ice" FieldValue="{Binding Path=Ice}"></fields:BooleanField>
     </StackPanel>
 </UserControl>

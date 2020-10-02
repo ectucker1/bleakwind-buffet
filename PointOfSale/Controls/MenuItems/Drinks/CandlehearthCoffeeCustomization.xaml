@@ -14,9 +14,9 @@
              d:DesignHeight="450" d:DesignWidth="800">
     <StackPanel>
         <TextBlock TextAlignment="Center" Margin="4" FontSize="16">Customize Candlehearth Coffee</TextBlock>
-        <fields:SizeField></fields:SizeField>
-        <fields:BooleanField FieldName="Ice" FieldValue="False"></fields:BooleanField>
-        <fields:BooleanField FieldName="Room for Cream" FieldValue="False"></fields:BooleanField>
-        <fields:BooleanField FieldName="Decaf" FieldValue="False"></fields:BooleanField>
+        <fields:SizeField FieldName="Size" FieldValue="{Binding Path=Size}"></fields:SizeField>
+        <fields:BooleanField FieldName="Ice" FieldValue="{Binding Path=Ice}"></fields:BooleanField>
+        <fields:BooleanField FieldName="Room for Cream" FieldValue="{Binding Path=RoomForCream}"></fields:BooleanField>
+        <fields:BooleanField FieldName="Decaf" FieldValue="{Binding Path=Decaf}"></fields:BooleanField>
     </StackPanel>
 </UserControl>
