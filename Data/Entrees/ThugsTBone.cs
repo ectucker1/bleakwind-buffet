@@ -14,11 +14,6 @@ namespace BleakwindBuffet.Data.Entrees
     public class ThugsTBone : Entree, INotifyPropertyChanged
     {
         /// <summary>
-        /// Event handler called whenever a property changes on this menu item
-        /// </summary>
-        public event PropertyChangedEventHandler PropertyChanged;
-
-        /// <summary>
         /// Gets the price of the T-Bone
         /// </summary>
         public override double Price => 6.44;

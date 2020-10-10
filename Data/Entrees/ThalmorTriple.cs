@@ -14,11 +14,6 @@ namespace BleakwindBuffet.Data.Entrees
     public class ThalmorTriple : Entree, INotifyPropertyChanged
     {
         /// <summary>
-        /// Event handler called whenever a property changes on this menu item
-        /// </summary>
-        public event PropertyChangedEventHandler PropertyChanged;
-
-        /// <summary>
         /// Gets the price of the burger
         /// </summary>
         public override double Price => 8.32;
@@ -42,8 +37,8 @@ namespace BleakwindBuffet.Data.Entrees
             set
             {
                 bun = value;
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(Bun)));
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(SpecialInstructions)));
+                OnPropertyChanged(new PropertyChangedEventArgs(nameof(Bun)));
+                OnPropertyChanged(new PropertyChangedEventArgs(nameof(SpecialInstructions)));
             }
         }
 
@@ -61,8 +56,8 @@ namespace BleakwindBuffet.Data.Entrees
             set
             {
                 ketchup = value;
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(Ketchup)));
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(SpecialInstructions)));
+                OnPropertyChanged(new PropertyChangedEventArgs(nameof(Ketchup)));
+                OnPropertyChanged(new PropertyChangedEventArgs(nameof(SpecialInstructions)));
             }
         }
 
@@ -80,8 +75,8 @@ namespace BleakwindBuffet.Data.Entrees
             set
             {
                 mustard = value;
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(Mustard)));
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(SpecialInstructions)));
+                OnPropertyChanged(new PropertyChangedEventArgs(nameof(Mustard)));
+                OnPropertyChanged(new PropertyChangedEventArgs(nameof(SpecialInstructions)));
             }
         }
 
@@ -99,8 +94,8 @@ namespace BleakwindBuffet.Data.Entrees
             set
             {
                 pickle = value;
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(Pickle)));
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(SpecialInstructions)));
+                OnPropertyChanged(new PropertyChangedEventArgs(nameof(Pickle)));
+                OnPropertyChanged(new PropertyChangedEventArgs(nameof(SpecialInstructions)));
             }
         }
 
@@ -118,8 +113,8 @@ namespace BleakwindBuffet.Data.Entrees
             set
             {
                 cheese = value;
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(Cheese)));
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(SpecialInstructions)));
+                OnPropertyChanged(new PropertyChangedEventArgs(nameof(Cheese)));
+                OnPropertyChanged(new PropertyChangedEventArgs(nameof(SpecialInstructions)));
             }
         }
 
@@ -137,8 +132,8 @@ namespace BleakwindBuffet.Data.Entrees
             set
             {
                 tomato = value;
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(Tomato)));
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(SpecialInstructions)));
+                OnPropertyChanged(new PropertyChangedEventArgs(nameof(Tomato)));
+                OnPropertyChanged(new PropertyChangedEventArgs(nameof(SpecialInstructions)));
             }
         }
 
@@ -156,8 +151,8 @@ namespace BleakwindBuffet.Data.Entrees
             set
             {
                 lettuce = value;
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(Lettuce)));
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(SpecialInstructions)));
+                OnPropertyChanged(new PropertyChangedEventArgs(nameof(Lettuce)));
+                OnPropertyChanged(new PropertyChangedEventArgs(nameof(SpecialInstructions)));
             }
         }
 
@@ -175,8 +170,8 @@ namespace BleakwindBuffet.Data.Entrees
             set
             {
                 mayo = value;
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(Mayo)));
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(SpecialInstructions)));
+                OnPropertyChanged(new PropertyChangedEventArgs(nameof(Mayo)));
+                OnPropertyChanged(new PropertyChangedEventArgs(nameof(SpecialInstructions)));
             }
         }
 
@@ -194,8 +189,8 @@ namespace BleakwindBuffet.Data.Entrees
             set
             {
                 bacon = value;
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(Bacon)));
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(SpecialInstructions)));
+                OnPropertyChanged(new PropertyChangedEventArgs(nameof(Bacon)));
+                OnPropertyChanged(new PropertyChangedEventArgs(nameof(SpecialInstructions)));
             }
         }
 
@@ -213,8 +208,8 @@ namespace BleakwindBuffet.Data.Entrees
             set
             {
                 egg = value;
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(Egg)));
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(SpecialInstructions)));
+                OnPropertyChanged(new PropertyChangedEventArgs(nameof(Egg)));
+                OnPropertyChanged(new PropertyChangedEventArgs(nameof(SpecialInstructions)));
             }
         }
 

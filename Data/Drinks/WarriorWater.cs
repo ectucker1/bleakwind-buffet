@@ -15,24 +15,6 @@ namespace BleakwindBuffet.Data.Drinks
     public class WarriorWater : Drink, INotifyPropertyChanged
     {
         /// <summary>
-        /// Event handler called whenever a property changes on this drink
-        /// </summary>
-        public event PropertyChangedEventHandler PropertyChanged;
-
-        /// <summary>
-        /// Stores the size of this drink
-        /// </summary>
-        public override Size Size
-        {
-            get => size;
-            set
-            {
-                size = value;
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(Size)));
-            }
-        }
-
-        /// <summary>
         /// Gets the price of the water
         /// </summary>
         public override double Price => 0.0;
@@ -56,8 +38,8 @@ namespace BleakwindBuffet.Data.Drinks
             set
             {
                 ice = value;
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(Ice)));
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(SpecialInstructions)));
+                OnPropertyChanged(new PropertyChangedEventArgs(nameof(Ice)));
+                OnPropertyChanged(new PropertyChangedEventArgs(nameof(SpecialInstructions)));
             }
         }
 
@@ -75,8 +57,8 @@ namespace BleakwindBuffet.Data.Drinks
             set
             {
                 lemon = value;
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(Lemon)));
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(SpecialInstructions)));
+                OnPropertyChanged(new PropertyChangedEventArgs(nameof(Lemon)));
+                OnPropertyChanged(new PropertyChangedEventArgs(nameof(SpecialInstructions)));
             }
         }
 

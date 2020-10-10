@@ -53,5 +53,14 @@ namespace BleakwindBuffet.Data.Sides
         /// A list of special instructions for the side
         /// </summary>
         public abstract List<string> SpecialInstructions { get; }
+
+        /// <summary>
+        /// Raises a PropertyChangedEvent from a child class
+        /// </summary>
+        /// <param name="e">Arguments for the property changed event arguments</param>
+        protected void OnPropertyChanged(PropertyChangedEventArgs e)
+        {
+            PropertyChanged?.Invoke(this, e);
+        }
     }
 }
