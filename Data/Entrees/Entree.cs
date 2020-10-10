@@ -11,7 +11,7 @@ namespace BleakwindBuffet.Data.Entrees
     /// <summary>
     /// A base class with common properties of all entrees
     /// </summary>
-    public abstract class Entree : IOrderItem, INotifyPropertyChanged
+    public abstract class Entree : IOrderItem
     {
         /// <summary>
         /// Event handler called whenever a property changes on this entree

@@ -12,7 +12,7 @@ namespace BleakwindBuffet.Data.Drinks
     /// <summary>
     /// A base class with common properties of drinks
     /// </summary>
-    public abstract class Drink : IOrderItem, INotifyPropertyChanged
+    public abstract class Drink : IOrderItem
     {
         /// <summary>
         /// Event handler called whenever a property changes on this drink

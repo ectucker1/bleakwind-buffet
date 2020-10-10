@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.ComponentModel;
 
 /*
 * Author: Ethan Tucker
@@ -10,7 +11,7 @@ namespace BleakwindBuffet.Data
     /// <summary>
     /// Interface implemented by all items on the menu
     /// </summary>
-    public interface IOrderItem
+    public interface IOrderItem : INotifyPropertyChanged
     {
         /// <summary>
         /// The price of this menu item in USD
