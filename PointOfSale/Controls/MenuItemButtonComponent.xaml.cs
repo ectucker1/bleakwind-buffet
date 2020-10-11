@@ -41,23 +41,23 @@ namespace BleakwindBuffet.PointOfSale.Controls
 
         #endregion ItemName Property
 
-        #region ItemCustomizationControl Property
+        #region ItemType Property
 
         /// <summary>
-        /// Gets or sets the control to be used to customize this item
+        /// Gets or sets the type of order item this button initializes
         /// </summary>
-        public Type ItemCustomizationControl
+        public Type ItemType
         {
-            get => (Type) GetValue(ItemCustomizationControlProperty);
-            set => SetValue(ItemCustomizationControlProperty, value);
+            get => (Type) GetValue(ItemTypeProperty);
+            set => SetValue(ItemTypeProperty, value);
         }
 
         /// <summary>
-        /// Dependency property used to access and set the item customization control in XAML
+        /// Dependency property used to access and set the item type in XAML
         /// </summary>
-        public static readonly DependencyProperty ItemCustomizationControlProperty = DependencyProperty.Register(nameof(ItemCustomizationControl), typeof(Type), typeof(MenuItemButtonComponent));
+        public static readonly DependencyProperty ItemTypeProperty = DependencyProperty.Register(nameof(ItemType), typeof(Type), typeof(MenuItemButtonComponent));
 
-        #endregion ItemCustomizationControl Property
+        #endregion ItemType Property
 
         /// <summary>
         /// Creates and initialized a new MenuItemButtonComponent

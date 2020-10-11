@@ -12,7 +12,7 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="200">
     <DockPanel Margin="0,4,0,0">
-        <TextBlock Name="OrderNumber" DockPanel.Dock="Top" TextAlignment="Center" Margin="4" FontSize="16">Order #000</TextBlock>
+        <TextBlock Name="OrderNumber" DockPanel.Dock="Top" TextAlignment="Center" Margin="4" FontSize="16" Text="{Binding Number, StringFormat={}Order #{0:D4}}"/>
         <!--This grid displays the subtotal, tax, and total-->
         <Grid DockPanel.Dock="Bottom" Margin="4">
             <Grid.RowDefinitions>
@@ -28,17 +28,21 @@
             <TextBlock Grid.Row="0" Grid.Column="0" Margin="4">Subtotal:</TextBlock>
             <TextBlock Grid.Row="1" Grid.Column="0" Margin="4">Tax:</TextBlock>
             <TextBlock Grid.Row="2" Grid.Column="0" Margin="4">Total:</TextBlock>
-            <TextBlock Name="textSubtotal" Grid.Row="0" Grid.Column="1" Margin="4">$17.78</TextBlock>
-            <TextBlock Name="textTax" Grid.Row="1" Grid.Column="1" Margin="4">$0.67</TextBlock>
-            <TextBlock Name="textTotal" Grid.Row="2" Grid.Column="1" Margin="4">$18.25</TextBlock>
+            <TextBlock Grid.Row="0" Grid.Column="1" Margin="4" Text="{Binding Subtotal, StringFormat={}{0:C}}"/>
+            <TextBlock Grid.Row="1" Grid.Column="1" Margin="4" Text="{Binding Tax, StringFormat={}{0:C}}"/>
+            <TextBlock Grid.Row="2" Grid.Column="1" Margin="4" Text="{Binding Total, StringFormat={}{0:C}}"/>
             <!--This button will cancel an order-->
-            <Button Name="buttonCancel" Grid.Row="3" Grid.Column="0" Margin="4">Cancel Order</Button>
+            <Button Click="OnCancelOrderClicked" Grid.Row="3" Grid.Column="0" Margin="4">Cancel Order</Button>
             <!--This button will finalize and submit an order-->
-            <Button Name="buttonSubmit" Grid.Row="3" Grid.Column="1" Margin="4">Submit Order</Button>
+            <Button Click="OnSubmitOrderClicked" Grid.Row="3" Grid.Column="1" Margin="4">Submit Order</Button>
         </Grid>
-        <!--This ListView will contain all items in the order, though the content is currently static-->
-        <ListView Name="ItemList" Margin="4">
-            <TextBlock>Example Item</TextBlock>
+        <!--This ListView will contain all items in the order-->
+        <ListView Name="listViewItems" ItemsSource="{Binding}" Margin="4" IsSynchronizedWithCurrentItem="True">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <local:ItemPreviewComponent/>
+                </DataTemplate>
+            </ListView.ItemTemplate>
         </ListView>
     </DockPanel>
 </UserControl>

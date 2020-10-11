@@ -27,7 +27,6 @@ namespace BleakwindBuffet.PointOfSale.Controls.MenuItems.Entrees
         public GardenOrcOmeletteCustomization()
         {
             InitializeComponent();
-            DataContext = new GardenOrcOmelette();
         }
     }
 }

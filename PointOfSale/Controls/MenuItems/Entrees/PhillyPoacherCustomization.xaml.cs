@@ -27,7 +27,6 @@ namespace BleakwindBuffet.PointOfSale.Controls.MenuItems.Entrees
         public PhillyPoacherCustomization()
         {
             InitializeComponent();
-            DataContext = new PhillyPoacher();
         }
     }
 }

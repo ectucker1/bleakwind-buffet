@@ -27,7 +27,6 @@ namespace BleakwindBuffet.PointOfSale.Controls.MenuItems.Drinks
         public SailorSodaCustomization()
         {
             InitializeComponent();
-            DataContext = new SailorSoda();
         }
     }
 }

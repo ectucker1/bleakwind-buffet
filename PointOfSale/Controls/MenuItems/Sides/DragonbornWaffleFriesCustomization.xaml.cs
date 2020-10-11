@@ -27,7 +27,6 @@ namespace BleakwindBuffet.PointOfSale.Controls.MenuItems.Sides
         public DragonbornWaffleFriesCustomization()
         {
             InitializeComponent();
-            DataContext = new DragonbornWaffleFries();
         }
     }
 }

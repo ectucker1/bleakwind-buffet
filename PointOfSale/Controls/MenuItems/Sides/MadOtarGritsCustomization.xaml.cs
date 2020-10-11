@@ -27,7 +27,6 @@ namespace BleakwindBuffet.PointOfSale.Controls.MenuItems.Sides
         public MadOtarGritsCustomization()
         {
             InitializeComponent();
-            DataContext = new MadOtarGrits();
         }
     }
 }

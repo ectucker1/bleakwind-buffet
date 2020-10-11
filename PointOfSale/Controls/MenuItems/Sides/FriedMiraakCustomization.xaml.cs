@@ -27,7 +27,6 @@ namespace BleakwindBuffet.PointOfSale.Controls.MenuItems.Sides
         public FriedMiraakCustomization()
         {
             InitializeComponent();
-            DataContext = new FriedMiraak();
         }
     }
 }

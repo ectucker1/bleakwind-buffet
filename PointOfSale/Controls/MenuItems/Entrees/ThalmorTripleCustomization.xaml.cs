@@ -27,7 +27,6 @@ namespace BleakwindBuffet.PointOfSale.Controls.MenuItems.Entrees
         public ThalmorTripleCustomization()
         {
             InitializeComponent();
-            DataContext = new ThalmorTriple();
         }
     }
 }

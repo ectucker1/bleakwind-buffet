@@ -38,7 +38,7 @@ namespace BleakwindBuffet.PointOfSale.Controls
             if (sender is MenuItemButtonComponent menuItem)
             {
                 var orderComponent = this.FindAncestor<OrderComponent>();
-                orderComponent.StartItem(menuItem.ItemCustomizationControl);
+                orderComponent.AddItem(menuItem.ItemType);
             }
         }
     }

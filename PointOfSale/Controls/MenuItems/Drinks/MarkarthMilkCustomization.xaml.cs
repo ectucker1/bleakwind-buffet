@@ -27,7 +27,6 @@ namespace BleakwindBuffet.PointOfSale.Controls.MenuItems.Drinks
         public MarkarthMilkCustomization()
         {
             InitializeComponent();
-            DataContext = new MarkarthMilk();
         }
     }
 }

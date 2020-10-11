@@ -27,7 +27,6 @@ namespace BleakwindBuffet.PointOfSale.Controls.MenuItems.Drinks
         public AretinoAppleJuiceCustomization()
         {
             InitializeComponent();
-            DataContext = new AretinoAppleJuice();
         }
     }
 }

@@ -1,5 +1,7 @@
-﻿using System;
+﻿using BleakwindBuffet.Data;
+using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 using System.Windows;
 using System.Windows.Controls;
@@ -23,18 +25,47 @@ namespace BleakwindBuffet.PointOfSale.Controls
     /// </summary>
     public partial class OrderComponent : UserControl
     {
+        private Order order;
+        /// <summary>
+        /// The current order being edited by the order component.
+        /// This will be set to the data context.
+        /// </summary>
+        public Order Order {
+            get => order;
+            set
+            {
+                order = value;
+                DataContext = order;
+            }
+        }
+
         public OrderComponent()
         {
             InitializeComponent();
+            Order = new Order();
         }
 
         /// <summary>
-        /// Starts customizing a new item by placing it in the ItemCustomizationComponent
+        /// Adds a new item with the given type to the order
         /// </summary>
-        /// <param name="customizationControl">The Type of the customization page to use</param>
-        public void StartItem(Type customizationControl)
+        /// <param name="itemType">The Type of the item to add</param>
+        public void AddItem(Type itemType)
         {
-            controlItemCustomization.SwitchCustomizationLayout(customizationControl);
+            var instance = Activator.CreateInstance(itemType);
+            if (instance is IOrderItem item)
+            {
+                Order.Add(item);
+                controlOrderPreview.SelectItem(item);
+            }
+            else
+            {
+                throw new ArgumentException("Type of items added must be descendants of IOrderItem");
+            }
+        }
+
+        public void RemoveCurrentItem()
+        {
+            Order.Remove(controlOrderPreview.SelectedItem);
         }
     }
 }

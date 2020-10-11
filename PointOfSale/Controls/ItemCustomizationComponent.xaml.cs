@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BleakwindBuffet.Data;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Windows;
@@ -32,44 +33,14 @@ namespace BleakwindBuffet.PointOfSale.Controls
         }
 
         /// <summary>
-        /// Switches to the given customization page
-        /// </summary>
-        /// <param name="customizationControl">The Type of the customization page to use</param>
-        public void SwitchCustomizationLayout(Type customizationControl)
-        {
-            var layout = Activator.CreateInstance(customizationControl);
-            if (layout is UIElement control)
-            {
-                containerCustomization.Child = control;
-            }
-        }
-
-        /// <summary>
-        /// When the Add Item button is clicked, adds an item to the order
-        /// </summary>
-        /// <param name="sender">The Add Item button</param>
-        /// <param name="e">Click event arguments</param>
-        public void OnAddItemClicked(object sender, RoutedEventArgs e)
-        {
-            ClearCustomizationLayout();
-        }
-
-        /// <summary>
-        /// When the Discard Item button is clicked, clear the customization page
+        /// When the Discard Item button is clicked, remove the item from the list
         /// </summary>
         /// <param name="sender">The Discard Item button</param>
         /// <param name="e">Click event arguments</param>
         public void OnDiscardItemClicked(object sender, RoutedEventArgs e)
         {
-            ClearCustomizationLayout();
-        }
-
-        /// <summary>
-        /// Clears the current customization page
-        /// </summary>
-        private void ClearCustomizationLayout()
-        {
-            containerCustomization.Child = null;
+            var orderComponent = this.FindAncestor<OrderComponent>();
+            orderComponent.RemoveCurrentItem();
         }
     }
 }

@@ -27,7 +27,6 @@ namespace BleakwindBuffet.PointOfSale.Controls.MenuItems.Entrees
         public BriarheartBurgerCustomization()
         {
             InitializeComponent();
-            DataContext = new BriarheartBurger();
         }
     }
 }

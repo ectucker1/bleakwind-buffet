@@ -9,42 +9,42 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:BleakwindBuffet.PointOfSale.Controls"
-             xmlns:drinks="clr-namespace:BleakwindBuffet.PointOfSale.Controls.MenuItems.Drinks"
-             xmlns:entrees="clr-namespace:BleakwindBuffet.PointOfSale.Controls.MenuItems.Entrees"
-             xmlns:sides="clr-namespace:BleakwindBuffet.PointOfSale.Controls.MenuItems.Sides"
+             xmlns:drinks="clr-namespace:BleakwindBuffet.Data.Drinks;assembly=Data"
+             xmlns:entrees="clr-namespace:BleakwindBuffet.Data.Entrees;assembly=Data"
+             xmlns:sides="clr-namespace:BleakwindBuffet.Data.Sides;assembly=Data"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <StackPanel Margin="4">
         <TextBlock Margin="4" FontSize="16">Entrees</TextBlock>
         <!--This container lists all entrees-->
         <WrapPanel>
-            <!--Each MenuItemButtonComponent has an ItemName to set it's text, and an ItemCustomizationControl to determine which kind of component is needed for customization-->
-            <local:MenuItemButtonComponent Click="OnMenuItemClick" ItemName="Briarheart Burger" ItemCustomizationControl="{x:Type entrees:BriarheartBurgerCustomization}"></local:MenuItemButtonComponent>
-            <local:MenuItemButtonComponent Click="OnMenuItemClick" ItemName="Double Draugr" ItemCustomizationControl="{x:Type entrees:DoubleDraugrCustomization}"></local:MenuItemButtonComponent>
-            <local:MenuItemButtonComponent Click="OnMenuItemClick" ItemName="Thalmor Triple"  ItemCustomizationControl="{x:Type entrees:ThalmorTripleCustomization}"></local:MenuItemButtonComponent>
-            <local:MenuItemButtonComponent Click="OnMenuItemClick" ItemName="Garden Orc Omelette"  ItemCustomizationControl="{x:Type entrees:GardenOrcOmeletteCustomization}"></local:MenuItemButtonComponent>
-            <local:MenuItemButtonComponent Click="OnMenuItemClick" ItemName="Philly Poacher"  ItemCustomizationControl="{x:Type entrees:PhillyPoacherCustomization}"></local:MenuItemButtonComponent>
-            <local:MenuItemButtonComponent Click="OnMenuItemClick" ItemName="Smokehouse Skeleton"  ItemCustomizationControl="{x:Type entrees:SmokehouseSkeletonCustomization}"></local:MenuItemButtonComponent>
-            <local:MenuItemButtonComponent Click="OnMenuItemClick" ItemName="Thugs T-Bone"  ItemCustomizationControl="{x:Type entrees:ThugsTBoneCustomization}"></local:MenuItemButtonComponent>
+            <!--Each MenuItemButtonComponent has an ItemName to set it's text, and an ItemType to determine which kind of item to initialize-->
+            <local:MenuItemButtonComponent Click="OnMenuItemClick" ItemName="Briarheart Burger" ItemType="{x:Type entrees:BriarheartBurger}"></local:MenuItemButtonComponent>
+            <local:MenuItemButtonComponent Click="OnMenuItemClick" ItemName="Double Draugr" ItemType="{x:Type entrees:DoubleDraugr}"></local:MenuItemButtonComponent>
+            <local:MenuItemButtonComponent Click="OnMenuItemClick" ItemName="Thalmor Triple" ItemType="{x:Type entrees:ThalmorTriple}"></local:MenuItemButtonComponent>
+            <local:MenuItemButtonComponent Click="OnMenuItemClick" ItemName="Garden Orc Omelette" ItemType="{x:Type entrees:GardenOrcOmelette}"></local:MenuItemButtonComponent>
+            <local:MenuItemButtonComponent Click="OnMenuItemClick" ItemName="Philly Poacher" ItemType="{x:Type entrees:PhillyPoacher}"></local:MenuItemButtonComponent>
+            <local:MenuItemButtonComponent Click="OnMenuItemClick" ItemName="Smokehouse Skeleton" ItemType="{x:Type entrees:SmokehouseSkeleton}"></local:MenuItemButtonComponent>
+            <local:MenuItemButtonComponent Click="OnMenuItemClick" ItemName="Thugs T-Bone" ItemType="{x:Type entrees:ThugsTBone}"></local:MenuItemButtonComponent>
         </WrapPanel>
         <TextBlock Margin="4" FontSize="16">Sides</TextBlock>
         <!--This container lists all sides-->
         <WrapPanel>
-            <!--Each MenuItemButtonComponent has an ItemName to set it's text, and an ItemCustomizationControl to determine which kind of component is needed for customization-->
-            <local:MenuItemButtonComponent Click="OnMenuItemClick" ItemName="Vokun Salad" ItemCustomizationControl="{x:Type sides:VokunSaladCustomization}"></local:MenuItemButtonComponent>
-            <local:MenuItemButtonComponent Click="OnMenuItemClick" ItemName="Fried Miraak"  ItemCustomizationControl="{x:Type sides:FriedMiraakCustomization}"></local:MenuItemButtonComponent>
-            <local:MenuItemButtonComponent Click="OnMenuItemClick" ItemName="Mad Otar Grits"  ItemCustomizationControl="{x:Type sides:MadOtarGritsCustomization}"></local:MenuItemButtonComponent>
-            <local:MenuItemButtonComponent Click="OnMenuItemClick" ItemName="Dragonborn Waffle Fries"  ItemCustomizationControl="{x:Type sides:DragonbornWaffleFriesCustomization}"></local:MenuItemButtonComponent>
+            <!--Each MenuItemButtonComponent has an ItemName to set it's text, and an ItemType to determine which kind of item to initialize-->
+            <local:MenuItemButtonComponent Click="OnMenuItemClick" ItemName="Vokun Salad" ItemType="{x:Type sides:VokunSalad}"></local:MenuItemButtonComponent>
+            <local:MenuItemButtonComponent Click="OnMenuItemClick" ItemName="Fried Miraak" ItemType="{x:Type sides:FriedMiraak}"></local:MenuItemButtonComponent>
+            <local:MenuItemButtonComponent Click="OnMenuItemClick" ItemName="Mad Otar Grits" ItemType="{x:Type sides:MadOtarGrits}"></local:MenuItemButtonComponent>
+            <local:MenuItemButtonComponent Click="OnMenuItemClick" ItemName="Dragonborn Waffle Fries" ItemType="{x:Type sides:DragonbornWaffleFries}"></local:MenuItemButtonComponent>
         </WrapPanel>
         <TextBlock Margin="4" FontSize="16">Drinks</TextBlock>
         <!--This container lists all drinks-->
         <WrapPanel>
-            <!--Each MenuItemButtonComponent has an ItemName to set it's text, and an ItemCustomizationControl to determine which kind of component is needed for customization-->
-            <local:MenuItemButtonComponent Click="OnMenuItemClick" ItemName="Aretino Apple Juice" ItemCustomizationControl="{x:Type drinks:AretinoAppleJuiceCustomization}"></local:MenuItemButtonComponent>
-            <local:MenuItemButtonComponent Click="OnMenuItemClick" ItemName="Candlehearth Coffee" ItemCustomizationControl="{x:Type drinks:CandlehearthCoffeeCustomization}"></local:MenuItemButtonComponent>
-            <local:MenuItemButtonComponent Click="OnMenuItemClick" ItemName="Markarth Milk" ItemCustomizationControl="{x:Type drinks:MarkarthMilkCustomization}"></local:MenuItemButtonComponent>
-            <local:MenuItemButtonComponent Click="OnMenuItemClick" ItemName="Sailor Soda" ItemCustomizationControl="{x:Type drinks:SailorSodaCustomization}"></local:MenuItemButtonComponent>
-            <local:MenuItemButtonComponent Click="OnMenuItemClick" ItemName="Warrior Water" ItemCustomizationControl="{x:Type drinks:WarriorWaterCustomization}"></local:MenuItemButtonComponent>
+            <!--Each MenuItemButtonComponent has an ItemName to set it's text, and an ItemType to determine which kind of item to initialize-->
+            <local:MenuItemButtonComponent Click="OnMenuItemClick" ItemName="Aretino Apple Juice" ItemType="{x:Type drinks:AretinoAppleJuice}"></local:MenuItemButtonComponent>
+            <local:MenuItemButtonComponent Click="OnMenuItemClick" ItemName="Candlehearth Coffee" ItemType="{x:Type drinks:CandlehearthCoffee}"></local:MenuItemButtonComponent>
+            <local:MenuItemButtonComponent Click="OnMenuItemClick" ItemName="Markarth Milk" ItemType="{x:Type drinks:MarkarthMilk}"></local:MenuItemButtonComponent>
+            <local:MenuItemButtonComponent Click="OnMenuItemClick" ItemName="Sailor Soda" ItemType="{x:Type drinks:SailorSoda}"></local:MenuItemButtonComponent>
+            <local:MenuItemButtonComponent Click="OnMenuItemClick" ItemName="Warrior Water" ItemType="{x:Type drinks:WarriorWater}"></local:MenuItemButtonComponent>
         </WrapPanel>
     </StackPanel>
 </UserControl>

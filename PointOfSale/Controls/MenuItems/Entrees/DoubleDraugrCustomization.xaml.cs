@@ -27,7 +27,6 @@ namespace BleakwindBuffet.PointOfSale.Controls.MenuItems.Entrees
         public DoubleDraugrCustomization()
         {
             InitializeComponent();
-            DataContext = new DoubleDraugr();
         }
     }
 }
