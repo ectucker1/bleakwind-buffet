@@ -9,6 +9,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:BleakwindBuffet.PointOfSale.Controls"
+             xmlns:data="clr-namespace:BleakwindBuffet.Data;assembly=Data"
              xmlns:drinks="clr-namespace:BleakwindBuffet.Data.Drinks;assembly=Data"
              xmlns:entrees="clr-namespace:BleakwindBuffet.Data.Entrees;assembly=Data"
              xmlns:sides="clr-namespace:BleakwindBuffet.Data.Sides;assembly=Data"
@@ -45,6 +46,12 @@
             <local:MenuItemButtonComponent Click="OnMenuItemClick" ItemName="Markarth Milk" ItemType="{x:Type drinks:MarkarthMilk}"></local:MenuItemButtonComponent>
             <local:MenuItemButtonComponent Click="OnMenuItemClick" ItemName="Sailor Soda" ItemType="{x:Type drinks:SailorSoda}"></local:MenuItemButtonComponent>
             <local:MenuItemButtonComponent Click="OnMenuItemClick" ItemName="Warrior Water" ItemType="{x:Type drinks:WarriorWater}"></local:MenuItemButtonComponent>
+        </WrapPanel>
+        <TextBlock Margin="4" FontSize="16">Combos and Other Items</TextBlock>
+        <!--This container lists all combos and other types-->
+        <WrapPanel>
+            <!--Each MenuItemButtonComponent has an ItemName to set it's text, and an ItemType to determine which kind of item to initialize-->
+            <local:MenuItemButtonComponent Click="OnMenuItemClick" ItemName="Combo" ItemType="{x:Type data:Combo}"></local:MenuItemButtonComponent>
         </WrapPanel>
     </StackPanel>
 </UserControl>

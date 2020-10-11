@@ -12,7 +12,7 @@
         xmlns:controls="clr-namespace:BleakwindBuffet.PointOfSale.Controls"
         mc:Ignorable="d"
         Title="Bleakwind Buffet Point of Sale"
-        Height="600" Width="1000">
+        Height="700" Width="1200">
     <!--Global application styles-->
     <Window.Resources>
         <Style TargetType="{x:Type Button}">

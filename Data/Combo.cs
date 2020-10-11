@@ -142,5 +142,14 @@ namespace BleakwindBuffet.Data
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(Combo.SpecialInstructions)));
             }
         }
+
+        /// <summary>
+        /// Returns a string representation of a combo
+        /// </summary>
+        /// <returns>The string "Combo"</returns>
+        public override string ToString()
+        {
+            return "Combo";
+        }
     }
 }

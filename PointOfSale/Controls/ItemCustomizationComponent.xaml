@@ -9,12 +9,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:BleakwindBuffet.PointOfSale.Controls"
-             xmlns:drinks="clr-namespace:BleakwindBuffet.Data.Drinks;assembly=Data"
-             xmlns:entrees="clr-namespace:BleakwindBuffet.Data.Entrees;assembly=Data"
-             xmlns:sides="clr-namespace:BleakwindBuffet.Data.Sides;assembly=Data"
-             xmlns:drinkControls="clr-namespace:BleakwindBuffet.PointOfSale.Controls.MenuItems.Drinks"
-             xmlns:entreeControls="clr-namespace:BleakwindBuffet.PointOfSale.Controls.MenuItems.Entrees"
-             xmlns:sideControls="clr-namespace:BleakwindBuffet.PointOfSale.Controls.MenuItems.Sides"
+             xmlns:menu="clr-namespace:BleakwindBuffet.PointOfSale.Controls.MenuItems"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <DockPanel Margin="4">
@@ -26,62 +21,6 @@
             </Grid.ColumnDefinitions>
             <Button Click="OnDiscardItemClicked" Grid.Column="0" Margin="4">Discard Item</Button>
         </Grid>
-        <!--The content control will select which customization screen to show-->
-        <ContentControl Grid.Column="1" Content="{Binding CurrentItem}">
-            <ContentControl.Resources>
-                <!--Data templates determine what kind of control to make for each data type-->
-                <!--Entree data templates-->
-                <DataTemplate DataType="{x:Type entrees:BriarheartBurger}">
-                    <entreeControls:BriarheartBurgerCustomization/>
-                </DataTemplate>
-                <DataTemplate DataType="{x:Type entrees:DoubleDraugr}">
-                    <entreeControls:DoubleDraugrCustomization/>
-                </DataTemplate>
-                <DataTemplate DataType="{x:Type entrees:ThalmorTriple}">
-                    <entreeControls:ThalmorTripleCustomization/>
-                </DataTemplate>
-                <DataTemplate DataType="{x:Type entrees:GardenOrcOmelette}">
-                    <entreeControls:GardenOrcOmeletteCustomization/>
-                </DataTemplate>
-                <DataTemplate DataType="{x:Type entrees:PhillyPoacher}">
-                    <entreeControls:PhillyPoacherCustomization/>
-                </DataTemplate>
-                <DataTemplate DataType="{x:Type entrees:SmokehouseSkeleton}">
-                    <entreeControls:SmokehouseSkeletonCustomization/>
-                </DataTemplate>
-                <DataTemplate DataType="{x:Type entrees:ThugsTBone}">
-                    <entreeControls:ThugsTBoneCustomization/>
-                </DataTemplate>
-                <!--Side data templates-->
-                <DataTemplate DataType="{x:Type sides:DragonbornWaffleFries}">
-                    <sideControls:DragonbornWaffleFriesCustomization/>
-                </DataTemplate>
-                <DataTemplate DataType="{x:Type sides:FriedMiraak}">
-                    <sideControls:FriedMiraakCustomization/>
-                </DataTemplate>
-                <DataTemplate DataType="{x:Type sides:MadOtarGrits}">
-                    <sideControls:MadOtarGritsCustomization/>
-                </DataTemplate>
-                <DataTemplate DataType="{x:Type sides:VokunSalad}">
-                    <sideControls:VokunSaladCustomization/>
-                </DataTemplate>
-                <!--Drink data templates-->
-                <DataTemplate DataType="{x:Type drinks:AretinoAppleJuice}">
-                    <drinkControls:AretinoAppleJuiceCustomization/>
-                </DataTemplate>
-                <DataTemplate DataType="{x:Type drinks:CandlehearthCoffee}">
-                    <drinkControls:CandlehearthCoffeeCustomization/>
-                </DataTemplate>
-                <DataTemplate DataType="{x:Type drinks:MarkarthMilk}">
-                    <drinkControls:MarkarthMilkCustomization/>
-                </DataTemplate>
-                <DataTemplate DataType="{x:Type drinks:SailorSoda}">
-                    <drinkControls:SailorSodaCustomization/>
-                </DataTemplate>
-                <DataTemplate DataType="{x:Type drinks:WarriorWater}">
-                    <drinkControls:WarriorWaterCustomization/>
-                </DataTemplate>
-            </ContentControl.Resources>
-        </ContentControl>
+        <menu:ItemCustomizationSelector DataContext="{Binding CurrentItem}"/>
     </DockPanel>
 </UserControl>
