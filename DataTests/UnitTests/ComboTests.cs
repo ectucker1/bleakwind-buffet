@@ -78,6 +78,13 @@ namespace BleakwindBuffet.DataTests.UnitTests
             Assert.Equal(d, c.Drink);
         }
 
+        [Fact]
+        public void ReturnsCorrectToString()
+        {
+            var c = new Combo();
+            Assert.Equal("Combo", c.ToString());
+        }
+
         [Theory]
         [InlineData(100, 200, 300, 600)]
         [InlineData(100, 100, 100, 300)]

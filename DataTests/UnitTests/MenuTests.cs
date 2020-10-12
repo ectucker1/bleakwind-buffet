@@ -92,6 +92,19 @@ namespace BleakwindBuffet.DataTests.UnitTests
         }
 
         [Fact]
+        public void ShouldReturnCorrectPlainSideList()
+        {
+            var sides = Menu.PlainSides();
+            // Run an assertion lambda for each side
+            Assert.Collection(sides,
+                item => Assert.IsType<VokunSalad>(item),
+                item => Assert.IsType<FriedMiraak>(item),
+                item => Assert.IsType<MadOtarGrits>(item),
+                item => Assert.IsType<DragonbornWaffleFries>(item)
+            );
+        }
+
+        [Fact]
         public void ShouldReturnCorrectDrinkList()
         {
             var drinks = Menu.Drinks();
@@ -238,6 +251,20 @@ namespace BleakwindBuffet.DataTests.UnitTests
                     Assert.Equal(Size.Large, ((Drink)item).Size);
                     Assert.Equal(SodaFlavor.Watermelon, ((SailorSoda)item).Flavor);
                 }
+            );
+        }
+
+        [Fact]
+        public void ShouldReturnCorrectPlainDrinkList()
+        {
+            var drinks = Menu.PlainDrinks();
+            // Run an assertion lambda for each drink
+            Assert.Collection(drinks,
+                item => Assert.IsType<AretinoAppleJuice>(item),
+                item => Assert.IsType<CandlehearthCoffee>(item),
+                item => Assert.IsType<MarkarthMilk>(item),
+                item => Assert.IsType<WarriorWater>(item),
+                item => Assert.IsType<SailorSoda>(item)
             );
         }
 
