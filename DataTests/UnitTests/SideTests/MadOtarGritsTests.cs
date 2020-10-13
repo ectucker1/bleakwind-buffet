@@ -87,6 +87,13 @@ namespace BleakwindBuffet.DataTests.UnitTests.SideTests
             Assert.Equal(name, og.ToString());
         }
 
+        [Fact]
+        public void ShouldHaveCorrectBaseName()
+        {
+            var og = new MadOtarGrits();
+            Assert.Equal("Mad Otar Grits", og.BaseName);
+        }
+
         [Theory]
         [InlineData(Size.Small)]
         [InlineData(Size.Medium)]

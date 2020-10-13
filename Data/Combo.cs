@@ -112,6 +112,11 @@ namespace BleakwindBuffet.Data
         }
 
         /// <summary>
+        /// The base name of the Combo
+        /// </summary>
+        public string BaseName => "Combo";
+
+        /// <summary>
         /// Creates a new combo with the default Entree, Side, and Drink
         /// </summary>
         public Combo()

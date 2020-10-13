@@ -120,6 +120,11 @@ namespace BleakwindBuffet.Data.Entrees
         }
 
         /// <summary>
+        /// Returns the base name of the Smokehouse Skeleton
+        /// </summary>
+        public override string BaseName => "Smokehouse Skeleton";
+
+        /// <summary>
         /// Returns the name of this entree
         /// </summary>
         /// <returns>The string "Smokehouse Skeleton"</returns>

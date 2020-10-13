@@ -127,6 +127,11 @@ namespace BleakwindBuffet.Data.Drinks
         }
 
         /// <summary>
+        /// Returns the base name of the Candlehearth Coffee
+        /// </summary>
+        public override string BaseName => "Candlehearth Coffee";
+
+        /// <summary>
         /// Creates a string representation of this drink
         /// </summary>
         /// <returns>A string with the format "[Size] [Decaf?] Candlehearth Coffee"</returns>

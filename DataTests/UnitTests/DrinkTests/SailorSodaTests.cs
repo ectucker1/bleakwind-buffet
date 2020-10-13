@@ -165,6 +165,13 @@ namespace BleakwindBuffet.DataTests.UnitTests.DrinkTests
             Assert.Equal(name, s.ToString());
         }
 
+        [Fact]
+        public void ShouldHaveCorrectBaseName()
+        {
+            var s = new SailorSoda();
+            Assert.Equal("Sailor Soda", s.BaseName);
+        }
+
         [Theory]
         [InlineData(Size.Small)]
         [InlineData(Size.Medium)]

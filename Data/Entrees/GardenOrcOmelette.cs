@@ -120,6 +120,11 @@ namespace BleakwindBuffet.Data.Entrees
         }
 
         /// <summary>
+        /// Returns the base name of the Garden Orc Omelette
+        /// </summary>
+        public override string BaseName => "Garden Orc Omelette";
+
+        /// <summary>
         /// Returns the name of this entree
         /// </summary>
         /// <returns>The string "Garden Orc Omelette"</returns>

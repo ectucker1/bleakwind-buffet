@@ -87,6 +87,13 @@ namespace BleakwindBuffet.DataTests.UnitTests.SideTests
             Assert.Equal(name, vs.ToString());
         }
 
+        [Fact]
+        public void ShouldHaveCorrectBaseName()
+        {
+            var vs = new VokunSalad();
+            Assert.Equal("Vokun Salad", vs.BaseName);
+        }
+
         [Theory]
         [InlineData(Size.Small)]
         [InlineData(Size.Medium)]

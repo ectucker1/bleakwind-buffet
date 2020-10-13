@@ -87,6 +87,13 @@ namespace BleakwindBuffet.DataTests.UnitTests.SideTests
             Assert.Equal(name, fm.ToString());
         }
 
+        [Fact]
+        public void ShouldHaveCorrectBaseName()
+        {
+            var fm = new FriedMiraak();
+            Assert.Equal("Fried Miraak", fm.BaseName);
+        }
+
         [Theory]
         [InlineData(Size.Small)]
         [InlineData(Size.Medium)]

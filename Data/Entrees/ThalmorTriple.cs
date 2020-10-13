@@ -246,6 +246,11 @@ namespace BleakwindBuffet.Data.Entrees
         }
 
         /// <summary>
+        /// Returns the base name of the Thalmor Triple
+        /// </summary>
+        public override string BaseName => "Thalmor Triple";
+
+        /// <summary>
         /// Returns the name of this entree
         /// </summary>
         /// <returns>The string "Thalmor Triple"</returns>

@@ -118,6 +118,12 @@ namespace BleakwindBuffet.DataTests.UnitTests.DrinkTests
             Assert.Equal(name, m.ToString());
         }
 
+        [Fact]
+        public void ShouldHaveCorrectBaseName()
+        {
+            var m = new MarkarthMilk();
+            Assert.Equal("Markarth Milk", m.BaseName);
+        }
 
         [Theory]
         [InlineData(Size.Small)]

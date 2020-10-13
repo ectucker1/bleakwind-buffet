@@ -151,6 +151,13 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
         }
 
         [Fact]
+        public void ShouldHaveCorrectBaseName()
+        {
+            var goc = new GardenOrcOmelette();
+            Assert.Equal("Garden Orc Omelette", goc.BaseName);
+        }
+
+        [Fact]
         public void ShouldNotifyWhenSettingBroccoli()
         {
             var goc = new GardenOrcOmelette();

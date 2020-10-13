@@ -204,6 +204,11 @@ namespace BleakwindBuffet.Data.Entrees
         }
 
         /// <summary>
+        /// Returns the base name of the Double Draugr
+        /// </summary>
+        public override string BaseName => "Double Draugr";
+
+        /// <summary>
         /// Returns the name of this entree
         /// </summary>
         /// <returns>The string "Double Draugr"</returns>

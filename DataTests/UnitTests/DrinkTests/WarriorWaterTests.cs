@@ -143,6 +143,12 @@ namespace BleakwindBuffet.DataTests.UnitTests.DrinkTests
             Assert.Equal(name, w.ToString());
         }
 
+        [Fact]
+        public void ShouldHaveCorrectBaseName()
+        {
+            var w = new WarriorWater();
+            Assert.Equal("Warrior Water", w.BaseName);
+        }
 
         [Theory]
         [InlineData(Size.Small)]

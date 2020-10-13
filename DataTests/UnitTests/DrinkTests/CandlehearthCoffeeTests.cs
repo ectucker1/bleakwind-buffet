@@ -166,6 +166,12 @@ namespace BleakwindBuffet.DataTests.UnitTests.DrinkTests
             Assert.Equal(name, c.ToString());
         }
 
+        [Fact]
+        public void ShouldHaveCorrectBaseName()
+        {
+            var c = new CandlehearthCoffee();
+            Assert.Equal("Candlehearth Coffee", c.BaseName);
+        }
 
         [Theory]
         [InlineData(Size.Small)]

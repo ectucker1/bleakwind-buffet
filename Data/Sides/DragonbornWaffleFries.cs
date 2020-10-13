@@ -66,6 +66,11 @@ namespace BleakwindBuffet.Data.Sides
         }
 
         /// <summary>
+        /// Returns the base name of the Dragonborn Waffle Fries
+        /// </summary>
+        public override string BaseName => "Dragonborn Waffle Fries";
+
+        /// <summary>
         /// Creates a string representation of this side
         /// </summary>
         /// <returns>A string with the format "[Size] Dragonborn Waffle Fries"</returns>

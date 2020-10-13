@@ -99,6 +99,11 @@ namespace BleakwindBuffet.Data.Entrees
         }
 
         /// <summary>
+        /// Returns the base name of the Philly Poacher
+        /// </summary>
+        public override string BaseName => "Philly Poacher";
+
+        /// <summary>
         /// Returns the name of this entree
         /// </summary>
         /// <returns>The string "Philly Poacher"</returns>

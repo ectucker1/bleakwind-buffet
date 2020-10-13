@@ -66,6 +66,11 @@ namespace BleakwindBuffet.Data.Sides
         }
 
         /// <summary>
+        /// Returns the base name of the Fried Miraak
+        /// </summary>
+        public override string BaseName => "Fried Miraak";
+
+        /// <summary>
         /// Creates a string representation of this side
         /// </summary>
         /// <returns>A string with the format "[Size] Fried Miraak"</returns>

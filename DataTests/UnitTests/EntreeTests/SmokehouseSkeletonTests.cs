@@ -151,6 +151,13 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
         }
 
         [Fact]
+        public void ShouldHaveCorrectBaseName()
+        {
+            var ss = new SmokehouseSkeleton();
+            Assert.Equal("Smokehouse Skeleton", ss.BaseName);
+        }
+
+        [Fact]
         public void ShouldNotifyWhenSettingSausageLink()
         {
             var ss = new SmokehouseSkeleton();

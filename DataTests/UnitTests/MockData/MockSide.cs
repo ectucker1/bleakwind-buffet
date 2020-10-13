@@ -31,6 +31,11 @@ namespace BleakwindBuffet.DataTests.UnitTests.MockData
         public override List<string> SpecialInstructions => specialInstructions;
 
         /// <summary>
+        /// The base name of this MockSide
+        /// </summary>
+        public override string BaseName => "Mock Side";
+
+        /// <summary>
         /// Creates a new MockSide with the given price and calories
         /// </summary>
         /// <param name="price">The price of this MockSide</param>

@@ -34,6 +34,11 @@ namespace BleakwindBuffet.Data.Entrees
         public abstract List<string> SpecialInstructions { get; }
 
         /// <summary>
+        /// The base name of this entree
+        /// </summary>
+        public abstract string BaseName { get; }
+
+        /// <summary>
         /// Raises a PropertyChangedEvent from a child class
         /// </summary>
         /// <param name="e">Arguments for the property changed event arguments</param>

@@ -117,6 +117,12 @@ namespace BleakwindBuffet.DataTests.UnitTests.DrinkTests
             Assert.Equal(name, aj.ToString());
         }
 
+        [Fact]
+        public void ShouldHaveCorrectBaseName()
+        {
+            var aj = new AretinoAppleJuice();
+            Assert.Equal("Aretino Apple Juice", aj.BaseName);
+        }
 
         [Theory]
         [InlineData(Size.Small)]

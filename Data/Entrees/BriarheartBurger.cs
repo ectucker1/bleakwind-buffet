@@ -139,6 +139,11 @@ namespace BleakwindBuffet.Data.Entrees
         }
 
         /// <summary>
+        /// Returns the base name of the Briarheart Burger
+        /// </summary>
+        public override string BaseName => "Briarheart Burger";
+
+        /// <summary>
         /// Returns the name of this entree
         /// </summary>
         /// <returns>The string "Briarheart Burger"</returns>

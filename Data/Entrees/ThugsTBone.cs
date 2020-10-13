@@ -36,6 +36,11 @@ namespace BleakwindBuffet.Data.Entrees
         }
 
         /// <summary>
+        /// Returns the base name of the Thugs T-Bone
+        /// </summary>
+        public override string BaseName => "Thugs T-Bone";
+
+        /// <summary>
         /// Returns the name of this entree
         /// </summary>
         /// <returns>The string "Thugs T-Bone"</returns>

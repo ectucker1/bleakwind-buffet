@@ -87,6 +87,13 @@ namespace BleakwindBuffet.DataTests.UnitTests.SideTests
             Assert.Equal(name, wf.ToString());
         }
 
+        [Fact]
+        public void ShouldHaveCorrectBaseName()
+        {
+            var wf = new DragonbornWaffleFries();
+            Assert.Equal("Dragonborn Waffle Fries", wf.BaseName);
+        }
+
         [Theory]
         [InlineData(Size.Small)]
         [InlineData(Size.Medium)]

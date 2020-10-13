@@ -85,6 +85,13 @@ namespace BleakwindBuffet.DataTests.UnitTests
             Assert.Equal("Combo", c.ToString());
         }
 
+        [Fact]
+        public void ShouldHaveCorrectBaseName()
+        {
+            var c = new Combo();
+            Assert.Equal("Combo", c.BaseName);
+        }
+
         [Theory]
         [InlineData(100, 200, 300, 600)]
         [InlineData(100, 100, 100, 300)]
