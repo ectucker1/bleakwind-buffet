@@ -1,0 +1,76 @@
+﻿<!--
+    Author: Ethan Tucker
+    Class: CashPaymentComponent.xaml
+    Purpose: Handles all the inputs needed for cash payments
+-->
+<UserControl x:Class="BleakwindBuffet.PointOfSale.Controls.Payment.CashPaymentComponent"
+            xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+            xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+            xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+            xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+            xmlns:local="clr-namespace:BleakwindBuffet.PointOfSale.Controls.Payment"
+            mc:Ignorable="d" 
+            d:DesignHeight="450" d:DesignWidth="800">
+    <DockPanel Margin="4">
+        <!--This dock panel displays total amounts and the finishing buttons-->
+        <DockPanel DockPanel.Dock="Bottom">
+            <Grid DockPanel.Dock="Right">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <!--This button will return to the order if it needs to be edited-->
+                <Button Grid.Column="0" FontSize="20" Margin="4" MinWidth="160">Return to Order</Button>
+                <!--This button will complete the sale with the cash amounts displayed-->
+                <Button Grid.Column="1" FontSize="20" Margin="4" MinWidth="160">Finish Sale</Button>
+            </Grid>
+            <Grid DockPanel.Dock="Left">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Label Grid.Column="0" Grid.Row="0" FontSize="20">Total Sale</Label>
+                <TextBlock Grid.Column="0" Grid.Row="1" Text="{Binding TotalSale, StringFormat={}{0:C2}}" FontSize="20"/>
+                <Label Grid.Column="1" Grid.Row="0" FontSize="20">Amount Due</Label>
+                <TextBlock Grid.Column="1" Grid.Row="1" Text="{Binding AmountDue, StringFormat={}{0:C2}}" FontSize="20"/>
+                <Label Grid.Column="2" Grid.Row="0" FontSize="20">Change Owed</Label>
+                <TextBlock Grid.Column="2" Grid.Row="1" Text="{Binding ChangeDue, StringFormat={}{0:C2}}" FontSize="20"/>
+            </Grid>
+        </DockPanel>
+        <!--This grid contains all the CashAmountComponents for inputing the amount of change given-->
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <!--Each CashAmountComponent binds to properties in the ViewModel-->
+            <local:CashAmountComponent Grid.Column="0" Grid.Row="0" Currency="100.00" CustomerGiven="{Binding HundredsGiven}" ChangeGiven="{Binding HundredsChange}"/>
+            <local:CashAmountComponent Grid.Column="0" Grid.Row="1" Currency="50.00" CustomerGiven="{Binding FiftiesGiven}" ChangeGiven="{Binding FiftiesChange}"/>
+            <local:CashAmountComponent Grid.Column="0" Grid.Row="2" Currency="20.00" CustomerGiven="{Binding TwentiesGiven}" ChangeGiven="{Binding TwentiesChange}"/>
+            <local:CashAmountComponent Grid.Column="0" Grid.Row="3" Currency="10.00" CustomerGiven="{Binding TensGiven}" ChangeGiven="{Binding TensChange}"/>
+            <local:CashAmountComponent Grid.Column="0" Grid.Row="4" Currency="5.00" CustomerGiven="{Binding FivesGiven}" ChangeGiven="{Binding FivesChange}"/>
+            <local:CashAmountComponent Grid.Column="0" Grid.Row="5" Currency="2.00" CustomerGiven="{Binding TwosGiven}" ChangeGiven="{Binding TwosChange}"/>
+            <local:CashAmountComponent Grid.Column="0" Grid.Row="6" Currency="1.00" CustomerGiven="{Binding OnesGiven}" ChangeGiven="{Binding OnesChange}"/>
+            <local:CashAmountComponent Grid.Column="1" Grid.Row="1" Currency="1.00" CustomerGiven="{Binding DollarsGiven}" ChangeGiven="{Binding DollarsChange}"/>
+            <local:CashAmountComponent Grid.Column="1" Grid.Row="2" Currency="0.50" CustomerGiven="{Binding HalfDollarsGiven}" ChangeGiven="{Binding HalfDollarsChange}"/>
+            <local:CashAmountComponent Grid.Column="1" Grid.Row="3" Currency="0.25" CustomerGiven="{Binding QuartersGiven}" ChangeGiven="{Binding QuartersChange}"/>
+            <local:CashAmountComponent Grid.Column="1" Grid.Row="4" Currency="0.10" CustomerGiven="{Binding DimesGiven}" ChangeGiven="{Binding DimesChange}"/>
+            <local:CashAmountComponent Grid.Column="1" Grid.Row="5" Currency="0.05" CustomerGiven="{Binding NickelsGiven}" ChangeGiven="{Binding NickelsChange}"/>
+            <local:CashAmountComponent Grid.Column="1" Grid.Row="6" Currency="0.01" CustomerGiven="{Binding PenniesGiven}" ChangeGiven="{Binding PenniesChange}"/>
+        </Grid>
+    </DockPanel>
+</UserControl>

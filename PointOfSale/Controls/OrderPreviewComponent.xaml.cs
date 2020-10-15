@@ -43,12 +43,22 @@ namespace BleakwindBuffet.PointOfSale.Controls
             listViewItems.SelectedItem = item;
         }
 
+        /// <summary>
+        /// Event handler called to start payment when the Submit Order button is clicked
+        /// </summary>
+        /// <param name="sender">The Submit Order button</param>
+        /// <param name="e">Click event arguments</param>
         public void OnSubmitOrderClicked(object sender, RoutedEventArgs e)
         {
             var orderComponent = this.FindAncestor<OrderComponent>();
-            orderComponent.Order = new Order();
+            orderComponent.StartPayment();
         }
 
+        /// <summary>
+        /// Event handler called to create a new order when the Cancel Order button is clicked
+        /// </summary>
+        /// <param name="sender">The Cancel Order button</param>
+        /// <param name="e">Click event arguments</param>
         public void OnCancelOrderClicked(object sender, RoutedEventArgs e)
         {
             var orderComponent = this.FindAncestor<OrderComponent>();

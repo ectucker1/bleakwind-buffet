@@ -18,6 +18,8 @@
             <ColumnDefinition Width="6*"/>
             <ColumnDefinition Width="3*"/>
         </Grid.ColumnDefinitions>
+        <!--The payment choice component will display options for and handle payments-->
+        <local:PaymentChoiceComponent x:Name="controlPaymentChoice" Grid.Column="0" Grid.ColumnSpan="2" Visibility="Collapsed"></local:PaymentChoiceComponent>
         <!--The menu selection component contains buttons to add each menu item-->
         <local:MenuSelectionComponent x:Name="controlMenuSelection" Grid.Column="0"></local:MenuSelectionComponent>
         <!--The item customization component shows customization options for the current item-->
