@@ -27,5 +27,39 @@ namespace BleakwindBuffet.PointOfSale.Controls
         {
             InitializeComponent();
         }
+
+        /// <summary>
+        /// Hides the cash payment control, and shows the button options
+        /// </summary>
+        public void Reset()
+        {
+            buttonCashPayment.Visibility = Visibility.Visible;
+            buttonCreditPayment.Visibility = Visibility.Visible;
+            controlCashPayment.Visibility = Visibility.Collapsed;
+        }
+
+        /// <summary>
+        /// Shows the cash payment screen when the Cash button is pressed
+        /// </summary>
+        /// <param name="sender">The cash button</param>
+        /// <param name="e">Click event arguments</param>
+        private void HandleCashPayment(object sender, RoutedEventArgs e)
+        {
+            var orderComponent = this.FindAncestor<OrderComponent>();
+            buttonCashPayment.Visibility = Visibility.Collapsed;
+            buttonCreditPayment.Visibility = Visibility.Collapsed;
+            controlCashPayment.SetCharge(orderComponent.Order.Total);
+            controlCashPayment.Visibility = Visibility.Visible;
+        }
+
+        /// <summary>
+        /// Handles credit card payment when the Credit/Debit button is pressed
+        /// </summary>
+        /// <param name="sender">The Credit/Debit button</param>
+        /// <param name="e">Click event arguments</param>
+        private void HandleCreditPayment(object sender, RoutedEventArgs e)
+        {
+            // TODO Handle credit card payments using Round Register
+        }
     }
 }

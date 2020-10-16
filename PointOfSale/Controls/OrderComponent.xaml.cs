@@ -74,21 +74,24 @@ namespace BleakwindBuffet.PointOfSale.Controls
         /// <summary>
         /// Hides the order customization components and shows the payment screen
         /// </summary>
-        public void StartPayment()
+        public void ShowPaymentScreen()
         {
+            controlPaymentChoice.Reset();
             controlPaymentChoice.Visibility = Visibility.Visible;
             controlMenuSelection.Visibility = Visibility.Collapsed;
             controlItemCustomization.Visibility = Visibility.Collapsed;
+            controlOrderPreview.DisableOrderSubmission();
         }
 
         /// <summary>
         /// Hides the payment screen and shows the order customization components
         /// </summary>
-        public void FinishPayment()
+        public void ShowEditingScreen()
         {
             controlPaymentChoice.Visibility = Visibility.Collapsed;
             controlMenuSelection.Visibility = Visibility.Visible;
             controlItemCustomization.Visibility = Visibility.Visible;
+            controlOrderPreview.EnableOrderSubmission();
         }
     }
 }

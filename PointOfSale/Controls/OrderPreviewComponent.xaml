@@ -34,7 +34,7 @@
             <!--This button will cancel an order-->
             <Button Click="OnCancelOrderClicked" Grid.Row="3" Grid.Column="0" Margin="4">Cancel Order</Button>
             <!--This button will finalize and submit an order-->
-            <Button Click="OnSubmitOrderClicked" Grid.Row="3" Grid.Column="1" Margin="4">Submit Order</Button>
+            <Button Name="buttonSubmitOrder" Click="OnSubmitOrderClicked" Grid.Row="3" Grid.Column="1" Margin="4">Submit Order</Button>
         </Grid>
         <!--This ListView will contain all items in the order-->
         <ListView Name="listViewItems" ItemsSource="{Binding}" Margin="4" IsSynchronizedWithCurrentItem="True">

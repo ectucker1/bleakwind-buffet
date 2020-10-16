@@ -24,10 +24,24 @@ namespace BleakwindBuffet.PointOfSale.Controls.Payment
     /// </summary>
     public partial class CashPaymentComponent : UserControl
     {
+        /// <summary>
+        /// Creates a new CashPaymentComponent and initializes its view model
+        /// </summary>
         public CashPaymentComponent()
         {
             InitializeComponent();
             DataContext = new CashPaymentViewModel();
+        }
+
+        /// <summary>
+        /// Sets the total charge and resets the values of the viewmodel
+        /// </summary>
+        /// <param name="charge">The total charge being paid for</param>
+        public void SetCharge(double charge)
+        {
+            var vm = new CashPaymentViewModel();
+            vm.TotalSale = charge;
+            DataContext = vm;
         }
     }
 }

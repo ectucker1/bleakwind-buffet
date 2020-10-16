@@ -27,6 +27,7 @@ namespace PointOfSale.Controls.Payment
             get => totalSale;
             set
             {
+                totalSale = value;
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(AmountDue)));
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(ChangeDue)));
             }

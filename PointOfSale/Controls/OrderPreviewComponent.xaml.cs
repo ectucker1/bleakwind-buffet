@@ -44,6 +44,22 @@ namespace BleakwindBuffet.PointOfSale.Controls
         }
 
         /// <summary>
+        /// Enables the Submit Order button
+        /// </summary>
+        public void EnableOrderSubmission()
+        {
+            buttonSubmitOrder.Content = "Submit Order";
+        }
+
+        /// <summary>
+        /// Switches the Submit Order button to the Return to Order button
+        /// </summary>
+        public void DisableOrderSubmission()
+        {
+            buttonSubmitOrder.Content = "Return to Order";
+        }
+
+        /// <summary>
         /// Event handler called to start payment when the Submit Order button is clicked
         /// </summary>
         /// <param name="sender">The Submit Order button</param>
@@ -51,7 +67,22 @@ namespace BleakwindBuffet.PointOfSale.Controls
         public void OnSubmitOrderClicked(object sender, RoutedEventArgs e)
         {
             var orderComponent = this.FindAncestor<OrderComponent>();
-            orderComponent.StartPayment();
+            if (sender is Button button)
+            {
+                // Determine which mode the button is in
+                // This could probably be better done with a custom class
+                if (button.Content is string str)
+                {
+                    if (str.Contains("Submit"))
+                    {
+                        orderComponent.ShowPaymentScreen();
+                    }
+                    else
+                    {
+                        orderComponent.ShowEditingScreen();
+                    }
+                }
+            }
         }
 
         /// <summary>
@@ -63,6 +94,7 @@ namespace BleakwindBuffet.PointOfSale.Controls
         {
             var orderComponent = this.FindAncestor<OrderComponent>();
             orderComponent.Order = new Order();
+            orderComponent.ShowEditingScreen();
         }
     }
 }
