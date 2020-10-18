@@ -28,6 +28,7 @@ namespace PointOfSale.Controls.Payment
             set
             {
                 totalSale = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(TotalSale)));
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(AmountDue)));
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(ChangeDue)));
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(PaymentValid)));
@@ -102,7 +103,7 @@ namespace PointOfSale.Controls.Payment
             set
             {
                 nickelsGiven = value;
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(PenniesGiven)));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(NickelsGiven)));
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(AmountPaid)));
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(AmountDue)));
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(ChangeDue)));
@@ -120,7 +121,7 @@ namespace PointOfSale.Controls.Payment
             set
             {
                 dimesGiven = value;
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(PenniesGiven)));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(DimesGiven)));
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(AmountPaid)));
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(AmountDue)));
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(ChangeDue)));
@@ -138,7 +139,7 @@ namespace PointOfSale.Controls.Payment
             set
             {
                 quartersGiven = value;
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(PenniesGiven)));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(QuartersGiven)));
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(AmountPaid)));
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(AmountDue)));
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(ChangeDue)));
@@ -156,7 +157,7 @@ namespace PointOfSale.Controls.Payment
             set
             {
                 halfDollarsGiven = value;
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(PenniesGiven)));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(HalfDollarsGiven)));
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(AmountPaid)));
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(AmountDue)));
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(ChangeDue)));
@@ -174,7 +175,7 @@ namespace PointOfSale.Controls.Payment
             set
             {
                 dollarsGiven = value;
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(PenniesGiven)));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(DollarsGiven)));
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(AmountPaid)));
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(AmountDue)));
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(ChangeDue)));
@@ -192,7 +193,7 @@ namespace PointOfSale.Controls.Payment
             set
             {
                 onesGiven = value;
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(PenniesGiven)));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(OnesGiven)));
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(AmountPaid)));
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(AmountDue)));
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(ChangeDue)));
@@ -210,7 +211,7 @@ namespace PointOfSale.Controls.Payment
             set
             {
                 twosGiven = value;
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(PenniesGiven)));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(TwosGiven)));
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(AmountPaid)));
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(AmountDue)));
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(ChangeDue)));
@@ -228,7 +229,7 @@ namespace PointOfSale.Controls.Payment
             set
             {
                 fivesGiven = value;
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(PenniesGiven)));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(FivesGiven)));
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(AmountPaid)));
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(AmountDue)));
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(ChangeDue)));
@@ -246,7 +247,7 @@ namespace PointOfSale.Controls.Payment
             set
             {
                 tensGiven = value;
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(PenniesGiven)));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(TensGiven)));
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(AmountPaid)));
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(AmountDue)));
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(ChangeDue)));
@@ -264,7 +265,7 @@ namespace PointOfSale.Controls.Payment
             set
             {
                 twentiesGiven = value;
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(PenniesGiven)));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(TwentiesGiven)));
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(AmountPaid)));
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(AmountDue)));
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(ChangeDue)));
@@ -282,7 +283,7 @@ namespace PointOfSale.Controls.Payment
             set
             {
                 fiftiesGiven = value;
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(PenniesGiven)));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(FiftiesGiven)));
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(AmountPaid)));
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(AmountDue)));
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(ChangeDue)));
@@ -300,7 +301,7 @@ namespace PointOfSale.Controls.Payment
             set
             {
                 hundredsGiven = value;
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(PenniesGiven)));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(HundredsGiven)));
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(AmountPaid)));
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(AmountDue)));
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(ChangeDue)));
@@ -499,6 +500,27 @@ namespace PointOfSale.Controls.Payment
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(TwentiesChange)));
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(FiftiesChange)));
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(HundredsChange)));
+        }
+
+        /// <summary>
+        /// Adds the given cash to the drawer, and removes the change
+        /// </summary>
+        public void ApplyCashSale()
+        {
+            CashDrawer.OpenDrawer();
+            CashDrawer.Hundreds += HundredsGiven - HundredsChange;
+            CashDrawer.Fifties += FiftiesGiven - FiftiesChange;
+            CashDrawer.Twenties += TwentiesGiven - TwentiesChange;
+            CashDrawer.Tens += TensGiven - TensChange;
+            CashDrawer.Fives += FivesGiven - FivesChange;
+            CashDrawer.Twos += TwosGiven - TwosChange;
+            CashDrawer.Ones += OnesGiven - OnesChange;
+            CashDrawer.Dollars += DollarsGiven - DollarsChange;
+            CashDrawer.HalfDollars += HalfDollarsGiven - HalfDollarsChange;
+            CashDrawer.Quarters += QuartersGiven - QuartersChange;
+            CashDrawer.Dimes += DimesGiven - DimesChange;
+            CashDrawer.Nickels += NickelsGiven - NickelsChange;
+            CashDrawer.Pennies += PenniesGiven - PenniesChange;
         }
 
         /// <summary>

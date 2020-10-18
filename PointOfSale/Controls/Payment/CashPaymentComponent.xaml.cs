@@ -54,6 +54,7 @@ namespace BleakwindBuffet.PointOfSale.Controls.Payment
             var orderComponent = this.FindAncestor<OrderComponent>();
             if (DataContext is CashPaymentViewModel model)
             {
+                model.ApplyCashSale();
                 orderComponent.FinishPayment(true, model.ChangeDue);
             }
         }
