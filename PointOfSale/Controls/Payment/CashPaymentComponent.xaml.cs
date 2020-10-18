@@ -43,5 +43,19 @@ namespace BleakwindBuffet.PointOfSale.Controls.Payment
             vm.TotalSale = charge;
             DataContext = vm;
         }
+
+        /// <summary>
+        /// Finalizes a cash sale and returns to the order screen
+        /// </summary>
+        /// <param name="sender">The Finish Sale button</param>
+        /// <param name="e">Click event arguments</param>
+        private void FinishCashSale(object sender, RoutedEventArgs e)
+        {
+            var orderComponent = this.FindAncestor<OrderComponent>();
+            if (DataContext is CashPaymentViewModel model)
+            {
+                orderComponent.FinishPayment(true, model.ChangeDue);
+            }
+        }
     }
 }

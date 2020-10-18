@@ -1,4 +1,5 @@
-﻿using System;
+﻿using RoundRegister;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Windows;
@@ -59,7 +60,26 @@ namespace BleakwindBuffet.PointOfSale.Controls
         /// <param name="e">Click event arguments</param>
         private void HandleCreditPayment(object sender, RoutedEventArgs e)
         {
-            // TODO Handle credit card payments using Round Register
+            var orderComponent = this.FindAncestor<OrderComponent>();
+            var result = CardReader.RunCard(orderComponent.Order.Total);
+            switch (result)
+            {
+                case CardTransactionResult.Declined:
+                    MessageBox.Show("Card declined.");
+                    break;
+                case CardTransactionResult.IncorrectPin:
+                    MessageBox.Show("Incorrect PIN entered.");
+                    break;
+                case CardTransactionResult.InsufficientFunds:
+                    MessageBox.Show("Insufficient funds on card.");
+                    break;
+                case CardTransactionResult.ReadError:
+                    MessageBox.Show("Error reading card.");
+                    break;
+                case CardTransactionResult.Approved:
+                    orderComponent.FinishPayment();
+                    break;
+            }
         }
     }
 }

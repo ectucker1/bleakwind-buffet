@@ -1,4 +1,5 @@
 ﻿using BleakwindBuffet.Data;
+using PointOfSale.Controls.Payment;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -92,6 +93,18 @@ namespace BleakwindBuffet.PointOfSale.Controls
             controlMenuSelection.Visibility = Visibility.Visible;
             controlItemCustomization.Visibility = Visibility.Visible;
             controlOrderPreview.EnableOrderSubmission();
+        }
+
+        /// <summary>
+        /// Prints a reciept and starts a new order
+        /// </summary>
+        /// <param name="paidCash">True if the user paid in cash</param>
+        /// <param name="changeOwed">The amount of change owed to the user</param>
+        public void FinishPayment(bool paidCash = false, double changeOwed = 0.0)
+        {
+            RecieptGenerator.PrintReciept(Order, paidCash, changeOwed);
+            Order = new Order();
+            ShowEditingScreen();
         }
     }
 }
