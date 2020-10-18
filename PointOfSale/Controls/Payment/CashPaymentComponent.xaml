@@ -55,21 +55,45 @@
                 <RowDefinition/>
                 <RowDefinition/>
                 <RowDefinition/>
+                <RowDefinition/>
             </Grid.RowDefinitions>
             <!--Each CashAmountComponent binds to properties in the ViewModel-->
-            <local:CashAmountComponent Grid.Column="0" Grid.Row="0" Currency="100.00" CustomerGiven="{Binding HundredsGiven}" ChangeGiven="{Binding HundredsChange}"/>
-            <local:CashAmountComponent Grid.Column="0" Grid.Row="1" Currency="50.00" CustomerGiven="{Binding FiftiesGiven}" ChangeGiven="{Binding FiftiesChange}"/>
-            <local:CashAmountComponent Grid.Column="0" Grid.Row="2" Currency="20.00" CustomerGiven="{Binding TwentiesGiven}" ChangeGiven="{Binding TwentiesChange}"/>
-            <local:CashAmountComponent Grid.Column="0" Grid.Row="3" Currency="10.00" CustomerGiven="{Binding TensGiven}" ChangeGiven="{Binding TensChange}"/>
-            <local:CashAmountComponent Grid.Column="0" Grid.Row="4" Currency="5.00" CustomerGiven="{Binding FivesGiven}" ChangeGiven="{Binding FivesChange}"/>
-            <local:CashAmountComponent Grid.Column="0" Grid.Row="5" Currency="2.00" CustomerGiven="{Binding TwosGiven}" ChangeGiven="{Binding TwosChange}"/>
-            <local:CashAmountComponent Grid.Column="0" Grid.Row="6" Currency="1.00" CustomerGiven="{Binding OnesGiven}" ChangeGiven="{Binding OnesChange}"/>
-            <local:CashAmountComponent Grid.Column="1" Grid.Row="1" Currency="1.00" CustomerGiven="{Binding DollarsGiven}" ChangeGiven="{Binding DollarsChange}"/>
-            <local:CashAmountComponent Grid.Column="1" Grid.Row="2" Currency="0.50" CustomerGiven="{Binding HalfDollarsGiven}" ChangeGiven="{Binding HalfDollarsChange}"/>
-            <local:CashAmountComponent Grid.Column="1" Grid.Row="3" Currency="0.25" CustomerGiven="{Binding QuartersGiven}" ChangeGiven="{Binding QuartersChange}"/>
-            <local:CashAmountComponent Grid.Column="1" Grid.Row="4" Currency="0.10" CustomerGiven="{Binding DimesGiven}" ChangeGiven="{Binding DimesChange}"/>
-            <local:CashAmountComponent Grid.Column="1" Grid.Row="5" Currency="0.05" CustomerGiven="{Binding NickelsGiven}" ChangeGiven="{Binding NickelsChange}"/>
-            <local:CashAmountComponent Grid.Column="1" Grid.Row="6" Currency="0.01" CustomerGiven="{Binding PenniesGiven}" ChangeGiven="{Binding PenniesChange}"/>
+            <local:CashAmountComponent Grid.Column="0" Grid.Row="1" Currency="100.00" CustomerGiven="{Binding HundredsGiven}" ChangeGiven="{Binding HundredsChange}"/>
+            <local:CashAmountComponent Grid.Column="0" Grid.Row="2" Currency="50.00" CustomerGiven="{Binding FiftiesGiven}" ChangeGiven="{Binding FiftiesChange}"/>
+            <local:CashAmountComponent Grid.Column="0" Grid.Row="3" Currency="20.00" CustomerGiven="{Binding TwentiesGiven}" ChangeGiven="{Binding TwentiesChange}"/>
+            <local:CashAmountComponent Grid.Column="0" Grid.Row="4" Currency="10.00" CustomerGiven="{Binding TensGiven}" ChangeGiven="{Binding TensChange}"/>
+            <local:CashAmountComponent Grid.Column="0" Grid.Row="5" Currency="5.00" CustomerGiven="{Binding FivesGiven}" ChangeGiven="{Binding FivesChange}"/>
+            <local:CashAmountComponent Grid.Column="0" Grid.Row="6" Currency="2.00" CustomerGiven="{Binding TwosGiven}" ChangeGiven="{Binding TwosChange}"/>
+            <local:CashAmountComponent Grid.Column="0" Grid.Row="7" Currency="1.00" CustomerGiven="{Binding OnesGiven}" ChangeGiven="{Binding OnesChange}"/>
+            <local:CashAmountComponent Grid.Column="1" Grid.Row="2" Currency="1.00" CustomerGiven="{Binding DollarsGiven}" ChangeGiven="{Binding DollarsChange}"/>
+            <local:CashAmountComponent Grid.Column="1" Grid.Row="3" Currency="0.50" CustomerGiven="{Binding HalfDollarsGiven}" ChangeGiven="{Binding HalfDollarsChange}"/>
+            <local:CashAmountComponent Grid.Column="1" Grid.Row="4" Currency="0.25" CustomerGiven="{Binding QuartersGiven}" ChangeGiven="{Binding QuartersChange}"/>
+            <local:CashAmountComponent Grid.Column="1" Grid.Row="5" Currency="0.10" CustomerGiven="{Binding DimesGiven}" ChangeGiven="{Binding DimesChange}"/>
+            <local:CashAmountComponent Grid.Column="1" Grid.Row="6" Currency="0.05" CustomerGiven="{Binding NickelsGiven}" ChangeGiven="{Binding NickelsChange}"/>
+            <local:CashAmountComponent Grid.Column="1" Grid.Row="7" Currency="0.01" CustomerGiven="{Binding PenniesGiven}" ChangeGiven="{Binding PenniesChange}"/>
+            <!--Copy layout from CashAmountComponent to display labels-->
+            <Grid Grid.Column="0" Grid.Row="0" Margin="4">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="2*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="2*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="2*"/>
+                </Grid.ColumnDefinitions>
+                <TextBlock Grid.Column="2" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="16">From Customer</TextBlock>
+                <TextBlock Grid.Column="4" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="16">Change</TextBlock>
+            </Grid>
+            <Grid Grid.Column="1" Grid.Row="1" Margin="4">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="2*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="2*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="2*"/>
+                </Grid.ColumnDefinitions>
+                <TextBlock Grid.Column="2" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="16">From Customer</TextBlock>
+                <TextBlock Grid.Column="4" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="16">Change</TextBlock>
+            </Grid>
         </Grid>
     </DockPanel>
 </UserControl>

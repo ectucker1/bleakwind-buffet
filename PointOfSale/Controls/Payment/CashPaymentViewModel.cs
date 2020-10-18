@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Text;
+using System.Windows;
 
 /*
  * Author: Ethan Tucker
@@ -480,11 +481,6 @@ namespace BleakwindBuffet.PointOfSale.Controls.Payment
             {
                 left -= 0.01;
                 PenniesChange++;
-            }
-
-            if (left > 0.0)
-            {
-                // TODO: Handle case of not enough change
             }
 
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(PenniesChange)));
