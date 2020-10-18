@@ -3,7 +3,6 @@
 using BleakwindBuffet.PointOfSale.Controls.Payment;
 using System;
 using RoundRegister;
-using PointOfSale.Controls.Payment;
 using System.ComponentModel;
 
 /*

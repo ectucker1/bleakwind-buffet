@@ -9,7 +9,7 @@ using System.Text;
  * Class name: CashPaymentViewModel
  * Purpose: Provides a ViewModel to handle calculations needed for cash payments
  */
-namespace PointOfSale.Controls.Payment
+namespace BleakwindBuffet.PointOfSale.Controls.Payment
 {
     public class CashPaymentViewModel : INotifyPropertyChanged
     {

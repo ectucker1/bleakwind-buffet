@@ -1,5 +1,5 @@
 ﻿using BleakwindBuffet.Data;
-using PointOfSale.Controls.Payment;
+using BleakwindBuffet.PointOfSale.Controls.Payment;
 using System;
 using System.Collections.Generic;
 using System.Linq;

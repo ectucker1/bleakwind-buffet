@@ -9,7 +9,7 @@ using System.Text;
  * Class name: RecieptGenerator.cs
  * Purpose: Provide methods to generate and complete reciepts of orders
  */
-namespace PointOfSale.Controls.Payment
+namespace BleakwindBuffet.PointOfSale.Controls.Payment
 {
     public class RecieptGenerator
     {
