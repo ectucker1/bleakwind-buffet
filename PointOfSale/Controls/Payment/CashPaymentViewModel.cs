@@ -30,6 +30,7 @@ namespace PointOfSale.Controls.Payment
                 totalSale = value;
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(AmountDue)));
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(ChangeDue)));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(PaymentValid)));
             }
         }
 
@@ -68,6 +69,11 @@ namespace PointOfSale.Controls.Payment
         /// </summary>
         public double ChangeDue => Math.Clamp(AmountPaid - TotalSale, 0.0, Double.MaxValue);
 
+        /// <summary>
+        /// Will return true once the customer has paid enough cash
+        /// </summary>
+        public bool PaymentValid => AmountPaid >= TotalSale;
+
         private int penniesGiven = 0;
         /// <summary>
         /// The number of pennies paid by the customer
@@ -82,6 +88,7 @@ namespace PointOfSale.Controls.Payment
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(AmountPaid)));
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(AmountDue)));
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(ChangeDue)));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(PaymentValid)));
             }
         }
 
@@ -99,6 +106,7 @@ namespace PointOfSale.Controls.Payment
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(AmountPaid)));
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(AmountDue)));
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(ChangeDue)));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(PaymentValid)));
             }
         }
 
@@ -116,6 +124,7 @@ namespace PointOfSale.Controls.Payment
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(AmountPaid)));
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(AmountDue)));
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(ChangeDue)));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(PaymentValid)));
             }
         }
 
@@ -133,6 +142,7 @@ namespace PointOfSale.Controls.Payment
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(AmountPaid)));
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(AmountDue)));
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(ChangeDue)));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(PaymentValid)));
             }
         }
 
@@ -150,6 +160,7 @@ namespace PointOfSale.Controls.Payment
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(AmountPaid)));
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(AmountDue)));
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(ChangeDue)));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(PaymentValid)));
             }
         }
 
@@ -167,6 +178,7 @@ namespace PointOfSale.Controls.Payment
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(AmountPaid)));
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(AmountDue)));
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(ChangeDue)));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(PaymentValid)));
             }
         }
 
@@ -184,6 +196,7 @@ namespace PointOfSale.Controls.Payment
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(AmountPaid)));
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(AmountDue)));
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(ChangeDue)));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(PaymentValid)));
             }
         }
 
@@ -201,6 +214,7 @@ namespace PointOfSale.Controls.Payment
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(AmountPaid)));
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(AmountDue)));
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(ChangeDue)));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(PaymentValid)));
             }
         }
 
@@ -218,6 +232,7 @@ namespace PointOfSale.Controls.Payment
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(AmountPaid)));
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(AmountDue)));
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(ChangeDue)));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(PaymentValid)));
             }
         }
 
@@ -235,6 +250,7 @@ namespace PointOfSale.Controls.Payment
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(AmountPaid)));
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(AmountDue)));
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(ChangeDue)));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(PaymentValid)));
             }
         }
 
@@ -252,6 +268,7 @@ namespace PointOfSale.Controls.Payment
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(AmountPaid)));
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(AmountDue)));
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(ChangeDue)));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(PaymentValid)));
             }
         }
 
@@ -269,6 +286,7 @@ namespace PointOfSale.Controls.Payment
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(AmountPaid)));
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(AmountDue)));
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(ChangeDue)));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(PaymentValid)));
             }
         }
 
@@ -286,6 +304,7 @@ namespace PointOfSale.Controls.Payment
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(AmountPaid)));
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(AmountDue)));
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(ChangeDue)));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(PaymentValid)));
             }
         }
 

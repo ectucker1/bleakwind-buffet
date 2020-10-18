@@ -21,7 +21,7 @@
                 </Grid.ColumnDefinitions>
 
                 <!--This button will complete the sale with the cash amounts displayed-->
-                <Button Click="FinishCashSale" Grid.Column="1" FontSize="20" Margin="4" MinWidth="160">Finish Sale</Button>
+                <Button Click="FinishCashSale" Grid.Column="1" FontSize="20" Margin="4" MinWidth="160" IsEnabled="{Binding PaymentValid}">Finish Sale</Button>
             </Grid>
             <Grid DockPanel.Dock="Left">
                 <Grid.ColumnDefinitions>
