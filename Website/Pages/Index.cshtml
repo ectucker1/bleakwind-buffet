@@ -9,9 +9,12 @@
 @using BleakwindBuffet.Data.Sides;
 @using BleakwindBuffet.Data.Drinks;
 
+<!--This row will contain the page title and the welcome message-->
 <div class="row">
     <div class="col-lg">
+        <!--The title of the index page-->
         <h1 class="display-4 text-center">Welcome to Bleakwind Buffet</h1>
+        <!--The page greeting message-->
         <p>
             We at Bleakwind Buffet are proud to bring you authentic fantasy meals straight from the world of Skyrim.
             Shake the blood off your sword and sake your thirst with one of our old-fashioned sailor sodas.
@@ -22,11 +25,15 @@
     </div>
 </div>
 
+<!--This row will contain all the items on the menu-->
 <div class="row">
+    <!--This column will contain all the entrees-->
     <div class="col-md">
         <h2 class="display-4">Entrees</h2>
+        <!--Iterate over all the entrees in the menu-->
         @foreach (Entree entree in Menu.Entrees())
         {
+            <!--Display each entree in a menu-item div-->
             <div class="menu-item">
                 <h3>@entree.BaseName</h3>
                 <ul class="list-unstyled">
@@ -36,15 +43,21 @@
             </div>
         }
     </div>
+
+    <!--This column will contain all the sides-->
     <div class="col-md">
         <h2 class="display-4">Sides</h2>
+        <!--Iterate over all the sides in the menu-->
         @foreach (Side side in Menu.PlainSides())
         {
+            <!--Display each side in a menu-item div-->
             <div class="menu-item">
                 <h3>@side.BaseName</h3>
                 <ul class="list-unstyled">
+                    <!--Iterate over all the possible sizes-->
                     @foreach (Size size in Enum.GetValues(typeof(Size)))
                     {
+                        <!--Set the side to that size, and then display its price and calories-->
                         side.Size = size;
                         <li>Price (@size): $@side.Price</li>
                         <li>Calories (@size): @side.Calories</li>
@@ -53,24 +66,32 @@
             </div>
         }
     </div>
+
+    <!--This column will contain all the drinks-->
     <div class="col-md">
         <h2 class="display-4">Drinks</h2>
+        <!--Iterate over all the drinks in the menu-->
         @foreach (Drink drink in Menu.PlainDrinks())
         {
+            <!--Display each drink in a menu-item div-->
             <div class="menu-item">
                 <h3>@drink.BaseName</h3>
                 <ul class="list-unstyled">
+                    <!--Iterate over all the possible sizes-->
                     @foreach (Size size in Enum.GetValues(typeof(Size)))
                     {
+                        <!--Set the drink to that size, and then display its price and calories-->
                         drink.Size = size;
                         <li>Price (@size): $@drink.Price</li>
                         <li>Calories (@size): @drink.Calories</li>
                     }
                 </ul>
+                <!--Display the list of flavors if this drink is a Sailor Soda-->
                 @if (drink is SailorSoda)
                 {
                     <h5>Available Flavors</h5>
                     <ul class="list-unstyled">
+                        <!--Iterate over all the possible flavors-->
                         @foreach (SodaFlavor flavor in Enum.GetValues(typeof(SodaFlavor)))
                         {
                             <li>@flavor</li>
@@ -82,6 +103,7 @@
     </div>
 </div>
 
+<!--This row will contain a description of the combo deal-->
 <div class="row">
     <div class="col-lg">
         <h2 class="display-4">Combos</h2>
