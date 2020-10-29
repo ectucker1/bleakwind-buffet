@@ -9,6 +9,11 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 
+/*
+* Author: Ethan Tucker
+* Class name: Startup.cshtml.cs
+* Purpose: Provide configuration information for the webserver
+*/
 namespace BleakwindBuffet.Website
 {
     public class Startup

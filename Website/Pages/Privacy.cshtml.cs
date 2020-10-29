@@ -6,6 +6,11 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.Extensions.Logging;
 
+/*
+* Author: Ethan Tucker
+* Class name: Privacy.cshtml.cs
+* Purpose: Provide backing data for the Privacy page
+*/
 namespace BleakwindBuffet.Website.Pages
 {
     public class PrivacyModel : PageModel
@@ -15,10 +20,6 @@ namespace BleakwindBuffet.Website.Pages
         public PrivacyModel(ILogger<PrivacyModel> logger)
         {
             _logger = logger;
-        }
-
-        public void OnGet()
-        {
         }
     }
 }

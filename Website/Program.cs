@@ -7,6 +7,11 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 
+/*
+* Author: Ethan Tucker
+* Class name: Program.cshtml.cs
+* Purpose: Create and run the website
+*/
 namespace BleakwindBuffet.Website
 {
     public class Program

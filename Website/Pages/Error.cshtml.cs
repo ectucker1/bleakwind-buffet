@@ -7,6 +7,11 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.Extensions.Logging;
 
+/*
+* Author: Ethan Tucker
+* Class name: Error.cshtml.cs
+* Purpose: Provide backing data for the Error page
+*/
 namespace BleakwindBuffet.Website.Pages
 {
     [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
@@ -21,11 +26,6 @@ namespace BleakwindBuffet.Website.Pages
         public ErrorModel(ILogger<ErrorModel> logger)
         {
             _logger = logger;
-        }
-
-        public void OnGet()
-        {
-            RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier;
         }
     }
 }

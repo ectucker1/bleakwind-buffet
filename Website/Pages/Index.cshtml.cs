@@ -6,6 +6,11 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.Extensions.Logging;
 
+/*
+* Author: Ethan Tucker
+* Class name: Index.cshtml.cs
+* Purpose: Provide backing data for the Index page
+*/
 namespace BleakwindBuffet.Website.Pages
 {
     public class IndexModel : PageModel
@@ -15,11 +20,6 @@ namespace BleakwindBuffet.Website.Pages
         public IndexModel(ILogger<IndexModel> logger)
         {
             _logger = logger;
-        }
-
-        public void OnGet()
-        {
-
         }
     }
 }
