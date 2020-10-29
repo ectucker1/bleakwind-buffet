@@ -3,14 +3,88 @@
 @{
     ViewData["Title"] = "Home page";
 }
+@using BleakwindBuffet.Data;
+@using BleakwindBuffet.Data.Enums;
+@using BleakwindBuffet.Data.Entrees;
+@using BleakwindBuffet.Data.Sides;
+@using BleakwindBuffet.Data.Drinks;
 
-<div class="text-center">
-    <h1 class="display-4">Welcome to Bleakwind Buffet</h1>
-    <p>
-        We at Bleakwind Buffet are proud to bring you authentic fantasy meals straight from the world of Skyrim.
-        Shake the blood off your sword and sake your thirst with one of our old-fashioned sailor sodas.
-        Hack into a Smokehouse Skeleton with your dagger.
-        Or vanquish the the mighty Thalmor Triple Burger!
-        You’ve had a hard adventure and earned your loot, so spend it with us!
-    </p>
+<div class="row">
+    <div class="col-lg">
+        <h1 class="display-4 text-center">Welcome to Bleakwind Buffet</h1>
+        <p>
+            We at Bleakwind Buffet are proud to bring you authentic fantasy meals straight from the world of Skyrim.
+            Shake the blood off your sword and sake your thirst with one of our old-fashioned sailor sodas.
+            Hack into a Smokehouse Skeleton with your dagger.
+            Or vanquish the the mighty Thalmor Triple Burger!
+            You’ve had a hard adventure and earned your loot, so spend it with us!
+        </p>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md">
+        <h2 class="display-4">Entrees</h2>
+        @foreach (Entree entree in Menu.Entrees())
+        {
+            <div class="menu-item">
+                <h3>@entree.BaseName</h3>
+                <ul class="list-unstyled">
+                    <li>Price: $@entree.Price</li>
+                    <li>Calories: @entree.Calories</li>
+                </ul>
+            </div>
+        }
+    </div>
+    <div class="col-md">
+        <h2 class="display-4">Sides</h2>
+        @foreach (Side side in Menu.PlainSides())
+        {
+            <div class="menu-item">
+                <h3>@side.BaseName</h3>
+                <ul class="list-unstyled">
+                    @foreach (Size size in Enum.GetValues(typeof(Size)))
+                    {
+                        side.Size = size;
+                        <li>Price (@size): $@side.Price</li>
+                        <li>Calories (@size): @side.Calories</li>
+                    }
+                </ul>
+            </div>
+        }
+    </div>
+    <div class="col-md">
+        <h2 class="display-4">Drinks</h2>
+        @foreach (Drink drink in Menu.PlainDrinks())
+        {
+            <div class="menu-item">
+                <h3>@drink.BaseName</h3>
+                <ul class="list-unstyled">
+                    @foreach (Size size in Enum.GetValues(typeof(Size)))
+                    {
+                        drink.Size = size;
+                        <li>Price (@size): $@drink.Price</li>
+                        <li>Calories (@size): @drink.Calories</li>
+                    }
+                </ul>
+                @if (drink is SailorSoda)
+                {
+                    <h5>Available Flavors</h5>
+                    <ul class="list-unstyled">
+                        @foreach (SodaFlavor flavor in Enum.GetValues(typeof(SodaFlavor)))
+                        {
+                            <li>@flavor</li>
+                        }
+                    </ul>
+                }
+            </div>
+        }
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-lg">
+        <h2 class="display-4">Combos</h2>
+        <p>Any Entree, Side, and Drink can be combined into a combo with a $1.00 discount.</p>
+    </div>
 </div>
