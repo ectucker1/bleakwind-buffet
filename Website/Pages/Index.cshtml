@@ -122,7 +122,7 @@
     <div class="col-md">
         <h2 class="display-4">Entrees</h2>
         <!--Iterate over all the entrees in the menu-->
-        @foreach (Entree entree in Menu.Entrees())
+        @foreach (Entree entree in Model.FilteredEntrees)
         {
             <!--Display each entree in a menu-item div-->
             <div class="menu-item">
@@ -139,7 +139,7 @@
     <div class="col-md">
         <h2 class="display-4">Sides</h2>
         <!--Iterate over all the sides in the menu-->
-        @foreach (Side side in Menu.PlainSides())
+        @foreach (Side side in Model.FilteredSides)
         {
             <!--Display each side in a menu-item div-->
             <div class="menu-item">
@@ -162,7 +162,7 @@
     <div class="col-md">
         <h2 class="display-4">Drinks</h2>
         <!--Iterate over all the drinks in the menu-->
-        @foreach (Drink drink in Menu.PlainDrinks())
+        @foreach (Drink drink in Model.FilteredDrinks)
         {
             <!--Display each drink in a menu-item div-->
             <div class="menu-item">

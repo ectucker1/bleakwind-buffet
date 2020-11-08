@@ -3,6 +3,7 @@ using BleakwindBuffet.Data.Entrees;
 using BleakwindBuffet.Data.Drinks;
 using BleakwindBuffet.Data.Sides;
 using System.Collections.Generic;
+using System;
 
 /*
 * Author: Ethan Tucker
@@ -143,6 +144,178 @@ namespace BleakwindBuffet.Data
             items.AddRange(Sides());
             items.AddRange(Drinks());
             return items;
+        }
+
+
+        /// <summary>
+        /// Filters the given collection of order items to those with the types allowed
+        /// </summary>
+        /// <param name="items">The collection of order items to filter</param>
+        /// <param name="includeEntrees">True if Entrees should be included</param>
+        /// <param name="includeSides">True if Sides should be included</param>
+        /// <param name="includeDrinks">True if Drinks should be included</param>
+        /// <returns>The filtered order item collection</returns>
+        public static IEnumerable<IOrderItem> FilterByType(IEnumerable<IOrderItem> items, bool includeEntrees, bool includeSides, bool includeDrinks)
+        {
+            var results = new List<IOrderItem>();
+
+            foreach (IOrderItem item in items)
+            {
+                if (item is Entree && includeEntrees)
+                    results.Add(item);
+                if (item is Side && includeSides)
+                    results.Add(item);
+                if (item is Drink && includeDrinks)
+                    results.Add(item);
+            }
+
+            return results;
+        }
+
+        /// <summary>
+        /// Filters the given collection of order items to those with a price in the specified range
+        /// </summary>
+        /// <param name="movies">The collection of order items to filter</param>
+        /// <param name="min">The minimum price</param>
+        /// <param name="max">The maximum price</param>
+        /// <returns>The filtered order item collection</returns>
+        public static IEnumerable<IOrderItem> FilterByPrice(IEnumerable<IOrderItem> items, double? min, double? max)
+        {
+            if (min == null && max == null) return items;
+
+            var results = new List<IOrderItem>();
+
+            // only a maximum specified
+            if (min == null)
+            {
+                foreach (IOrderItem item in items)
+                {
+                    if (item.Price <= max) results.Add(item);
+                }
+                return results;
+            }
+
+            // only a minimum specified
+            if (max == null)
+            {
+                foreach (IOrderItem item in items)
+                {
+                    if (item.Price >= min) results.Add(item);
+                }
+                return results;
+            }
+
+            // Both minimum and maximum specified
+            foreach (IOrderItem item in items)
+            {
+                if (item.Price >= min && item.Price <= max)
+                {
+                    results.Add(item);
+                }
+            }
+            return results;
+        }
+
+        /// <summary>
+        /// Filters the given collection of order items to those with a calorie count in the specified range
+        /// </summary>
+        /// <param name="movies">The collection of order items to filter</param>
+        /// <param name="min">The minimum number of calories</param>
+        /// <param name="max">The maximum number of calories</param>
+        /// <returns>The filtered order item collection</returns>
+        public static IEnumerable<IOrderItem> FilterByCalories(IEnumerable<IOrderItem> items, uint? min, uint? max)
+        {
+            if (min == null && max == null) return items;
+
+            var results = new List<IOrderItem>();
+
+            // only a maximum specified
+            if (min == null)
+            {
+                foreach (IOrderItem item in items)
+                {
+                    if (item.Calories <= max) results.Add(item);
+                }
+                return results;
+            }
+
+            // only a minimum specified
+            if (max == null)
+            {
+                foreach (IOrderItem item in items)
+                {
+                    if (item.Calories >= min) results.Add(item);
+                }
+                return results;
+            }
+
+            // Both minimum and maximum specified
+            foreach (IOrderItem item in items)
+            {
+                if (item.Calories >= min && item.Calories <= max)
+                {
+                    results.Add(item);
+                }
+            }
+            return results;
+        }
+
+        /// <summary>
+        /// Searches menu items for one containing the given terms
+        /// </summary>
+        /// <param name="terms">The terms to search for</param>
+        /// <returns>The results of the search</returns>
+        public static IEnumerable<IOrderItem> Search(IEnumerable<IOrderItem> items, string terms)
+        {
+            List<IOrderItem> results = new List<IOrderItem>();
+
+            // null check
+            if (terms == null) return items;
+
+            foreach (IOrderItem item in items)
+            {
+                // Add the item if the name is a match
+                // IndexOf is used instead of Contains to allow for use of InvariantCultureIgnoreCase
+                if (item.BaseName.IndexOf(terms, StringComparison.InvariantCultureIgnoreCase) >= 0)
+                {
+                    results.Add(item);
+                }
+            }
+
+            return results;
+        }
+
+        /// <summary>
+        /// Remove all items with the same type from the given list
+        /// </summary>
+        /// <param name="items">The list of order items to filter</param>
+        /// <returns>A new list without duplicate types</returns>
+        public static IEnumerable<IOrderItem> FilterDuplicates(IEnumerable<IOrderItem> items)
+        {
+            var results = new List<IOrderItem>();
+
+            // For each item in the original list
+            foreach (IOrderItem item in items)
+            {
+                // Determine if that item is a duplicate
+                bool duplicate = false;
+                foreach (IOrderItem existing in results)
+                {
+                    if (item.GetType() == existing.GetType())
+                    {
+                        duplicate = true;
+                        break;
+                    }
+                }
+
+                // Add that item if it's not a duplicate
+                if (!duplicate)
+                {
+                    results.Add(item);
+                }
+            }
+
+            return results;
         }
     }
 }
