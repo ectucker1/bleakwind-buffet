@@ -31,6 +31,91 @@
     </div>
 </div>
 
+<!--This row will contain the search and filter forms-->
+<div class="row">
+    <div class="col-lg">
+        <!--Create a card around the filters-->
+        <div class="card">
+            <!--Card heading text-->
+            <div class="card-header">
+                Find the perfect menu item
+            </div>
+            <!--Card body containing the form-->
+            <div class="card-body">
+                <!--Actual form element-->
+                <form>
+                    <!--This form row contains the price and calorie parameters-->
+                    <div class="form-row">
+                        <!--Minimum price field-->
+                        <div class="form-group col-lg-3 col-md-6">
+                            <label for="minPriceNumber">Minimum Price</label>
+                            <input name="MinPrice" value="@Model.MinPrice" type="number" class="form-control" id="minPriceNumber" placeholder="Minimum Price" min="0" max="10" step="0.1" />
+                        </div>
+                        <!--Maximum price field-->
+                        <div class="form-group col-lg-3 col-md-6">
+                            <label for="maxPriceNumber">Maximum Price</label>
+                            <input name="MaxPrice" value="@Model.MaxPrice" type="number" class="form-control" id="maxPriceNumber" placeholder="Maximum Price" min="0" max="10" step="0.1" />
+                        </div>
+                        <!--Minimum calories field-->
+                        <div class="form-group col-lg-3 col-md-6">
+                            <label for="minCaloriesNumber">Minimum Calories</label>
+                            <input name="MinCalories" value="@Model.MinCalories" type="number" class="form-control" id="minCaloriesNumber" placeholder="Minimum Calories" min="0" max="1000" step="10" />
+                        </div>
+                        <!--Maximum calories field-->
+                        <div class="form-group col-lg-3 col-md-6">
+                            <label for="maxCaloriesNumber">Maximum Calories</label>
+                            <input name="MaxCalories" value="@Model.MaxCalories" type="number" class="form-control" id="maxCaloriesNumber" placeholder="Maximum Calories" min="0" max="1000" step="10" />
+                        </div>
+                    </div>
+
+                    <!--Form row for menu item types-->
+                    <div class="form-row">
+                        <!--Entree checkbox-->
+                        <div class="form-group col-md-4">
+                            <div class="form-check">
+                                <input name="IncludeEntrees" checked="@Model.IncludeEntrees" class="form-check-input" type="checkbox" id="entreeCheck">
+                                <label class="form-check-label" for="entreeCheck">
+                                    Entrees
+                                </label>
+                            </div>
+                        </div>
+                        <!--Side checkbox-->
+                        <div class="form-group col-md-4">
+                            <div class="form-check">
+                                <input name="IncludeSides" checked="@Model.IncludeSides" class="form-check-input" type="checkbox" id="sideCheck">
+                                <label class="form-check-label" for="sideCheck">
+                                    Sides
+                                </label>
+                            </div>
+                        </div>
+                        <!--Drink checkbox-->
+                        <div class="form-group col-md-4">
+                            <div class="form-check">
+                                <input name="IncludeDrinks" checked="@Model.IncludeDrinks" class="form-check-input" type="checkbox" id="drinkCheck">
+                                <label class="form-check-label" for="drinkCheck">
+                                    Drinks
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--Form row for search box and submit button-->
+                    <div class="form-row align-items-end">
+                        <!--Search text box-->
+                        <div class="form-group col-md-8">
+                            <input name="SearchTerms" value="@Model.SearchTerms" type="text" class="form-control" id="searchText" placeholder="Name">
+                        </div>
+                        <!--Submit button-->
+                        <div class="form-group col-md-4">
+                            <button type="submit" class="btn btn-primary">Search</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
 <!--This row will contain all the items on the menu-->
 <div class="row">
     <!--This column will contain all the entrees-->
