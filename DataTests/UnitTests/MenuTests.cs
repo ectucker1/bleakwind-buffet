@@ -10,6 +10,8 @@ using BleakwindBuffet.Data.Drinks;
 using BleakwindBuffet.Data.Sides;
 using BleakwindBuffet.Data.Entrees;
 using BleakwindBuffet.Data.Enums;
+using System.Windows.Documents;
+using BleakwindBuffet.DataTests.UnitTests.MockData;
 
 namespace BleakwindBuffet.DataTests.UnitTests
 {
@@ -474,6 +476,140 @@ namespace BleakwindBuffet.DataTests.UnitTests
                     Assert.Equal(SodaFlavor.Watermelon, ((SailorSoda)item).Flavor);
                 }
             );
+        }
+
+        [Fact]
+        public void ShouldCorrectlyFilterByType()
+        {
+            var items = new IOrderItem[] { new MockEntree(0, 0), new MockDrink(0, 0), new MockSide(0, 0) };
+            // No types allowed
+            var results = Menu.FilterByType(items, false, false, false);
+            Assert.Empty(results);
+            // Only entrees allowed
+            results = Menu.FilterByType(items, true, false, false);
+            Assert.Collection(results, (item) => Assert.IsType<MockEntree>(item));
+            // Only sides allowed
+            results = Menu.FilterByType(items, false, true, false);
+            Assert.Collection(results, (item) => Assert.IsType<MockSide>(item));
+            // Only drinks allowed
+            results = Menu.FilterByType(items, false, false, true);
+            Assert.Collection(results, (item) => Assert.IsType<MockDrink>(item));
+            // All types allowed
+            results = Menu.FilterByType(items, true, true, true);
+            Assert.Collection(results, (item) => Assert.IsType<MockEntree>(item),
+                (item) => Assert.IsType<MockDrink>(item),
+                (item) => Assert.IsType<MockSide>(item));
+        }
+
+        [Fact]
+        public void ShouldCorrectlyFilterByPriceWithNoBounds()
+        {
+            var items = new IOrderItem[] { new MockEntree(1, 0), new MockDrink(2, 0), new MockSide(3, 0) };
+            var results = Menu.FilterByPrice(items, null, null);
+            Assert.Collection(results, (item) => Assert.IsType<MockEntree>(item),
+                (item) => Assert.IsType<MockDrink>(item),
+                (item) => Assert.IsType<MockSide>(item));
+        }
+
+        [Fact]
+        public void ShouldCorrectlyFilterByPriceWithLowerBound()
+        {
+            var items = new IOrderItem[] { new MockEntree(1, 0), new MockDrink(2, 0), new MockSide(3, 0) };
+            var results = Menu.FilterByPrice(items, 2, null);
+            Assert.Collection(results, (item) => Assert.IsType<MockDrink>(item),
+                (item) => Assert.IsType<MockSide>(item));
+        }
+
+        [Fact]
+        public void ShouldCorrectlyFilterByPriceWithUpperBound()
+        {
+            var items = new IOrderItem[] { new MockEntree(1, 0), new MockDrink(2, 0), new MockSide(3, 0) };
+            var results = Menu.FilterByPrice(items, null, 2);
+            Assert.Collection(results, (item) => Assert.IsType<MockEntree>(item),
+                (item) => Assert.IsType<MockDrink>(item));
+        }
+
+        [Fact]
+        public void ShouldCorrectlyFilterByPriceWithBothBounds()
+        {
+            var items = new IOrderItem[] { new MockEntree(1, 0), new MockDrink(2, 0), new MockSide(3, 0) };
+            var results = Menu.FilterByPrice(items, 1.1, 2.9);
+            Assert.Collection(results, (item) => Assert.IsType<MockDrink>(item));
+        }
+
+        [Fact]
+        public void ShouldCorrectlyFilterByCaloriesWithNoBounds()
+        {
+            var items = new IOrderItem[] { new MockEntree(0, 10), new MockDrink(0, 20), new MockSide(0, 30) };
+            var results = Menu.FilterByCalories(items, null, null);
+            Assert.Collection(results, (item) => Assert.IsType<MockEntree>(item),
+                (item) => Assert.IsType<MockDrink>(item),
+                (item) => Assert.IsType<MockSide>(item));
+        }
+
+        [Fact]
+        public void ShouldCorrectlyFilterByCaloriesWithLowerBound()
+        {
+            var items = new IOrderItem[] { new MockEntree(0, 10), new MockDrink(0, 20), new MockSide(0, 30) };
+            var results = Menu.FilterByCalories(items, 20, null);
+            Assert.Collection(results, (item) => Assert.IsType<MockDrink>(item),
+                (item) => Assert.IsType<MockSide>(item));
+        }
+
+        [Fact]
+        public void ShouldCorrectlyFilterByCaloriesWithUpperBound()
+        {
+            var items = new IOrderItem[] { new MockEntree(0, 10), new MockDrink(0, 20), new MockSide(0, 30) };
+            var results = Menu.FilterByCalories(items, null, 20);
+            Assert.Collection(results, (item) => Assert.IsType<MockEntree>(item),
+                (item) => Assert.IsType<MockDrink>(item));
+        }
+
+        [Fact]
+        public void ShouldCorrectlyFilterByCaloriesWithBothBounds()
+        {
+            var items = new IOrderItem[] { new MockEntree(0, 10), new MockDrink(0, 20), new MockSide(0, 30) };
+            var results = Menu.FilterByCalories(items, 11, 29);
+            Assert.Collection(results, (item) => Assert.IsType<MockDrink>(item));
+        }
+
+        [Fact]
+        public void ShouldReturnFullListForNullSearch()
+        {
+            var items = new IOrderItem[] { new MockEntree(0, 0), new MockDrink(0, 0), new MockSide(0, 0) };
+            var results = Menu.Search(items, null);
+            Assert.Collection(results, (item) => Assert.IsType<MockEntree>(item),
+                (item) => Assert.IsType<MockDrink>(item),
+                (item) => Assert.IsType<MockSide>(item));
+        }
+
+        [Fact]
+        public void ShouldCorrectlyFilterBySearch()
+        {
+            var items = new IOrderItem[] { new MockEntree(0, 0), new MockDrink(0, 0), new MockSide(0, 0) };
+            var results = Menu.Search(items, "MOCK");
+            Assert.Collection(results, (item) => Assert.IsType<MockEntree>(item),
+                (item) => Assert.IsType<MockDrink>(item),
+                (item) => Assert.IsType<MockSide>(item));
+            results = Menu.Search(items, "mock");
+            Assert.Collection(results, (item) => Assert.IsType<MockEntree>(item),
+                (item) => Assert.IsType<MockDrink>(item),
+                (item) => Assert.IsType<MockSide>(item));
+            results = Menu.Search(items, "i");
+            Assert.Collection(results, (item) => Assert.IsType<MockDrink>(item),
+                (item) => Assert.IsType<MockSide>(item));
+            results = Menu.Search(items, "DRinK");
+            Assert.Collection(results, (item) => Assert.IsType<MockDrink>(item));
+        }
+
+        [Fact]
+        public void ShouldCorrectlyFilterDuplicates()
+        {
+            var items = new IOrderItem[] { new MockDrink(0, 0), new MockEntree(0, 0), new MockEntree(0, 0), new MockDrink(0, 0), new MockSide(0, 0), new MockDrink(0, 0) };
+            var results = Menu.FilterDuplicates(items);
+            Assert.Collection(results, (item) => Assert.IsType<MockDrink>(item),
+                (item) => Assert.IsType<MockEntree>(item),
+                (item) => Assert.IsType<MockSide>(item));
         }
     }
 }
