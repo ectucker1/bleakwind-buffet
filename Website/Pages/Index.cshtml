@@ -127,6 +127,7 @@
             <!--Display each entree in a menu-item div-->
             <div class="menu-item">
                 <h3>@entree.BaseName</h3>
+                <p>@entree.Description</p>
                 <ul class="list-unstyled">
                     <li>Price: $@entree.Price</li>
                     <li>Calories: @entree.Calories</li>
@@ -144,6 +145,7 @@
             <!--Display each side in a menu-item div-->
             <div class="menu-item">
                 <h3>@side.BaseName</h3>
+                <p>@side.Description</p>
                 <ul class="list-unstyled">
                     <!--Iterate over all the possible sizes-->
                     @foreach (Size size in Enum.GetValues(typeof(Size)))
@@ -167,6 +169,7 @@
             <!--Display each drink in a menu-item div-->
             <div class="menu-item">
                 <h3>@drink.BaseName</h3>
+                <p>@drink.Description</p>
                 <ul class="list-unstyled">
                     <!--Iterate over all the possible sizes-->
                     @foreach (Size size in Enum.GetValues(typeof(Size)))
