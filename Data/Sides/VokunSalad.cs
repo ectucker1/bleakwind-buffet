@@ -71,6 +71,12 @@ namespace BleakwindBuffet.Data.Sides
         public override string BaseName => "Vokun Salad";
 
         /// <summary>
+        /// Returns the description of the Vokun Salad
+        /// </summary>
+        public override string Description =>
+            "A seasonal fruit salad of mellons, berries, mango, grape, apple, and oranges.";
+
+        /// <summary>
         /// Creates a string representation of this side
         /// </summary>
         /// <returns>A string with the format "[Size] Vokun Salad"</returns>

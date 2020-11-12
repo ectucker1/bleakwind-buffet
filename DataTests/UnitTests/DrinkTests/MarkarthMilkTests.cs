@@ -125,6 +125,13 @@ namespace BleakwindBuffet.DataTests.UnitTests.DrinkTests
             Assert.Equal("Markarth Milk", m.BaseName);
         }
 
+        [Fact]
+        public void ShouldHaveCorrectDescription()
+        {
+            var m = new MarkarthMilk();
+            Assert.Equal("Hormone-free organic 2% milk.", m.Description);
+        }
+
         [Theory]
         [InlineData(Size.Small)]
         [InlineData(Size.Medium)]

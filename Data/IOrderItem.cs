@@ -29,6 +29,11 @@ namespace BleakwindBuffet.Data
         string BaseName { get; }
 
         /// <summary>
+        /// A string description of this menu item
+        /// </summary>
+        string Description { get; }
+
+        /// <summary>
         /// A list of special instructions for this menu item
         /// </summary>
         List<string> SpecialInstructions { get; }

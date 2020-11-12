@@ -71,6 +71,12 @@ namespace BleakwindBuffet.Data.Sides
         public override string BaseName => "Mad Otar Grits";
 
         /// <summary>
+        /// Returns the description of the Mad Otar Grits
+        /// </summary>
+        public override string Description =>
+            "Cheesey Grits.";
+
+        /// <summary>
         /// Creates a string representation of this side
         /// </summary>
         /// <returns>A string with the format "[Size] Mad Otar Grits"</returns>

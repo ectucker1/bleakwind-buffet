@@ -93,6 +93,12 @@ namespace BleakwindBuffet.Data.Drinks
         public override string BaseName => "Aretino Apple Juice";
 
         /// <summary>
+        /// Returns the description of the Aretino Apple Juice
+        /// </summary>
+        public override string Description =>
+            "Fresh squeezed apple juice.";
+
+        /// <summary>
         /// Creates a string representation of this drink
         /// </summary>
         /// <returns>A string with the format "[Size] Aretino Apple Juice"</returns>

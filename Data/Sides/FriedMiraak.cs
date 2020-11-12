@@ -71,6 +71,12 @@ namespace BleakwindBuffet.Data.Sides
         public override string BaseName => "Fried Miraak";
 
         /// <summary>
+        /// Returns the description of the Fried Miraak
+        /// </summary>
+        public override string Description =>
+            "Perfectly prepared hash brown pancakes.";
+
+        /// <summary>
         /// Creates a string representation of this side
         /// </summary>
         /// <returns>A string with the format "[Size] Fried Miraak"</returns>

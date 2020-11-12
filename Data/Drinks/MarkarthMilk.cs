@@ -93,6 +93,12 @@ namespace BleakwindBuffet.Data.Drinks
         public override string BaseName => "Markarth Milk";
 
         /// <summary>
+        /// Returns the description of the Markarth Milk
+        /// </summary>
+        public override string Description =>
+            "Hormone-free organic 2% milk.";
+
+        /// <summary>
         /// Creates a string representation of this drink
         /// </summary>
         /// <returns>A string with the format "[Size] Markarth Milk"</returns>

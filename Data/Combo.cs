@@ -117,6 +117,11 @@ namespace BleakwindBuffet.Data
         public string BaseName => "Combo";
 
         /// <summary>
+        /// The description of the Combo
+        /// </summary>
+        public string Description => "Combo of an Entree, Side, and Drink with a $1.00 discount.";
+
+        /// <summary>
         /// Creates a new combo with the default Entree, Side, and Drink
         /// </summary>
         public Combo()

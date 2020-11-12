@@ -178,6 +178,13 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
         }
 
         [Fact]
+        public void ShouldHaveCorrectDescription()
+        {
+            var bb = new BriarheartBurger();
+            Assert.Equal("Single patty burger on a brioche bun. Comes with ketchup, mustard, pickle, and cheese.", bb.Description);
+        }
+
+        [Fact]
         public void ShouldNotifyWhenSettingBun()
         {
             var bb = new BriarheartBurger();

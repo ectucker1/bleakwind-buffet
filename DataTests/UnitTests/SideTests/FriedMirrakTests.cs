@@ -94,6 +94,13 @@ namespace BleakwindBuffet.DataTests.UnitTests.SideTests
             Assert.Equal("Fried Miraak", fm.BaseName);
         }
 
+        [Fact]
+        public void ShouldHaveCorrectDescription()
+        {
+            var fm = new FriedMiraak();
+            Assert.Equal("Perfectly prepared hash brown pancakes.", fm.Description);
+        }
+
         [Theory]
         [InlineData(Size.Small)]
         [InlineData(Size.Medium)]

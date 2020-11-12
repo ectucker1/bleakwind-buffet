@@ -92,6 +92,13 @@ namespace BleakwindBuffet.DataTests.UnitTests
             Assert.Equal("Combo", c.BaseName);
         }
 
+        [Fact]
+        public void ShouldHaveCorrectDescription()
+        {
+            var c = new Combo();
+            Assert.Equal("Combo of an Entree, Side, and Drink with a $1.00 discount.", c.Description);
+        }
+
         [Theory]
         [InlineData(100, 200, 300, 600)]
         [InlineData(100, 100, 100, 300)]

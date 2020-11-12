@@ -35,6 +35,11 @@ namespace BleakwindBuffet.DataTests.UnitTests.MockData
         public override string BaseName => "Mock Entree";
 
         /// <summary>
+        /// The description of the MockEntree
+        /// </summary>
+        public override string Description => "Two data patties on a silicon bun used for unit testing.";
+
+        /// <summary>
         /// Creates a new MockEntree with the given price and calories
         /// </summary>
         /// <param name="price">The price of this MockEntree</param>

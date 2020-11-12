@@ -36,6 +36,11 @@ namespace BleakwindBuffet.DataTests.UnitTests.MockData
         public override string BaseName => "Mock Side";
 
         /// <summary>
+        /// The description of the MockSide
+        /// </summary>
+        public override string Description => "Fried bytes used for unit testing.";
+
+        /// <summary>
         /// Creates a new MockSide with the given price and calories
         /// </summary>
         /// <param name="price">The price of this MockSide</param>

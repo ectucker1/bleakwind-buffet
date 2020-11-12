@@ -36,6 +36,11 @@ namespace BleakwindBuffet.DataTests.UnitTests.MockData
         public override string BaseName => "Mock Drink";
 
         /// <summary>
+        /// The description of the MockDrink
+        /// </summary>
+        public override string Description => "Refreshing streams of 0's and 1's used for unit testing.";
+
+        /// <summary>
         /// Creates a new MockDrink with the given price and calories
         /// </summary>
         /// <param name="price">The price of this MockDrink</param>

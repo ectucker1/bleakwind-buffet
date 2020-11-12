@@ -104,6 +104,12 @@ namespace BleakwindBuffet.Data.Entrees
         public override string BaseName => "Philly Poacher";
 
         /// <summary>
+        /// Returns the description of the Philly Poacher
+        /// </summary>
+        public override string Description =>
+            "Cheesesteak sandwich made from grilled sirloin, topped with onions on a fried roll.";
+
+        /// <summary>
         /// Returns the name of this entree
         /// </summary>
         /// <returns>The string "Philly Poacher"</returns>

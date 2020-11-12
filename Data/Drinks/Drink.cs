@@ -60,6 +60,11 @@ namespace BleakwindBuffet.Data.Drinks
         public abstract string BaseName { get; }
 
         /// <summary>
+        /// The description of this drink
+        /// </summary>
+        public abstract string Description { get; }
+
+        /// <summary>
         /// Raises a PropertyChangedEvent from a child class
         /// </summary>
         /// <param name="e">Arguments for the property changed event arguments</param>

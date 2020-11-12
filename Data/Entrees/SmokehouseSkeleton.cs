@@ -125,6 +125,12 @@ namespace BleakwindBuffet.Data.Entrees
         public override string BaseName => "Smokehouse Skeleton";
 
         /// <summary>
+        /// Returns the description of the Smokehouse Skeleton
+        /// </summary>
+        public override string Description =>
+            "Put some meat on those bones with a small stack of pancakes. Includes sausage links, eggs, and hash browns on the side. Topped with the syrup of your choice.";
+
+        /// <summary>
         /// Returns the name of this entree
         /// </summary>
         /// <returns>The string "Smokehouse Skeleton"</returns>

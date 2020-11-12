@@ -150,6 +150,13 @@ namespace BleakwindBuffet.DataTests.UnitTests.DrinkTests
             Assert.Equal("Warrior Water", w.BaseName);
         }
 
+        [Fact]
+        public void ShouldHaveCorrectDescription()
+        {
+            var w = new WarriorWater();
+            Assert.Equal("It’s water. Just water.", w.Description);
+        }
+
         [Theory]
         [InlineData(Size.Small)]
         [InlineData(Size.Medium)]

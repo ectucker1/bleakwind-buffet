@@ -84,6 +84,12 @@ namespace BleakwindBuffet.Data.Drinks
         public override string BaseName => "Warrior Water";
 
         /// <summary>
+        /// Returns the description of the Warrior Water
+        /// </summary>
+        public override string Description =>
+            "It’s water. Just water.";
+
+        /// <summary>
         /// Creates a string representation of this drink
         /// </summary>
         /// <returns>A string with the format "[Size] Warrior Water"</returns>
