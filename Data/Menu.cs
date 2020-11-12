@@ -215,24 +215,28 @@ namespace BleakwindBuffet.Data
         /// </summary>
         /// <param name="terms">The terms to search for</param>
         /// <returns>The results of the search</returns>
-        public static IEnumerable<IOrderItem> Search(IEnumerable<IOrderItem> items, string terms)
+        public static IEnumerable<IOrderItem> Search(IEnumerable<IOrderItem> items, string search)
         {
-            List<IOrderItem> results = new List<IOrderItem>();
-
             // null check
-            if (terms == null) return items;
+            if (search == null) return items;
 
-            foreach (IOrderItem item in items)
+            // Split the search into multiple terms
+            var terms = search.Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
+
+            return items.Where(item =>
             {
-                // Add the item if the name is a match
-                // IndexOf is used instead of Contains to allow for use of InvariantCultureIgnoreCase
-                if (item.BaseName.IndexOf(terms, StringComparison.InvariantCultureIgnoreCase) >= 0)
+                // Iterate over each search term
+                foreach (string term in terms)
                 {
-                    results.Add(item);
+                    // Checks if the item name contains the term
+                    if (item.BaseName.IndexOf(term, StringComparison.CurrentCultureIgnoreCase) >= 0)
+                        return true;
+                    // Checks if the item description contains the term
+                    if (item.Description.IndexOf(term, StringComparison.CurrentCultureIgnoreCase) >= 0)
+                        return true;
                 }
-            }
-
-            return results;
+                return false;
+            });
         }
 
         /// <summary>
@@ -242,8 +246,6 @@ namespace BleakwindBuffet.Data
         /// <returns>A new list without duplicate types</returns>
         public static IEnumerable<IOrderItem> FilterDuplicates(IEnumerable<IOrderItem> items)
         {
-            var results = new List<IOrderItem>();
-
             // Return only the items which are the first of their type in the collection
             return items.Where(item => items.Where(other => other.GetType() == item.GetType()).First() == item);
         }

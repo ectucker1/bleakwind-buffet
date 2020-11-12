@@ -584,7 +584,7 @@ namespace BleakwindBuffet.DataTests.UnitTests
         }
 
         [Fact]
-        public void ShouldCorrectlyFilterBySearch()
+        public void ShouldCorrectlySearchByName()
         {
             var items = new IOrderItem[] { new MockEntree(0, 0), new MockDrink(0, 0), new MockSide(0, 0) };
             var results = Menu.Search(items, "MOCK");
@@ -595,11 +595,39 @@ namespace BleakwindBuffet.DataTests.UnitTests
             Assert.Collection(results, (item) => Assert.IsType<MockEntree>(item),
                 (item) => Assert.IsType<MockDrink>(item),
                 (item) => Assert.IsType<MockSide>(item));
-            results = Menu.Search(items, "i");
+            results = Menu.Search(items, "side drink");
             Assert.Collection(results, (item) => Assert.IsType<MockDrink>(item),
                 (item) => Assert.IsType<MockSide>(item));
             results = Menu.Search(items, "DRinK");
             Assert.Collection(results, (item) => Assert.IsType<MockDrink>(item));
+        }
+
+        [Fact]
+        public void ShouldCorrectlySearchByDescription()
+        {
+            var items = new IOrderItem[] { new MockEntree(0, 0), new MockDrink(0, 0), new MockSide(0, 0) };
+            var results = Menu.Search(items, "testing");
+            Assert.Collection(results, (item) => Assert.IsType<MockEntree>(item),
+                (item) => Assert.IsType<MockDrink>(item),
+                (item) => Assert.IsType<MockSide>(item));
+            results = Menu.Search(items, "UNIT");
+            Assert.Collection(results, (item) => Assert.IsType<MockEntree>(item),
+                (item) => Assert.IsType<MockDrink>(item),
+                (item) => Assert.IsType<MockSide>(item));
+            results = Menu.Search(items, "fried stream");
+            Assert.Collection(results, (item) => Assert.IsType<MockDrink>(item),
+                (item) => Assert.IsType<MockSide>(item));
+            results = Menu.Search(items, "REFRESHING");
+            Assert.Collection(results, (item) => Assert.IsType<MockDrink>(item));
+        }
+
+        [Fact]
+        public void ShouldCorrectlySearchByNameOrDescription()
+        {
+            var items = new IOrderItem[] { new MockEntree(0, 0), new MockDrink(0, 0), new MockSide(0, 0) };
+            var results = Menu.Search(items, "fried DRINK");
+            Assert.Collection(results, (item) => Assert.IsType<MockDrink>(item),
+                (item) => Assert.IsType<MockSide>(item));
         }
 
         [Fact]
