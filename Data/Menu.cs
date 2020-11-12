@@ -4,6 +4,7 @@ using BleakwindBuffet.Data.Drinks;
 using BleakwindBuffet.Data.Sides;
 using System.Collections.Generic;
 using System;
+using System.Linq;
 
 /*
 * Author: Ethan Tucker
@@ -157,19 +158,10 @@ namespace BleakwindBuffet.Data
         /// <returns>The filtered order item collection</returns>
         public static IEnumerable<IOrderItem> FilterByType(IEnumerable<IOrderItem> items, bool includeEntrees, bool includeSides, bool includeDrinks)
         {
-            var results = new List<IOrderItem>();
-
-            foreach (IOrderItem item in items)
-            {
-                if (item is Entree && includeEntrees)
-                    results.Add(item);
-                if (item is Side && includeSides)
-                    results.Add(item);
-                if (item is Drink && includeDrinks)
-                    results.Add(item);
-            }
-
-            return results;
+            return items.Where(item =>
+                (includeEntrees && item is Entree)
+                || (includeSides && item is Side)
+                || (includeDrinks && item is Drink));
         }
 
         /// <summary>
@@ -183,37 +175,16 @@ namespace BleakwindBuffet.Data
         {
             if (min == null && max == null) return items;
 
-            var results = new List<IOrderItem>();
-
             // only a maximum specified
             if (min == null)
-            {
-                foreach (IOrderItem item in items)
-                {
-                    if (item.Price <= max) results.Add(item);
-                }
-                return results;
-            }
+                return items.Where(item => item.Price <= max);
 
             // only a minimum specified
             if (max == null)
-            {
-                foreach (IOrderItem item in items)
-                {
-                    if (item.Price >= min) results.Add(item);
-                }
-                return results;
-            }
+                return items.Where(item => item.Price >= min);
 
             // Both minimum and maximum specified
-            foreach (IOrderItem item in items)
-            {
-                if (item.Price >= min && item.Price <= max)
-                {
-                    results.Add(item);
-                }
-            }
-            return results;
+            return items.Where(item => item.Price >= min && item.Price <= max);
         }
 
         /// <summary>
@@ -227,37 +198,16 @@ namespace BleakwindBuffet.Data
         {
             if (min == null && max == null) return items;
 
-            var results = new List<IOrderItem>();
-
             // only a maximum specified
             if (min == null)
-            {
-                foreach (IOrderItem item in items)
-                {
-                    if (item.Calories <= max) results.Add(item);
-                }
-                return results;
-            }
+                return items.Where(item => item.Calories <= max);
 
             // only a minimum specified
             if (max == null)
-            {
-                foreach (IOrderItem item in items)
-                {
-                    if (item.Calories >= min) results.Add(item);
-                }
-                return results;
-            }
+                return items.Where(item => item.Calories >= min);
 
             // Both minimum and maximum specified
-            foreach (IOrderItem item in items)
-            {
-                if (item.Calories >= min && item.Calories <= max)
-                {
-                    results.Add(item);
-                }
-            }
-            return results;
+            return items.Where(item => item.Calories >= min && item.Calories <= max);
         }
 
         /// <summary>
@@ -294,28 +244,8 @@ namespace BleakwindBuffet.Data
         {
             var results = new List<IOrderItem>();
 
-            // For each item in the original list
-            foreach (IOrderItem item in items)
-            {
-                // Determine if that item is a duplicate
-                bool duplicate = false;
-                foreach (IOrderItem existing in results)
-                {
-                    if (item.GetType() == existing.GetType())
-                    {
-                        duplicate = true;
-                        break;
-                    }
-                }
-
-                // Add that item if it's not a duplicate
-                if (!duplicate)
-                {
-                    results.Add(item);
-                }
-            }
-
-            return results;
+            // Return only the items which are the first of their type in the collection
+            return items.Where(item => items.Where(other => other.GetType() == item.GetType()).First() == item);
         }
     }
 }
